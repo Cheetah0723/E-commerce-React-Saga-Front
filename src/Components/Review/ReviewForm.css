@@ -1,0 +1,34 @@
+.err-msg {
+    color: blue;
+}
+
+.form {
+    display: grid;
+    background-color: white;
+    align-items: center;
+    width:600px;
+    overflow: scroll;
+    height:100%;
+}
+
+.input {
+    width: 100%;
+}
+
+
+.col {
+    display: grid;
+}
+
+p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.star{
+    margin-left: 5%;
+    padding-left: 2rem;
+}
+

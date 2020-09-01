@@ -1,0 +1,104 @@
+@media screen and (min-width: 401px) {
+.centered-title{
+    position: absolute;
+    top: 42%;
+    left: 10%;
+    color: white;
+        font-size: 40px;
+        margin-left: 20px;
+}
+
+.centered-text{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+.sub-image{
+    width:100%;
+    display: block;
+}
+
+.mobile-sub-image{
+    display:none;
+}
+.womens{
+    margin-left: 70px;
+    margin-top: 40px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+.new-release{
+    margin-left: 70px;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+.view-all-link{
+    text-align: right;
+    color: black;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-right: 100px;
+    align-self: buttom;
+}
+}
+
+@media screen and (max-width: 400px) {
+    .sub-image{
+        display:none;
+    }
+    .mobile-sub-image{
+        width:100%;
+        display: block;
+    }
+    .centered-title{
+        position: absolute;
+        top: 42%;
+        left: 10%;
+        color: white;
+            font-size: 20px;
+         
+    }
+    .centered-text{
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        font-size: 12px;
+    
+    }
+    .view-all-btn{
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        color: white;
+        font-size: 16px;
+        background-color: black;
+        width: 120px;border-radius: 25px;
+                            font-family: 'Montserrat', sans-serif;
+    }
+    .womens{
+        margin-left: 20px;
+        margin-top: 40px;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .new-release{
+        margin-left: 20px;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .view-all-link{
+        text-align: right;
+        color: black;
+        text-decoration: underline;
+        font-size: 10px;
+        margin-right: 100px;
+        align-self: buttom;
+        font-family: 'Montserrat', sans-serif;
+    }
+}

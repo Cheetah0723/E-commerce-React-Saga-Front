@@ -1,0 +1,31 @@
+.description {
+    text-align: center;
+    background-color: white;
+}
+
+.product-name {
+    text-transform: uppercase;
+}
+
+.non-sales-price {
+    text-align: center;
+    font-family: 'Montserrat; sans-serif';
+    font-size: 1.125rem;
+}
+
+.sales-price {
+    text-align: center;
+    color: red;
+    font-family: 'Montserrat; sans-serif';
+    font-size: 1.125rem;
+}
+
+.color-btn{
+    margin-right: 30%;
+    color: rgba(0,0,0,0.5);
+    width: 0.625rem;
+}
+
+.form{
+    width: 60%;
+}

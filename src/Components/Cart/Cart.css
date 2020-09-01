@@ -1,0 +1,17 @@
+.product-outer-container {
+    display: flex;
+}
+
+.product-name {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    align-self: center;
+    width: 100%;
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    font-family: 'Montserrat, sans-serif';
+}

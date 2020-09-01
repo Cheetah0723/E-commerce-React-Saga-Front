@@ -1,0 +1,25 @@
+@media screen and (min-width: 401px) {
+.product-list-item-in-3{
+    padding-right: 10;
+    width: 25%;
+}
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .product-list-item-in-3{
+        padding-right: 10;
+        width: 150px;
+    }
+
+}
+
+.product-list-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: 25%;
+}

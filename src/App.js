@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="app-container">
+    <div className="app-container">
         <Homepage />
         <Footer />
       </div>

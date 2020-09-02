@@ -1,17 +1,18 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Button } from '@material-ui/core';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import { Button, Typography, TextareaAutosize } from '@material-ui/core';
 import ReviewStarRating from "./ReviewStarRating"
 import ReviewBarRating from "./ReviewBarRating"
 import useReviewForm from "./useReviewForm"
 
-export default function ReviewForm({ productName, initialState }) {
+export default function ReviewForm({ productName, productId, initialState }) {
     const { state, errors, save, handleSubmit, readOnly } = useReviewForm(initialState)
 
     return (
         <form className="form" >
-            <p>WRITE YOUR REVIEW ABOUT THE {productName}</p>
+            <Typography variant="h5" gutterBottom>
+                WRITE YOUR REVIEW ABOUT THE {productName}
+            </Typography>
             <p>OVERALL RATING *</p>
             <div className="star">
                 <ReviewStarRating value={state.overall}

@@ -5,7 +5,6 @@ import SizeTabController from "./SizeTabController"
 import Snackbar from '@material-ui/core/Snackbar';
 import Fade from '@material-ui/core/Fade';
 import CustomizedToggleButton from "./CustomizedToggleButton"
-import "./SizeTabWithoutLabel.css";
 
 const initialClick = [false, false, false, false, false]
 export default function SizeTab({ sizeDisplay, onChange }) {

@@ -16,13 +16,13 @@ export default function ProductListDisplay({ sales }) {
         <div className="AllProducts">
             <HeaderContainer />
             <div className="main">
-                <div className="right-2">
+                <div className="sort-select">
                     <Sorting onSort={sortDisplayList} />
                 </div>
-                <div className="left-2">
+                <div className="filters">
                     <FilterView handleFilter={handleFilter} />
                 </div>
-                <div className="right-10">
+                <div className="list-container">
                     <ProductList display={displayData} />
                 </div>
             </div>

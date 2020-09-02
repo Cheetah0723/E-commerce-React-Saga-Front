@@ -1,31 +1,3 @@
-/** ProductList**/
-
-.hp-product-list {
-  @media screen and (min-width: 401px) {
-    .product-list-item-in-3 {
-      padding-right: 10;
-      width: 25%;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    .product-list-item-in-3 {
-      padding-right: 10;
-      width: 150px;
-    }
-  }
-
-  .product-list-row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .item {
-    width: 25%;
-  }
-  /** ProductList ends here**/
-}
-
 /** Cart  **/
 .product-outer-container {
   display: flex;
@@ -48,14 +20,32 @@
 /** Cart **/
 
 .Homepage {
+  .hp-new-release {
+    margin-top: 5rem;
+    width: 100%;
+
+    .hp-list {
+      margin-left: 4%;
+      margin-right: 4%;
+      width: 92%;
+    }
+  }
+
   @media screen and (min-width: 401px) {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-gap: 0.5rem;
+    }
+
     .centered-title {
       position: absolute;
       top: 42%;
       left: 10%;
       color: white;
       font-size: 40px;
-      margin-left: 20px;
+      margin-left: 4%;
+      margin-right: 4%;
     }
 
     .centered-text {
@@ -76,27 +66,34 @@
       display: none;
     }
     .womens {
-      margin-left: 70px;
+      margin-left: 60px;
       margin-top: 40px;
-      font-size: 16px;
+      font-size: 1rem;
       font-family: "Montserrat", sans-serif;
     }
     .new-release {
-      margin-left: 70px;
+      margin-left: 60px;
       font-size: 28px;
       font-family: "Montserrat", sans-serif;
     }
     .view-all-link {
+      cursor: pointer;
+      padding-right: 10%;
       text-align: right;
       color: black;
       text-decoration: underline;
       font-size: 20px;
-      margin-right: 100px;
-      align-self: buttom;
+      align-self: flex-end;
     }
   }
 
   @media screen and (max-width: 400px) {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+      grid-gap: 0.5rem;
+    }
+
     .sub-image {
       display: none;
     }
@@ -150,21 +147,6 @@
       font-family: "Montserrat", sans-serif;
     }
   }
-
-  .hp-product-list {
-    display: grid;
-    grid-auto-flow: column;
-  }
-
-  .ProductContainer {
-    width: 18rem;
-  }
-
-  .card-image {
-  }
-
-  .item-name {
-  }
 }
 /** Home page ends here**/
 
@@ -180,16 +162,6 @@
     width: 100%;
     font-size: 1.25rem;
     font-family: "Roboto", sans-serif;
-  }
-
-  .row {
-    margin-top: 1rem;
-    width: 100%;
-  }
-
-  .col {
-    display: grid;
-    width: 100%;
   }
 
   .col-right {
@@ -267,6 +239,8 @@
 
   .review-list {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 1rem;
     margin-top: 1rem;
   }
 
@@ -305,10 +279,6 @@
     width: 90%;
     padding-left: 10%;
     margin-right: 20%;
-  }
-
-  .col {
-    display: grid;
   }
 
   .product-detail-page {
@@ -390,77 +360,278 @@
 
 .AllProducts {
   background-color: white;
-  width: 100%;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+  display: grid;
 
-  .right-2 {
-    grid-column: 4;
-    grid-row: 1;
-    width: 15rem;
+  .main {
+    width: 100%;
+    display: grid;
   }
 
   @media (max-width: 400x) {
-    .AllProducts {
-      background-color: white;
+    .sort-select {
+      grid-column-start: 5;
+      grid-row: 1;
+      width: auto;
+    }
+
+    .list-container {
       width: 100%;
-      display: grid;
+
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        grid-gap: 0.5rem;
+      }
     }
 
-    .main {
-      grid-auto-flow: row;
-      width: 100%;
-      display: grid;
-      grid-gap: 1rem;
-      justify-items: stretch;
-      align-items: stretch;
-    }
-
-    .sort-desktop {
+    .filters {
       display: none;
-    }
-
-    .left-2 {
-      display: none;
-    }
-
-    .right-10 {
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 100px;
-      grid-row-start: 2;
-      grid-auto-flow: row dense;
-    }
-
-    .right-2 {
-      width: 40%;
-      grid-column: 4;
     }
   }
 
   @media (min-width: 401px) {
-    .main {
-      grid-auto-flow: row;
-      width: 100%;
-      display: grid;
-      grid-gap: 1rem;
-      justify-items: stretch;
-      align-items: stretch;
+    .list-container {
+      grid-column-start: 5;
+      grid-row: 2;
+
+      .product-list {
+        display: grid;
+        padding-top: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 0.5rem;
+      }
     }
 
-    .left-2 {
+    .filters {
       grid-column: 1;
       grid-row: 2;
-      width: 35rem;
-    }
-
-    .right-10 {
-      width: 100%;
-      grid-column: 2/4;
-      grid-row-start: 2;
-      padding-right: 10;
-      display: flex;
+      width: 20%;
     }
 
     .sort-desktop {
       display: block;
+    }
+  }
+}
+
+.col {
+  display: grid;
+  width: 100%;
+}
+
+.row {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.ProductContainer {
+  width: 100%;
+  border-radius: 1%;
+  z-index: 100;
+  box-shadow: 0.5rem;
+
+  .item-name {
+    font-size: 1rem;
+    color: #444444;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    line-height: 2.1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .sales-price-label {
+    color: red;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .new-price-label {
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+
+  .sales-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-self: flex-end;
+  }
+
+  .new-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-self: flex-end;
+  }
+
+  .item-color {
+    color: lightslategray;
+    font-size: 1rem;
+    font-weight: 200;
+  }
+
+  .card-image {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+  }
+
+  .button-group-items {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .button-group-item:hover,
+  .button-group-item:active {
+    background-color: black;
+    color: white;
+  }
+
+  .sales-price {
+    color: red;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0;
+
+    .item-color {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      color: #4444;
+    }
+
+    .item-price {
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.FilterTab {
+  width: 100%;
+  margin-top: 0.8rem;
+
+  .filter-label {
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .orange-btn {
+    background-color: #ff9900;
+  }
+
+  .pink-btn {
+    background-color: #ff99cc;
+  }
+
+  .lt-grey-btn {
+    background-color: #c0c0c0;
+  }
+
+  .dk-grey-btn {
+    background-color: #808080;
+  }
+
+  .blue-btn {
+    background-color: #3399ff;
+  }
+
+  .tab-btn {
+    margin-right: 0.6rem;
+    color: transparent;
+    width: 3rem;
+    height: 3.5rem;
+  }
+
+  .button-group-item,
+  .disabledTab {
+    width: 3rem;
+    height: 3.5rem;
+    float: center;
+    color: black;
+    margin-right: 0.6rem;
+  }
+
+  .SizeTabWithoutLabel {
+    width: 100%;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .tab:hover,
+  .tab:active {
+    background-color: black;
+    color: white;
+  }
+
+  .disabledTab,
+  .disabledTab:hover,
+  .disabledTab:active {
+    color: black;
+    background-color: white;
+  }
+}
+
+/** Review Form **/
+
+.modal {
+  background-color: white;
+  padding-top: 80px;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  width:30%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  .form {
+    display: grid;
+    background-color: white;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: autp;
+    overflow: scroll;
+    height: 100%;
+
+    .err-msg {
+      color: blue;
+    }
+
+    .input {
+      width: 100%;
+    }
+
+    p {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .star {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      padding-top: 0;
+    }
+
+    .bar-rating {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      padding-top: 0;
     }
   }
 }

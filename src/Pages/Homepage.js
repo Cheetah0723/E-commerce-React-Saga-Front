@@ -43,7 +43,7 @@ export default function Homepage() {
                 <img className="mobile-sub-image" src={require('../product-photos/hp-photo-3-mobile.jpeg')} alt="hp-top" />
 
             </div>
-            <div className="hp-new-release" style={{ marginTop: "60px", }}>
+            <div className="hp-new-release">
                 <Grid container
                     className={classes.root}
                     spacing={3}
@@ -59,7 +59,9 @@ export default function Homepage() {
                     <Grid item xs={6}></Grid>
                     <Grid item xs={2}><p className="view-all-link" onClick={viewAll}>View All</p></Grid>
                 </Grid>
-                <ProductList display={displayData}/>
+                <div className="hp-list">
+                    <ProductList display={displayData} />
+                </div>
             </div>
             <div className="hp-insta-slider" style={{ marginTop: "60px" }}>
                 <div style={{ textAlign: "center", }}>

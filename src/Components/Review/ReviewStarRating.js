@@ -11,8 +11,8 @@ export default function ReviewStarRating({ value, readOnly, name, handleClick })
             value={value === undefined ? 0 : parseInt(value)}
             readOnly={readOnly}
             precision={0.5}
-            icon={<StarIcon fontSize="3rem" />}
-            emptyIcon={<StarBorderIcon fontSize="3rem" />}
+            icon={<StarIcon fontSize="large" />}
+            emptyIcon={<StarBorderIcon fontSize="large" />}
             onChange={(event, newValue) => {
                 if (!readOnly) {
                     handleClick(newValue)

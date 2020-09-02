@@ -13,8 +13,8 @@ export default function ReviewBarRating({ value, readOnly, handleClick, name }) 
                     name={name}
                     precision={0.5}
                     size="large"
-                    icon={<ThumbUpAltSharpIcon fontSize="3rem" />}
-                    emptyIcon={<ThumbUpAltSharpIcon fontSize="3rem" />}
+                    icon={<ThumbUpAltSharpIcon fontSize="large" />}
+                    emptyIcon={<ThumbUpAltSharpIcon fontSize="large" />}
                     readOnly={readOnly}
                     onChange={(event, newValue) => {
                         if (!readOnly) {

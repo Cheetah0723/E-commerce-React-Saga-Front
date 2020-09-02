@@ -1,7 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { InputLabel } from '@material-ui/core';
-import "./OrderConfirmation.css"
 
 export default function OrderConfirmation() {
     const order = useSelector(state => state.OrderReducer)

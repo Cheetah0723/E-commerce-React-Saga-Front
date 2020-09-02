@@ -30,6 +30,6 @@ export default function FilterView({handleFilter}) {
         >
             <FilterColorTab onSelect={findColor} />
             <SizeTab onSelect={findSize} />
-            {showClear && <p style={{ marginTop: "15px" }} onClick={clearAll}>Clear Filter</p>}
+            {showClear && <p style={{ marginTop: "1rem", cursor:"pointer" }} onClick={clearAll}>Clear Filter</p>}
         </List>)
 }

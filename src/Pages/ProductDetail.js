@@ -3,7 +3,6 @@ import HeaderContainer from '../Components/Header/HeaderContainer';
 import RightSideData from '../Components/ProductDetail/RightSideData'
 import Footer from '../Components/Footer/Footer';
 import ProductImg from '../Components/ProductDetail/ProductImg'
-import "./ProductDetail.css"
 //import Recommendations from './Recommendations';
 
 export default function ProductDetail(props) {

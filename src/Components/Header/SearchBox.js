@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
-import TextField from '@material-ui/core/TextField';
+import { TextField, ClickAwayListener, IconButton, InputAdornment } from '@material-ui/core';
 import SearchBoxController from "./SearchBoxController"
 
 export default function SearchBox({ onClick }) {
@@ -8,9 +8,20 @@ export default function SearchBox({ onClick }) {
 
     return (
         <div className="SearchBox" onClick={onClick}>
-            <SearchIcon />
-            <TextField onChange={_handleKeyDown}
-                onKeyPress={_handleKeyDown} placeholder="Color or size" />
+                <TextField id="standard-search" placeholder="Color or size" type="search"
+                    variant="outlined"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment>
+                                <IconButton>
+                                    <SearchIcon />
+                                </IconButton>
+                            </InputAdornment>
+                        )
+                    }}
+                    onChange={_handleKeyDown}
+                    onKeyPress={_handleKeyDown}
+                />
         </div>
     );
 }

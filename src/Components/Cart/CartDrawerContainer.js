@@ -5,7 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { Button } from '@material-ui/core';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import Cart from './Cart';
-import "./Cart.css"
 
 const drawerWidth = 330;
 

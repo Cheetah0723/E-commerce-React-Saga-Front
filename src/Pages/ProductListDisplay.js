@@ -6,7 +6,6 @@ import ProductListController from "../Components/ProductList/ProductListControll
 import HeaderContainer from '../Components/Header/HeaderContainer';
 import Footer from '../Components/Footer/Footer';
 
-import "./ProductListView.css"
 
 export default function ProductListDisplay({ sales }) {
 

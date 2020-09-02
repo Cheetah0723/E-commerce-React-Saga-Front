@@ -6,7 +6,6 @@ import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import HeaderContainer from '../Components/Header/HeaderContainer';
 import HomepageController from "./HomepageController"
-import './Homepage.css'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 export default function Homepage() {
 
     const classes = useStyles();
-    const {viewAll, displayData} = HomepageController()
+    const { viewAll, displayData } = HomepageController()
 
     return (
         <div className="Homepage">
@@ -60,9 +59,7 @@ export default function Homepage() {
                     <Grid item xs={6}></Grid>
                     <Grid item xs={2}><p className="view-all-link" onClick={viewAll}>View All</p></Grid>
                 </Grid>
-                <div className="hp-new-releases">
-                    <ProductList style={{ marginLeft: "60px", marginRight: "60px" }} display={displayData} numEachRow={4} />
-                </div>
+                <ProductList display={displayData}/>
             </div>
             <div className="hp-insta-slider" style={{ marginTop: "60px" }}>
                 <div style={{ textAlign: "center", }}>

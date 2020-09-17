@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { findInstaRecordById, findById } from '../Search/Actions';
+import { findInstaRecordById, findById } from '../../Actions/search.action';
 import InstaModal from "./InstaModal"
 import InstaTileView from "./InstaTileView"
 

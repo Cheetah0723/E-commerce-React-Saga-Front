@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { findById } from "../Search/Actions"
+import { findById } from "../../Actions/search.action"
 
 export default function ProductImg({ id }) {
     var product = findById(id);

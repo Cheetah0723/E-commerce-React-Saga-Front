@@ -5,7 +5,7 @@ import ProductList from '../Components/ProductList/ProductList';
 import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import HeaderContainer from '../Components/Header/HeaderContainer';
-import HomepageController from "./HomepageController"
+import useHomepage from "./HomepageController"
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 export default function Homepage() {
 
     const classes = useStyles();
-    const { viewAll, displayData } = HomepageController()
+    const { viewAll, displayData } = useHomepage()
 
     return (
         <div className="Homepage">

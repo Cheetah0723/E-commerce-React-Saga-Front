@@ -2,7 +2,7 @@
 import { useDispatch } from "react-redux"
 import useData from "../useData"
 import { renderHook } from '@testing-library/react-hooks'
-import { test } from "../../Cart/Actions"
+import { test } from "../../../Actions/cart.action"
 
 jest.mock('react-redux', () => ({
     useDispatch: () => jest.fn().mockImplementation(() => {

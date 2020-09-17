@@ -4,8 +4,8 @@ import Enzyme, { mount, configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-import CartReducer from "../CartReducer"
-import CurrencyReducer from "../../Currency/CurrencyReducer"
+import CartReducer from "../../../Reducers/cart.reducer"
+import CurrencyReducer from "../../../Reducers/currency.reducer"
 
 configure({ adapter: new Adapter() });
 

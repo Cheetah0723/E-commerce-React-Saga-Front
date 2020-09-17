@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { CLEAR_CART } from '../Cart/ActionTypes';
+import { CLEAR_CART } from '../../Actions/action.types';
 import { useDispatch } from "react-redux"
 
 export default function Model() {

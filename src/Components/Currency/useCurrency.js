@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { updateCurrency } from "./Actions"
+import { updateCurrency } from "../../Actions/currency.action"
 
 export default function useCurrency() {
     const [openStatus, setOpen] = useState(false)

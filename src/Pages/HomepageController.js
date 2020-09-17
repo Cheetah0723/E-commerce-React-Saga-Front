@@ -1,9 +1,8 @@
-import React from 'react';
-import { findNewReleases } from '../Components/Search/Actions';
-import history from '../history';
-import Homepage from "./Homepage";
 
-export default function HomepageController() {
+import { findNewReleases } from '../Components/../Actions/search.action';
+import history from '../history';
+
+export default function useHomepage() {
     const viewAll = () => {
         history.push("/all");
     }

@@ -1,7 +1,0 @@
-export const CREATE_REVIEW = "CREATE_REVIEW"
-export const SAVE_REVIEWS = "SAVE_REVIEWS"
-export const APPEND_REVIEW = "APPEND_REVIEW"
-export const SUCCESSFUL = "SUCCESSFUL"
-export const FAILED = "FAILED"
-export const SAVE_PRODUCT_ID = "SAVE_PRODUCT_ID"
-export const ADD_RATING = "ADD_RATING"

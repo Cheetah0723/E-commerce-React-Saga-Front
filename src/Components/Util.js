@@ -1,7 +1,4 @@
 
-//Take in a list of added items and calculate the total price.
-import { useStore } from "react-redux"
-
 function getSum(total, num) {
     return total + num;
 }

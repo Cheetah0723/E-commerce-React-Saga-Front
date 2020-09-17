@@ -1,4 +1,4 @@
-import { CREATE_ORDER } from "./Components/Order/ActionTypes"
+import { CREATE_ORDER } from "./Actions/action.types"
 import { useDispatch } from "react-redux"
 import React, { useCallback } from "react"
 

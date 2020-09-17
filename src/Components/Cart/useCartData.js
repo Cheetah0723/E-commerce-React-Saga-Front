@@ -1,6 +1,5 @@
-import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { test, sub } from './Actions';
+import { test, sub } from '../../Actions/cart.action';
 
 export default function useCartData({ item }) {
     const currency = useSelector(state => state.CurrencyReducer.currency)

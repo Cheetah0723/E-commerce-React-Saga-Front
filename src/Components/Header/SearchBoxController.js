@@ -1,7 +1,7 @@
 import  { useCallback } from 'react';
-import { findByColor } from '../Search/Actions';
+import { findByColor } from '../../Actions/search.action';
 import { useSelector, useDispatch } from 'react-redux';
-import { SAVE_SEARCH_INPUT } from '../Search/ActionTypes';
+import { SAVE_SEARCH_INPUT } from '../../Actions/action.types';
 
 
 export default function SearchBoxController(props) {

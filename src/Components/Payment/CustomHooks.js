@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react"
 import { selectCurrency } from "../Selectors"
 import { useStore, useDispatch } from "react-redux"
 import Model from "./Model"
-import { CREATE_ORDER } from "../Order/ActionTypes"
+import { CREATE_ORDER } from "../../Actions/action.types"
 
 export function usePaymentData() {
     const store = useStore().getState()

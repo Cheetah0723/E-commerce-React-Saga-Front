@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { useDispatch } from 'react-redux'
-import { ADD_TO_CART } from '../Cart/ActionTypes';
+import { ADD_TO_CART } from '../../Actions/action.types';
 
 export default function useData(product, currency) {
     const dispatch = useDispatch();

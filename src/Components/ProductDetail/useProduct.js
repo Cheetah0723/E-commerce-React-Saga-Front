@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useStore } from 'react-redux'
-import { findById, showStockStatus, findBackgroundColor } from '../Search/Actions';
+import { findById, showStockStatus, findBackgroundColor } from '../../Actions/search.action';
 import { selectCurrency } from '../Selectors';
 import { getReviewsByProductId } from "../Review/ApiCalls"
 

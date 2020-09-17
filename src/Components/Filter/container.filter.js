@@ -1,8 +1,8 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
-import FilterColorTab from './FilterColorTab';
-import SizeTab from './FilterSizeTab';
+import FilterColorTab from './color.filter';
+import SizeTab from './size.filter';
 import useFilter from "./useFilter"
 
 const useStyles = makeStyles(theme => ({

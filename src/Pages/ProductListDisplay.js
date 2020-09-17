@@ -1,6 +1,6 @@
 import React from 'react';
 import Sorting from '../Components/Sorting/Sorting';
-import FilterView from "../Components/Filter/FilterView"
+import FilterView from "../Components/Filter/container.filter"
 import ProductList from "../Components/ProductList/ProductList"
 import ProductListController from "../Components/ProductList/ProductListController"
 import HeaderContainer from '../Components/Header/HeaderContainer';

@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterView from "../FilterView"
+import FilterView from "../container.filter"
 import renderer from 'react-test-renderer';
 
 describe.skip("FilterView", () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterColorTab from "../FilterColorTab"
+import FilterColorTab from "../color.filter"
 import renderer from 'react-test-renderer'
 
 describe.skip("CheckoutForm", () => {

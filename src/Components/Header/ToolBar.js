@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './ToolBar.css';
 import SearchBox from "./SearchBox";
 import Cart from "../Cart/CartIcon";
 import ToolBarController from "./ToolBarController"

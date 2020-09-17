@@ -40,8 +40,8 @@
 
     .centered-title {
       position: absolute;
-      top: 42%;
-      left: 10%;
+      top: 40%;
+      left: 7.5rem;
       color: white;
       font-size: 40px;
       margin-left: 4%;
@@ -51,7 +51,7 @@
     .centered-text {
       position: absolute;
       top: 50%;
-      left: 10%;
+      left: 10rem;
       color: white;
       font-size: 20px;
       margin-left: 20px;
@@ -591,7 +591,7 @@
   overflow: scroll;
   align-items: center;
   justify-content: center;
-  width:30%;
+  width: 30%;
   margin-left: 30%;
   margin-right: 30%;
 
@@ -632,6 +632,102 @@
       margin-left: 40%;
       margin-right: 40%;
       padding-top: 0;
+    }
+  }
+}
+
+.toolbar {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  height: 56px;
+  top: 0;
+  left: 0;
+
+  .toolbar_navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+  }
+
+  .toolbar_navigation_items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: center;
+  }
+
+  .toolbar_logo {
+    padding-left: 5%;
+    padding-right: 7%;
+  }
+
+  .toolbar_navigation_items {
+    text-decoration: none;
+  }
+
+  .toolbar_navigation_items li {
+    padding: 0 1.5rem;
+    font-size: 0.75rem;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    cursor: pointer;
+  }
+
+  .toolbar_navigation_items li:hover,
+  .toolbar_navigation_items li:active {
+    color: #4183c4;
+  }
+
+  .toolbar_right {
+    display: flex;
+  }
+
+  .spacer {
+    flex: 0.5;
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 401px) {
+    .toolbar {
+      display: none;
+    }
+  }
+}
+
+.mobile_toolbar {
+  width: 100%;
+
+  .mobile_toolbar_navigation_items {
+    display: flex;
+  }
+
+  .mobile_toolbar_navigation {
+    display: flex;
+  }
+
+  .mobile_toolbar_right {
+    display: flex;
+  }
+
+  .left-button {
+    width: 50%;
+    left: 0;
+  }
+
+  .right-button {
+    width: 50%;
+    right: 0;
+  }
+
+  @media screen and (min-width: 1243px) {
+    .mobile_toolbar {
+      display: none;
     }
   }
 }

@@ -26,5 +26,3 @@ export const SAVE_PRODUCT_ID = "SAVE_PRODUCT_ID"
 export const ADD_RATING = "ADD_RATING"
 //currency
 export const UPDATE_CURRENCY = "UPDATE_CURRENCY"
-
-

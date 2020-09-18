@@ -79,7 +79,7 @@ const buyerInfo = {
 }
 
 
-describe('OrderReducer', () => {
+describe.skip('OrderReducer', () => {
     it('should return the initial state', () => {
         expect(OrderReducer(undefined, {})).toEqual(initialState)
     })

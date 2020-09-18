@@ -28,7 +28,6 @@ function CartReducer(state = initialState, action) {
                 targetItem.quantity = 1;
                 newState.addedItems.push(targetItem);
             }
-            newState.currency = "AUD"
             return newState;
         case REMOVE_ITEM:
             if (action.id === "" || action.size === "" || state.addedItems.length === 0) { return state }

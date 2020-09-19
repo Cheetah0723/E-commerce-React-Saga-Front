@@ -6,7 +6,6 @@ import CreditCardIcons from './CreditCardIcons';
 import FooterSignUp from './FooterSignUp';
 import Currency from "../Currency/Currency"
 
-import './Footer.css';
 //import PropTypes from 'prop-types'
 
 const Footer = () => {

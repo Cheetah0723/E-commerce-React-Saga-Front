@@ -9,21 +9,23 @@ import useProduct from "./useProduct"
 import ReviewTabContainer from "../Review/ReviewTabContainer"
 import ReviewForm from "../Review/ReviewForm"
 import useData from "./useData"
+import { selectCurrency } from '../Selectors';
 
 export default function RightSideData({ id }) {
 
-    const currency = useSelector(state => state.CurrencyReducer).currency
-    const { product, setProduct, sizeAvailability, colorCode, price, reviews,
+    const currency = useSelector(selectCurrency)
+    const { product, setProduct, sizeAvailability, colorCode,  reviews,
     } = useProduct(id)
+
     const { handleAddToCart } = useData(product, currency)
 
-    const handleChangeSize = value => {// Update the selected size
-        let newProduct = Object.assign({}, product)
-        newProduct.size = value
-        setProduct(newProduct)
-        handleAddToCart(newProduct)
-    };
+    const price = currency === "AU" ? product.AUprice : product.USprice
 
+    const handleChangeSize = value => {
+        setProduct({...product, size: value })
+
+        //TODO size tab issue
+    };
 
     let reviewsParsed = Array.isArray(reviews) ? reviews : []
     const reviewBody = reviewsParsed.length === 0 ? <p>There is no review yet.</p> :

@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { useDispatch } from 'react-redux'
-import { ADD_TO_CART } from '../../Actions/action.types';
+import { addToCart } from '../../Actions/cart.action';
 
 export default function useData(product, currency) {
     const dispatch = useDispatch();
@@ -15,14 +15,10 @@ export default function useData(product, currency) {
         }
     }
 
-    const dispatchAddToCart = useCallback(
-        () => dispatch({
-            type: ADD_TO_CART,
-            product: product,
-            currency: currency
-        }),
-        [dispatch]
-    )
+    const dispatchAddToCart = useCallback(() => {
+        const price = currency === "AUD" ? product.AUprice : product.USprice
+        dispatch(addToCart(product, product.size, price))
+    }, [dispatch])
 
     return { handleAddToCart }
 }

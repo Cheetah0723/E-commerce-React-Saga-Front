@@ -2,7 +2,7 @@ import { call, all, select, takeLatest, fork, put } from 'redux-saga/effects'
 import {  UPDATE_CURRENCY, CREATE_ORDER } from "../Actions/action.types"
 import { saveOrderConfirmation, clearOrder } from "../Actions/order.action"
 import { createOrder } from "../Components/Order/ApiCalls"
-import { selectOrder, selectCurrency, selectProductsInOrder, } from "../Components/Selectors"
+import { selectOrder, selectCurrency, selectProductsInCart, } from "../Components/Selectors"
 import { clearCart } from "../Actions/cart.action"
 
 /**
@@ -20,7 +20,7 @@ export function* fetchCreateOrder() {
         let [newOrder, currency, products] = yield all([
             select(selectOrder),
             select(selectCurrency),
-            select(selectProductsInOrder)
+            select(selectProductsInCart)
         ])
         newOrder.currency = currency + "D"
         newOrder.products = products.map(each => {

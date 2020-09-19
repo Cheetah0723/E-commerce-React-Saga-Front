@@ -1,13 +1,17 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux"
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import useCartData from "./useCartData"
+import { selectCurrency} from "../Selectors"
+import {addQuantity, subQuantity } from "../../Actions/cart.action"
 
-export default function CartEachProduct({ item }) {
+export default function CartItem({ item }) {
+    const currency = useSelector(selectCurrency)
+    const dispatch = useDispatch();
+    const price = currency === "AUD" ? item.AUprice : item.USprice
 
-    const { addQuantity, subQuantity, currency } = useCartData(item)
-
-    const price = currency === "AU" ? item.AUprice : item.USprice
+    const add = () => dispatch(addQuantity(item.id, item.size, price))
+    const sub = () => dispatch(subQuantity(item.id, item.size, price))
 
     return (
         <div className="product-outer-container" key={item.name + item.color}>
@@ -24,10 +28,10 @@ export default function CartEachProduct({ item }) {
                         {item.name}<br />
                         {item.size} / {item.color}
                         <ButtonGroup aria-label="outlined secondary button group">
-                            <Button data-test="add-quantity-btn" onClick={addQuantity}
+                            <Button data-test="add-quantity-btn" onClick={add}
                                 style={{ width: "0.625rem" }}>+</Button>
                             <Button disabled>{item.quantity}</Button>
-                            <Button data-test="sub-quantity-btn" onClick={subQuantity}
+                            <Button data-test="sub-quantity-btn" onClick={sub}
                                 className="subQuantity">-</Button>
                         </ButtonGroup>
                     </div>

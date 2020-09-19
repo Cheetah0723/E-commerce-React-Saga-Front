@@ -1,10 +1,11 @@
 import { useState, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { updateCurrency } from "../../Actions/currency.action"
+import { updateCurrency } from "../../Actions/cart.action"
+import { selectCurrency } from "../Selectors";
 
 export default function useCurrency() {
     const [openStatus, setOpen] = useState(false)
-    const currency = useSelector(state =>state.CurrencyReducer.currency)
+    const currency = useSelector(selectCurrency)
  
     const handleClick = () => setOpen(true)
     const handleClose = () => setOpen(false)

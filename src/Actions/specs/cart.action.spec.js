@@ -1,7 +1,8 @@
 import {
-    addToCart, removeItem, sub, addOn,  addShipping,
-    clearCart
+    addToCart, removeItem, subQuantity, addQuantity,  addShipping,
+    clearCart,updateCurrency
 } from "../cart.action"
+
 
 const id = "1"
 const size = "L"
@@ -42,27 +43,8 @@ describe.skip("Actions", () => {
         })
     })
 
-    describe('sub', () => {
-        it('should create an action', () => {
-            let action = sub(id, size)
-            expect(action).toEqual({
-                type: 'SUB_QUANTITY',
-                id: id,
-                size: size
-            });
-        })
-    })
 
-    describe('addOn', () => {
-        it('should create an action', () => {
-            let action = addOn(id, size)
-            expect(action).toEqual({
-                type: 'ADD_QUANTITY',
-                id: id,
-                size: size
-            });
-        })
-    })
+
 
     describe('addShipping', () => {
         it('should create an action', () => {
@@ -82,4 +64,18 @@ describe.skip("Actions", () => {
         })
     })
 
+})
+
+
+const data = "US"
+
+describe.skip('addToCart', () => {
+    it('should create an action', () => {
+        let action = updateCurrency(data)
+        expect(action).toEqual({
+            type: "UPDATE_CURRENCY",
+            data: data,
+            //currency: currency
+        });
+    })
 })

@@ -51,13 +51,5 @@ describe('useData', () => {
         expect(useDispatch).toHaveBeenCalledTimes(1)
     })
 
-    it('calls useDispatch to dispatch an action', () => {
-        const spy = spyOn(test, "addToCart")
-        test.addToCart({
-            type: "ADD_TO_CART",
-            product: item,
-            currency: "AU"
-        })
-        expect(useDispatch).toHaveBeenCalledTimes(1)
-    })
+
 });

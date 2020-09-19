@@ -1,17 +1,24 @@
 import React, { Fragment } from 'react';
+import { useSelector } from "react-redux"
 import Grid from '@material-ui/core/Grid';
-import CheckOutButton from './CheckOutButton'
+import { Button } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
-import CartEachProduct from './CartEachProduct';
+import CartItem from './CartItem';
 import Paypal from '../Payment/Paypal';
-import useCart from "./useCart"
+import { selectTotal, selectProductsInCart } from "../Selectors"
+import history from '../../history';
 
-export default function CartDrawer({ showButton }) {
-    const { items, totalFromState, handleCheckOut, shipping } = useCart()
+export default function Cart({ showButton }) {
+    const totalFromState = useSelector(selectTotal)
+    const items = useSelector(selectProductsInCart)
 
-    let itemsInCart = items !== undefined ? items.map(each => {
-        return (<CartEachProduct item={each} key={uuidv4()} />)
-    }) : []
+    const handleCheckOut = (totalFromState) => {
+        if (totalFromState > 0) {
+            history.push("/checkoutInfo");
+        }
+    }
+
+    const shipping = totalFromState >= 99 ? 0 : 10;
 
     return (
         (items !== undefined && items.length > 0) ?
@@ -21,7 +28,9 @@ export default function CartDrawer({ showButton }) {
                     justify="center"
                 >
                     <Grid item style={{ paddingBlockStart: "3px" }} key="product-in-cart">
-                        {itemsInCart}
+                        {items ? items.map(each => {
+                            return (<CartItem item={each} key={uuidv4()} />)
+                        }) : []}
                     </Grid>
                     <br />  <br />
                     <Grid container
@@ -66,7 +75,7 @@ export default function CartDrawer({ showButton }) {
                         </div>
                     }
                     <Grid item key="2">
-                        {showButton && <CheckOutButton onCheckOut={handleCheckOut} />}
+                        {showButton && <Button style={{ width: 260 }} onClick={handleCheckOut}>Check Out→</Button>}
                         <br />
                     </Grid>
                     <Grid item key="3">

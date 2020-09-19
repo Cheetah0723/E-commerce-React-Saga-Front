@@ -1,5 +1,5 @@
 import {
-    CLEAR_CART, SAVE_DATA, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY,
+    CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, UPDATE_CURRENCY,
     ADD_QUANTITY, ADD_SHIPPING
 } from '../Actions/action.types';
 import { loadState, validatePrice } from '../Components/Util';
@@ -45,7 +45,7 @@ function CartReducer(state = initialState, action) {
             }
             newState.total = parseInt(state.total) === 0 ? 0 : parseInt(state.total) - action.price
             itemToSub.quantity -= 1
-            newState.addedItems = (itemToSub.quantity == 0) ?
+            newState.addedItems = (itemToSub.quantity === 0) ?
                 newState.addedItems.filter(item => item.id !== action.id && action.size !== item.size)
                 : newState.addedItems
             return newState;
@@ -69,7 +69,7 @@ function CartReducer(state = initialState, action) {
             return {
                 addedItems: [],
                 total: 0,
-                currency:"AUD"
+                currency: "AUD"
             };
         default:
             return state;

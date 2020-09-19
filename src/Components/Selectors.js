@@ -16,9 +16,6 @@ export const selectPaymentReducer = (state) => {
     return state.PaymentReducer
 }
 
-export const selectOrderReducer = (state) => {
-    return state.OrderReducer
-}
 
 
 /**** Reselectors **********/
@@ -32,7 +29,7 @@ export const selectCartFilter = createSelector(
     reducer => reducer.id
 )
 
-export const selectProductsInOrder =
+export const selectProductsInCart =
 createSelector(
     selectCartReducer,
     reducer => reducer.addedItems

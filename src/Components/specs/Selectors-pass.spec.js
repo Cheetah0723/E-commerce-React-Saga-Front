@@ -1,6 +1,6 @@
 import {
     selectCurrency, selectTotal, selectReview, selectOrder, selectProductId,
-    selectProductsInOrder, selectPaymentMethod
+    selectProductsInCart, selectPaymentMethod
 } from "../Selectors"
 
 const order = {
@@ -104,9 +104,9 @@ describe('selectProductId', () => {
     })
 })
 
-describe('selectProductsInOrder', () => {
+describe('selectProductsInCart', () => {
     it('should select the specified field', () => {
-        let selector = selectProductsInOrder(state)
+        let selector = selectProductsInCart(state)
         expect(selector).toEqual(items);
     })
 })

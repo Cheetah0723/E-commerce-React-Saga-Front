@@ -15,7 +15,6 @@ export default function SizeTab({ sizeDisplay, onChange }) {
     });
     const [clickState, setClickState] = useState(initialClick)
 
-
     const { size, setSize, availability } = SizeTabController(sizeDisplay)
 
     const handleClose = () =>

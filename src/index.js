@@ -7,6 +7,7 @@ import Routes from './Routes';
 import history from './history';
 import './fonts/Montserrat/Montserrat-Regular.ttf';
 
+
 const store = configureStore();
 
 ReactDOM.render(

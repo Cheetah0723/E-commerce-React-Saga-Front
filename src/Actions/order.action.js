@@ -1,5 +1,7 @@
-import { CREATE_ORDER, ADD_BUYER_INFO, CLEAR_ORDER, SET_PAYMENT_METHOD,
-    SAVE_ORDER_CONFIRMATION } from "./action.types";
+import {
+    CREATE_ORDER, ADD_BUYER_INFO, CLEAR_ORDER, SET_PAYMENT_METHOD,
+    SAVE_ORDER_CONFIRMATION
+} from "./action.types";
 
 export const addBuyerInfo = (data) => {
     return {
@@ -28,7 +30,7 @@ export const setPaymentMethod = (paymentMethod, total) => {
     }
 }
 
-export const saveOrderConfirmation = data =>{
+export const saveOrderConfirmation = data => {
     return {
         type: SAVE_ORDER_CONFIRMATION,
         data: data
@@ -36,6 +38,12 @@ export const saveOrderConfirmation = data =>{
 }
 
 /***************   Thunk Actions ***********/
-export function fetchCreateOrder() {}
+export const fetchCreateOrder = () => async  dispatch => {
+    //CREATE_ORDER
 
-export function clearCartAndOrder() {}
+}
+
+export const clearCartAndOrder = () => async  dispatch => {
+    //UPDATE_CURRENCY
+
+}

@@ -1,46 +1,65 @@
-export const selectCurrency = (state) => {
-    return state.CurrencyReducer.currency
+import { createSelector } from 'reselect'
+
+export const selectCurrencyReducer = (state) => {
+    return state.CurrencyReducer
 }
 
-export const selectTotal = (state) => {
-    return state.CartReducer.total
+export const selectCartReducer = (state) => {
+    return state.CartReducer
 }
 
-export const selectReview = (state) => {
-    return state.ReviewReducer.toBeAdded
-}
-
-export const selectOrder = (state) => {
+export const selectOrderReducer = (state) => {
     return state.OrderReducer
 }
 
-export const selectProductId = (state) => {
-    return state.ReviewReducer.currentProductId
+export const selectReviewReducer = (state) => {
+    return state.ReviewReducer
 }
 
-export const selectProductsInOrder = (state) => {
-    const test = [{
-        id: 1,
-        name: "Flex Leggings",
-        color: "pink",
-        img: "product-photos/pink-front.png",
-        AUprice: 60,
-        USprice: 40,
-        category: "bottoms",
-        texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
-        new: true,
-        salesRate: 1,
-        img2: "product-photos/pink-back.png",
-        quantity: 1,
-        size: "L"
-    }]
-    return state.CartReducer.addedItems
+export const selectPaymentReducer = (state) => {
+    return state.PaymentReducer
 }
 
-export const selectPaymentMethod = (state) => {
-    return state.OrderReducer.paymentMethod
+export const selectOrderReducer = (state) => {
+    return state.OrderReducer
 }
 
-export const selectCartFilter = (state) => {
-    return state.CartReducer.id
-}
+
+/**** Reselectors **********/
+export const selectTotal = createSelector(
+    selectCartReducer,
+    reducer => reducer.total
+)
+
+export const selectCartFilter = createSelector(
+    selectCartReducer,
+    reducer => reducer.id
+)
+
+export const selectProductsInOrder =
+createSelector(
+    selectCartReducer,
+    reducer => reducer.addedItems
+)
+
+export const selectCurrency = createSelector(
+    selectCurrencyReducer,
+    reducer => reducer.currency
+)
+
+export const selectReview = createSelector(
+    selectReviewReducer,
+    reducer => reducer.toBeAdded
+)
+
+export const selectProductId = createSelector(
+    selectReviewReducer,
+    reducer => reducer.currentProductId
+)
+
+export const selectPaymentMethod =createSelector(
+    selectOrderReducer,
+    reducer => reducer.paymentMethod
+)
+
+

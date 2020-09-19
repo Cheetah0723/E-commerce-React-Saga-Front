@@ -13,6 +13,8 @@ import { clearCart } from "../Actions/cart.action"
 export function* fetchCreateOrder() {
     while (select(selectOrder) === undefined || select(selectOrder) === {}) {
         yield select(selectOrder)
+
+        //TODO buggy!
     }
     try {
         let [newOrder, currency, products] = yield all([

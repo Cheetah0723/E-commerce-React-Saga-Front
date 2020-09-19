@@ -5,7 +5,6 @@ import {
 
 const id = "1"
 const size = "L"
-const currency = "AU"
 const product = {
     id: 1,
     name: "Flex Leggings",
@@ -23,11 +22,11 @@ const product = {
 describe.skip("Actions", () => {
     describe('addToCart', () => {
         it('should create an action', () => {
-            let action = addToCart(id, size, currency)
+            let action = addToCart(id, size)
             expect(action).toEqual({
                 type: 'ADD_TO_CART',
                 product: product,
-                currency: currency
+
             });
         })
     })

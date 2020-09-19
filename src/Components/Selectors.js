@@ -1,9 +1,5 @@
 import { createSelector } from 'reselect'
 
-export const selectCurrencyReducer = (state) => {
-    return state.CurrencyReducer
-}
-
 export const selectCartReducer = (state) => {
     return state.CartReducer
 }
@@ -43,7 +39,7 @@ createSelector(
 )
 
 export const selectCurrency = createSelector(
-    selectCurrencyReducer,
+    selectCartReducer,
     reducer => reducer.currency
 )
 

@@ -1,5 +1,7 @@
-import { CLEAR_CART, SAVE_DATA, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, 
-    ADD_QUANTITY, ADD_SHIPPING } from '../Actions/action.types';
+import {
+    CLEAR_CART, SAVE_DATA, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY,
+    ADD_QUANTITY, ADD_SHIPPING
+} from '../Actions/action.types';
 import { loadState, validatePrice } from '../Components/Util';
 
 //TODO intial state should be from the local storage???
@@ -8,13 +10,16 @@ const initialState = loadState("CartReducer");
 function CartReducer(state = initialState, action) {
     let newTotal = 0; //instantialize the new total amount
     let new_items;
-    let newState;
+    let newState = Object.assign({}, state);
     let targetItem;
 
     switch (action.type) {
+        case UPDATE_CURRENCY:
+            newState.currency = action.data
+            return newState
         case ADD_TO_CART:
-            newState = Object.assign({}, state);
-            newState.currency = action.currency
+
+            //move the price to action
             newState.total = parseInt(newState.total) + validatePrice(action.data, newState.currency)
             let existed_item;
             if (newState.addedItems.length > 0) {

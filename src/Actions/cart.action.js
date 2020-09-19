@@ -6,7 +6,7 @@ import {
 export const addToCart = (product, size, price) => {
     return {
         type: ADD_TO_CART,
-        product: product,
+        data: product,
         size: size,
         price: price
     }

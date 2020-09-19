@@ -27,7 +27,7 @@ describe("CartReducer", () => {
 
     it("handles ADD_TO_CART", () => {
         expect(
-            OrderReducer(initialState, {
+            CartReducer(initialState, {
                 type: ADD_TO_CART,
                 product: product,
                 currency: "AUD"

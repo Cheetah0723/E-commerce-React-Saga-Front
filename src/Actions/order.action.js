@@ -34,3 +34,8 @@ export const saveOrderConfirmation = data =>{
         data: data
     }
 }
+
+/***************   Thunk Actions ***********/
+export function fetchCreateOrder() {}
+
+export function clearCartAndOrder() {}

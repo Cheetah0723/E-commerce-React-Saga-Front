@@ -3,8 +3,7 @@ import RootReducer from './Reducers/root.reducer';
 import throttle from 'lodash/throttle'
 import { loadState, saveState } from './Components/Util'
 import logger from 'redux-logger'
-import createSagaMiddleware from 'redux-saga'
-import RootSaga from './Sagas/RootSaga';
+import thunk from 'redux-thunk';
 
 const configureStore = () => {
     const persistedCart = loadState("CartReducer");
@@ -12,10 +11,7 @@ const configureStore = () => {
         CartReducer: persistedCart,
 
     };
-
-    const sagaMiddleware = createSagaMiddleware()
-
-    let middleware = applyMiddleware(sagaMiddleware, logger);
+    let middleware = applyMiddleware(thunk, logger);
 
     if (process.env.NODE_ENV !== 'production') {
         const devToolsExtension = window.devToolsExtension;
@@ -24,10 +20,7 @@ const configureStore = () => {
         }
     }
 
-    const store = createStore(RootReducer, persistedState,
-        middleware);
-
-    sagaMiddleware.run(RootSaga);
+    const store = createStore(RootReducer, middleware);
 
     if (module.hot) {
         module.hot.accept('./Reducers/root.reducer', () => {

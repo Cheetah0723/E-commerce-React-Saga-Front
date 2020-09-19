@@ -773,3 +773,16 @@ img{
 }
 
 }
+
+@media screen and (max-width: 400px) {
+  .Promo{
+      font-family:'Montserrat', sans-serif;
+      font-size:0.625rem;
+  }
+  }
+  @media screen and (min-width: 401px) {
+      .Promo{
+          font-family:'Montserrat', sans-serif;
+          font-size:0.75rem;
+      }
+  }

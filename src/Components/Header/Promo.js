@@ -1,5 +1,4 @@
 import React from 'react';
-import "./Promo.css";
 
 const Promo = () => (
         <div className = "Promo" style={{textAlign:"center", marginTop:"40px"}}>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import sizeList from '../../Data/sizeList';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-import SizeTabItem from "./SizeTabItem"
+import {ToggleButtonGroup,ToggleButton} from '@material-ui/lab';
 
 export function useSizeTab(sizeDisplay) {
     const [size, setSize] = useState('');
@@ -37,14 +36,14 @@ export default function SizeTab({ sizeDisplay, onChange }) {
                 {sizeList.items.map(each => {
                     let index = sizeList.items.indexOf(each);
                     return (
-                        <SizeTabItem key={each} handleClick={() => changeSize(index, each)} disabled={!availability[index]}
-                            value={each} clicked={clickState[index]} />
+                        <ToggleButton className={clickState[index] ? "button-group-item-clicked" : availability[index] ? "button-group-item" : "disabledTab"}
+                            value={each} key={each} onClick={() => changeSize(index, each)}
+                            disabled={!availability[index]}>{each}</ToggleButton>
                     );
                 })}
             </ToggleButtonGroup>
         </Fragment>
-    );
-
+    )
 }
 
 

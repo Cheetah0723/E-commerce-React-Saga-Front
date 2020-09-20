@@ -6,6 +6,7 @@ import Promo from './Promo';
 import CartDrawer from "../Cart/CartDrawerContainer";
 import Divider from '@material-ui/core/Divider';
 import DesktopNavBar from "./Desktop.NavBar"
+import MobileNavBar from "./Mobile.NavBar"
 import { selectProductsInCart } from '../Selectors';
 
 const useStyles = makeStyles(theme => ({
@@ -58,7 +59,7 @@ export default function HeaderContainer(props) {
         <div className={openCartDrawer ? classes.shiftTextLeft : classes.shiftTextRight}>
             <main >
                 <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
-
+                <MobileNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                 <div className={classes.root}>
 
                 </div>

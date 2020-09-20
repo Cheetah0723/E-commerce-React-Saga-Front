@@ -780,26 +780,60 @@ img {
   }
 }
 
-.nav-bar {
-  width: 100%;
-  font-size:1.2rem;
+@media screen and (min-width: 401px) {
+  .nav-bar {
+    width: 100%;
+    font-size: 1.2rem;
 
-  Form{
-    font-size:1.2rem;
+    form {
+      font-size: 1.2rem;
+    }
   }
 
+  .mobile-nav-bar {
+    display: none;
+  }
 }
 
-.cart-icon{
-  display:flex;
+@media screen and (max-width: 400px) {
+  .App{
+    width: 100%;
+  }
+
+  .app-container,
+  .Homepage
+  {
+    width: inherit;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    width: 100%;
+    font-size: 1.2rem;
+
+    form {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.cart-icon {
+  display: flex;
   cursor: pointer;
+  margin-right: 0;
 }
 
-.cart-page{
-  .close-btn,
-  .check-out-btn{
-    background-color: black;
-    color:white;
+.line {
+  display: flex;
+}
 
+.cart-page {
+  .close-btn,
+  .check-out-btn {
+    background-color: black;
+    color: white;
   }
 }

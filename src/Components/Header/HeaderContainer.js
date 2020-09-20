@@ -3,12 +3,9 @@ import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Promo from './Promo';
-import ToolBar from './ToolBar';
 import CartDrawer from "../Cart/CartDrawerContainer";
-import clsx from 'clsx';
 import Divider from '@material-ui/core/Divider';
-import MobileToolBar from './MobileToolBar';
-import NavBar from "./NavBar"
+import DesktopNavBar from "./Desktop.NavBar"
 import { selectProductsInCart } from '../Selectors';
 
 const useStyles = makeStyles(theme => ({
@@ -52,21 +49,18 @@ export default function HeaderContainer(props) {
     const [invalidSearch, setInvalidSearch] = useState(false);
 
 
-    const itemsInCart = useSelector(selectProductsInCart)
+    //  const itemsInCart = useSelector(selectProductsInCart)
 
-    function handleChange() {
-
-    }
+    // <ToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
+    // <MobileToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
 
     return (
         <div className={openCartDrawer ? classes.shiftTextLeft : classes.shiftTextRight}>
-            <main className={clsx(classes.content, {
-                [classes.contentShift]: openCartDrawer,
-            })}>
+            <main >
+                <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
+
                 <div className={classes.root}>
-                    <NavBar />
-                    <ToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
-                    <MobileToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
+
                 </div>
                 <Divider />
                 {invalidSearch && <Grid item><b>No results.</b><br />

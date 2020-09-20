@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import ProductList from '../Components/ProductList/ProductList';
 import InstaController from '../Components/InstagramTile/InstaController';
@@ -7,18 +7,8 @@ import HeaderContainer from '../Components/Header/HeaderContainer';
 import { findNewReleases } from '../Actions/search.action';
 import history from '../history';
 
-export function useHomepage() {
-    const viewAll = () => {
-        history.push("/all");
-    }
-
-    const displayData = useCallback(() => findNewReleases())
-
-    return { viewAll, displayData }
-}
-
 export default function Homepage() {
-    const { viewAll, displayData } = useHomepage()
+    const displayData = findNewReleases()
 
     return (
         <div className="Homepage">
@@ -26,7 +16,7 @@ export default function Homepage() {
             <div className="hp-promotion-image" style={{ position: "relative" }}>
                 <div className="centered-title" ><b>BUILD YOUR LEGACY</b></div>
                 <div className="centered-text" >Lift like the legends in authentic bodybuilding cuts.</div>
-                <Button className="view-all-btn" onClick={viewAll}
+                <Button className="view-all-btn" onClick={() => history.push("/all")}
                     style={{
                         position: "absolute",
                         top: "58%",
@@ -56,7 +46,7 @@ export default function Homepage() {
                         <b className="new-release">NEW RELEASES</b>
                     </Grid>
                     <Grid item xs={6}></Grid>
-                    <Grid item xs={2}><p className="view-all-link" onClick={viewAll}>View All</p></Grid>
+                    <Grid item xs={2}><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Grid>
                 </Grid>
                 <div className="hp-list">
                     <ProductList display={displayData} />

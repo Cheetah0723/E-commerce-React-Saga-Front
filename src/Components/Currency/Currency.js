@@ -19,7 +19,7 @@ export default function Currency() {
                     borderRadius: "25px",
                     fontFamily: "'Montserrat', sans-serif",
                 }}>
-              Select Currency: {currency}D</Button>
+              Select Currency: {currency}</Button>
             <CurrencyModalView openStatus={openStatus} handleClose={handleClose}
                 currency={currency} 
                 handleSubmit={handleSubmit} />

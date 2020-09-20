@@ -21,7 +21,7 @@ export default function Cart({ showButton }) {
     const shipping = totalFromState >= 99 ? 0 : 10;
 
     return (
-        (items !== undefined && items.length > 0) ?
+        (items && items.length > 0) ?
             <Fragment>
                 <Grid container
                     direction="column"
@@ -75,7 +75,7 @@ export default function Cart({ showButton }) {
                         </div>
                     }
                     <Grid item key="2">
-                        {showButton && <Button style={{ width: 260 }} onClick={handleCheckOut}>Check Out→</Button>}
+                        {showButton && <Button className="check-out-btn" onClick={handleCheckOut}>Check Out→</Button>}
                         <br />
                     </Grid>
                     <Grid item key="3">

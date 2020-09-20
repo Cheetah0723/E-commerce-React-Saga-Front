@@ -1,10 +1,11 @@
 import React from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-export default function CartIcon({onClick}) {
+export default function CartIcon({ onClick }) {
     return (
-            <ShoppingCartIcon onClick={onClick}
-                style={{ cursor: "pointer"}}
-            />
+        <div className="cart-icon" onClick={onClick}>
+            <ShoppingCartIcon />
+            <p>My Cart</p>
+        </div>
     )
 }

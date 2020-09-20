@@ -779,3 +779,27 @@ img {
     color: white;
   }
 }
+
+.nav-bar {
+  width: 100%;
+  font-size:1.2rem;
+
+  Form{
+    font-size:1.2rem;
+  }
+
+}
+
+.cart-icon{
+  display:flex;
+  cursor: pointer;
+}
+
+.cart-page{
+  .close-btn,
+  .check-out-btn{
+    background-color: black;
+    color:white;
+
+  }
+}

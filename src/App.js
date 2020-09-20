@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage from './Pages/Homepage';
+import Homepage from './Pages/Home.page';
 import Footer from './Components/Footer/Footer';
 import './App.scss';
 import ReviewForm from "./Components/Review/ReviewForm"

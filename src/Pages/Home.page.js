@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import ProductList from '../Components/ProductList/ProductList';
 import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import HeaderContainer from '../Components/Header/HeaderContainer';
-import useHomepage from "./HomepageController"
+import { findNewReleases } from '../Actions/search.action';
+import history from '../history';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        flexGrow: 1,
-        width: "100%",
-    },
-}));
+export function useHomepage() {
+    const viewAll = () => {
+        history.push("/all");
+    }
+
+    const displayData = useCallback(() => findNewReleases())
+
+    return { viewAll, displayData }
+}
 
 export default function Homepage() {
-
-    const classes = useStyles();
     const { viewAll, displayData } = useHomepage()
 
     return (
@@ -45,7 +45,6 @@ export default function Homepage() {
             </div>
             <div className="hp-new-release">
                 <Grid container
-                    className={classes.root}
                     spacing={3}
                     direction="row"
                     justify="center"

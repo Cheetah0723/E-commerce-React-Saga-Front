@@ -5,6 +5,7 @@ import configureStore from './store';
 import {  BrowserRouter as Router   } from 'react-router-dom';
 import Routes from './Routes';
 import history from './history';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts/Montserrat/Montserrat-Regular.ttf';
 
 

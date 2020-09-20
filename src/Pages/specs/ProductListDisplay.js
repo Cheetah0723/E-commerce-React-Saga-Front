@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductListDisplay from "../ProductListDisplay"
+import ProductListPage from "../ProductList.page"
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
@@ -28,7 +28,7 @@ it('renders correctly', () => {
         img2: "product-photos/ltgrey-back.png"
     }]
     const test = (arg) => { console.log(arg) }
-    const component = renderer.create(<ProductListDisplay displayData={displayData}
+    const component = renderer.create(<ProductListPage displayData={displayData}
         handleFilter={test} sortDisplayList={test}
     />);
     let tree = component.toJSON();

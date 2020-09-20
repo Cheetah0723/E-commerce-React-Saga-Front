@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
-import App from './App';
-import ProductDetail from "./Pages/ProductDetail";
-import ProductListDisplay from "./Pages/ProductListDisplay";
 import history from './history';
-import Checkout from './Pages/Checkout';
-import Sales from './Pages/Sales';
-import Cart from "./Pages/CartDrawer"
-import OrderConfirmation from "./Pages/OrderConfirmation"
+import App from './App';
+import ProductDetail from "./Pages/ProductDetail.page";
+import ProductListPage from "./Pages/ProductList.page";
+import Checkout from './Pages/Checkout.page';
+import Sales from './Pages/Sales.page';
+import Cart from "./Components/Cart/CartDrawer"
+import OrderConfirmation from "./Pages/OrderConfirmation.page"
 
 export default class Routes extends Component {
     render() {
@@ -15,7 +15,7 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={App} />
-                    <Route path="/all" exact component={ProductListDisplay} />
+                    <Route path="/all" exact component={ProductListPage} />
                     <Route path="/sales" exact component={Sales} />
                     <Route path="/product/:id" exact component={ProductDetail} />
                     <Route path='/checkoutInfo' exact component={Checkout} />

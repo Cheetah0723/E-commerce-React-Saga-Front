@@ -1,11 +1,11 @@
 import React from 'react';
-import ProductListDisplay from "./ProductListDisplay"
+import ProductListPage from "./ProductList.page"
 
 export default function Sales() {
 
     return (
         <div className="Sales">
-            <ProductListDisplay sales={true}/>
+            <ProductListPage sales={true}/>
         </div>
     );
 }

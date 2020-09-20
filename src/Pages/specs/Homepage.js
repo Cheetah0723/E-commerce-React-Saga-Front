@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage from "../Homepage"
+import Homepage from "../Home.page"
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {

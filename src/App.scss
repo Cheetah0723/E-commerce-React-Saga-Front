@@ -479,19 +479,6 @@
     height: auto;
   }
 
-  .button-group-items {
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 1rem;
-  }
-
-  .button-group-item:hover,
-  .button-group-item:active {
-    background-color: black;
-    color: white;
-  }
-
   .sales-price {
     color: red;
     text-align: center;
@@ -567,12 +554,6 @@
     width: 100%;
     justify-items: stretch;
     align-items: stretch;
-  }
-
-  .tab:hover,
-  .tab:active {
-    background-color: black;
-    color: white;
   }
 
   .disabledTab,
@@ -732,57 +713,73 @@
   }
 }
 
-img{
-  cursor:pointer;
+img {
+  cursor: pointer;
 }
 
-.Footer{
-  background-color:white;
-  height:100%;
+.Footer {
+  background-color: white;
+  height: 100%;
 
   @media screen and (max-width: 400px) {
-
     .footer-item-1,
     .footer-item-2,
     .footer-item-3 {
-        padding-left: 5%;
-        width: 50px;
-        padding-right: 5%;
-
+      padding-left: 5%;
+      width: 50px;
+      padding-right: 5%;
     }
-}
+  }
 
-@media screen and (min-width: 401px) {
+  @media screen and (min-width: 401px) {
     .col-1 {
-        padding-left: 5%;
-
+      padding-left: 5%;
     }
 
     .col-2 {
-        padding-left: 5%;
-        padding-right: 5%;
+      padding-left: 5%;
+      padding-right: 5%;
     }
-}
+  }
 
-.row{
-    display:flex;
-}
+  .row {
+    display: flex;
+  }
 
-.center-align{
-    margin-left:40%;
-}
-
+  .center-align {
+    margin-left: 40%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-  .Promo{
-      font-family:'Montserrat', sans-serif;
-      font-size:0.625rem;
+  .Promo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.625rem;
   }
+}
+@media screen and (min-width: 401px) {
+  .Promo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
   }
-  @media screen and (min-width: 401px) {
-      .Promo{
-          font-family:'Montserrat', sans-serif;
-          font-size:0.75rem;
-      }
+}
+
+.SizeTabWithoutLabel {
+  .button-group-items {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 1rem;
   }
+
+  .button-group-item-clicked {
+    background-color: black;
+    color: white;
+  }
+
+  .button-group-item:hover,
+  .button-group-item:active {
+    background-color: black;
+    color: white;
+  }
+}

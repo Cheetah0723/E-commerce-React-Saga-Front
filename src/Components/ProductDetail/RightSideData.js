@@ -23,8 +23,6 @@ export default function RightSideData({ id }) {
 
     const handleChangeSize = value => {
         setProduct({...product, size: value })
-
-        //TODO size tab issue
     };
 
     let reviewsParsed = Array.isArray(reviews) ? reviews : []
@@ -52,7 +50,7 @@ export default function RightSideData({ id }) {
                 className="form">
                 <p className="select-size">SELECT SIZE</p>
                 <div className="size-tab">
-                    <SizeTab onChange={handleChangeSize} sizeDisplay={sizeAvailability} />
+                    <SizeTab onChange={size=>handleChangeSize(size)} sizeDisplay={sizeAvailability} />
                 </div>
                 <AddToCartButton onAddToCart={handleAddToCart} />
                 <div className="review-list">

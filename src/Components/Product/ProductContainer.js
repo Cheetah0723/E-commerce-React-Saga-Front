@@ -4,13 +4,11 @@ import { useSelector } from "react-redux"
 import Card from '@material-ui/core/Card';   
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { selectCurrency } from '../Selectors';
 
 export default function ProductContainer({ item }) {
-    const currency = useSelector(state => state.CurrencyReducer).currency
-
-    const price = currency === "AU" ? item.AUprice : item.USprice
-
-    const unit = currency === "AU" ? "AUD" : "USD"
+    const currency = useSelector(selectCurrency)
+    const price = currency === "AUD" ? item.AUprice : item.USprice
 
     if (item === undefined) {
         return <div></div>
@@ -25,11 +23,11 @@ export default function ProductContainer({ item }) {
             <CardContent>
                 {item.salesRate < 1 && <div className="row">
                     <p className="sales-price-label">SALE</p>
-                    <p className="sales-price"> ${price * item.salesRate}{unit}</p>
+                    <p className="sales-price"> ${price * item.salesRate}{currency}</p>
                 </div>}
                 {item.salesRate === 1 && <div className="row">
                     <p className="new-price-label">New</p>
-                    <p className="new-price">${price}{unit}</p>
+                    <p className="new-price">${price}{currency}</p>
                 </div>}
 
                 <Typography className="item-name" variant="subtitle1" gutterBottom>

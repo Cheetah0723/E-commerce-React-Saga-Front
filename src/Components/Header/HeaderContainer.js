@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Promo from './Promo';
 import ToolBar from './ToolBar';
 import CartDrawer from "../Cart/CartDrawerContainer";
 import clsx from 'clsx';
-import { useStore } from 'react-redux'
 import Divider from '@material-ui/core/Divider';
 import MobileToolBar from './MobileToolBar';
+import NavBar from "./NavBar"
+import { selectProductsInCart } from '../Selectors';
 
 const useStyles = makeStyles(theme => ({
     menuButton: {
@@ -49,30 +51,12 @@ export default function HeaderContainer(props) {
     const [openCartDrawer, setOpenCartDrawer] = useState(false);
     const [invalidSearch, setInvalidSearch] = useState(false);
 
-    const store = useStore();
 
-    function select(state) {
-        //TODO we want to access the addedItems here.
-        return state.CartReducer.addedItems; //TODO very strange hereZZZZZZZ
-    }
-
-    let itemsInStore = []
+    const itemsInCart = useSelector(selectProductsInCart)
 
     function handleChange() {
-        if (store.state !== undefined && select(store.state) !== [] && select(store.state) !== undefined) {
-            itemsInStore = select(store.getState());
-            //TODO pass this to the search method if no error is detected
-        }
-    }
 
-    let headerMounted = false;
-    useEffect(() => {
-        headerMounted = true;
-        if (headerMounted) {
-            store.subscribe(handleChange);
-            return () => headerMounted = false;
-        }
-    }, [select(store.getState())])
+    }
 
     return (
         <div className={openCartDrawer ? classes.shiftTextLeft : classes.shiftTextRight}>
@@ -80,6 +64,7 @@ export default function HeaderContainer(props) {
                 [classes.contentShift]: openCartDrawer,
             })}>
                 <div className={classes.root}>
+                    <NavBar />
                     <ToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                     <MobileToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                 </div>

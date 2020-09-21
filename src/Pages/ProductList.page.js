@@ -50,7 +50,6 @@ export default function ProductListPage({ sales }) {
 
     return (
         <div className="AllProducts">
-            <HeaderContainer />
             <div className="main">
                 <div className="sort-select">
                     <Sorting onSort={sortDisplayList} />
@@ -62,7 +61,6 @@ export default function ProductListPage({ sales }) {
                     <ProductList display={displayData} />
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

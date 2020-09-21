@@ -796,44 +796,42 @@ img {
 }
 
 @media screen and (max-width: 400px) {
-  .App{
+  .App {
     width: 100%;
-  }
 
-  .app-container,
-  .Homepage
-  {
-    width: inherit;
-  }
+    .Homepage {
+      width: inherit;
+    }
 
-  .nav-bar {
-    display: none;
-  }
+    .nav-bar {
+      display: none;
+    }
 
-  .mobile-nav-bar {
-    width: 100%;
-    font-size: 1.2rem;
-
-    form {
+    .mobile-nav-bar {
+      width: 100%;
       font-size: 1.2rem;
+
+      form {
+        font-size: 1.2rem;
+      }
     }
   }
-}
 
-.cart-icon {
-  display: flex;
-  cursor: pointer;
-  margin-right: 0;
-}
+  .cart-icon {
+    display: flex;
+    cursor: pointer;
+    margin-right: 0;
+  }
 
-.line {
-  display: flex;
-}
+  .line {
+    display: flex;
+  }
 
-.cart-page {
-  .close-btn,
-  .check-out-btn {
-    background-color: black;
-    color: white;
+  .cart-page {
+    .close-btn,
+    .check-out-btn {
+      background-color: black;
+      color: white;
+    }
   }
 }

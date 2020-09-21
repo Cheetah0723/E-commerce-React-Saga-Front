@@ -19,7 +19,7 @@ export default function RightSideData({ id }) {
 
     const { handleAddToCart } = useData(product, currency)
 
-    const price = currency === "AU" ? product.AUprice : product.USprice
+    const price = currency === "AUD" ? product.AUprice : product.USprice
 
     const handleChangeSize = value => {
         setProduct({...product, size: value })
@@ -35,10 +35,10 @@ export default function RightSideData({ id }) {
     return (
         <div className="description right-container" >
             <h4 className="product-name">{product.name}</h4>
-            {product.salesRate === 1 && <p className="non-sales-price">${price} {currency}D</p>}
+            {product.salesRate === 1 && <p className="non-sales-price">${price} {currency}</p>}
             {
                 product.salesRate < 1 &&
-                <p className="sales-price">SALE ${price * product.salesRate} {currency}D ({100 - product.salesRate * 100} % off)</p>
+                <p className="sales-price">SALE ${price * product.salesRate} {currency} ({100 - product.salesRate * 100} % off)</p>
             }
             <Button className="color-btn" style={{ backgroundColor: colorCode }}> </Button>
             <p className="colors">{product.color}</p>

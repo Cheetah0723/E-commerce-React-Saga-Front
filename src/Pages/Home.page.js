@@ -12,7 +12,6 @@ export default function Homepage() {
 
     return (
         <div className="Homepage">
-            <HeaderContainer />
             <div className="hp-promotion-image" style={{ position: "relative" }}>
                 <div className="centered-title" ><b>BUILD YOUR LEGACY</b></div>
                 <div className="centered-text" >Lift like the legends in authentic bodybuilding cuts.</div>

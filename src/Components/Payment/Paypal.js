@@ -1,7 +1,8 @@
 import React from 'react';
+import { useSelector } from "react-redux"
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-import { usePaypal, usePaymentData } from './CustomHooks';
-
+import { usePaypal } from './CustomHooks';
+import {selectCurrency, selectTotal} from "../Selectors"
 
 const CLIENT = {
     sandbox: 'AUsHUsDNDqG5Hev6xTdRxuViWHAQU-xHqMahjGuI4pv3xL4JS1mAJVLhF_YXKkrRNPkfRp4v_1lJnMZt',
@@ -11,7 +12,8 @@ const env = 'sandbox'; // you can set here to 'production' for production
 
 export default function Paypal() {
     const { onSuccess, onCancel, onError } = usePaypal()
-    const { total, currency } = usePaymentData()
+    const currency = useSelector(selectCurrency)  //AUD or USD
+    const total = useSelector(selectTotal)
 
     return (
         <PaypalExpressBtn env={env} client={CLIENT} currency={currency}

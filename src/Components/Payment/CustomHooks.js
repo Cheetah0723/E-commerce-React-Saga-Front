@@ -1,17 +1,9 @@
 import { useState, useEffect, useCallback } from "react"
-import { selectCurrency } from "../Selectors"
-import { useStore, useDispatch } from "react-redux"
+import { selectCurrency, selectTotal } from "../Selectors"
+import { useSelector, useDispatch } from "react-redux"
 import Model from "./Model"
 import { CREATE_ORDER } from "../../Actions/action.types"
 
-export function usePaymentData() {
-    const store = useStore().getState()
-    const country = selectCurrency(store)
-    const currency = country + "D" //AUD. USD
-    const total = 100   //selectTotal(store) 
-
-    return { total, currency, country }
-}
 
 export function useGoogle() {
 
@@ -49,7 +41,7 @@ export function usePaypal() {
             createOrder()
         }
     }, [successful])
-    
+
     const onSuccess = (payment) => {
         setSuccessful(true)
         clearCart(); //TODO bug

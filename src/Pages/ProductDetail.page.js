@@ -10,14 +10,12 @@ export default function ProductDetail(props) {
 
     return (
         <div className="product-detail-page">
-            <HeaderContainer />
             <div className="main">
                 <ProductImg id={id} />
                 <div className="blank"></div>
                     <RightSideData id={id} />
                 <div className="blank"></div>
             </div>
-            <Footer />
         </div>
     )
 }

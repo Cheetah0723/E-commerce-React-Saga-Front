@@ -10,8 +10,8 @@ const MobileNavBar = ({ openDrawer, closeDrawer }) => (
             </Col>
             <Col xs={7}>
                 <Nav className="nav-bar-links" className="ml-auto">
-                    <Nav.Link href="/all">Shop All</Nav.Link>
-                    <Nav.Link href="/sales">Shop Sales</Nav.Link>
+                    <Nav.Link href="/all">Shop</Nav.Link>
+                    <Nav.Link href="/sales">Sales</Nav.Link>
                 </Nav>
             </Col>
             <Col xs={3}>

@@ -798,10 +798,7 @@ img {
 @media screen and (max-width: 400px) {
   .App {
     width: 100%;
-
-    .Homepage {
-      width: inherit;
-    }
+    background-color:white;
 
     .nav-bar {
       display: none;

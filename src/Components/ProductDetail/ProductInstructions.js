@@ -1,25 +1,26 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-import EachProductInstruction from "./EachProductInstruction";
+import EachProductInstruction from "./ProductInstructionItem";
 import { Divider } from '@material-ui/core';
+import { Fragment } from 'react';
+import ProductReviewItem from "./ProductReviewItem"
 
-const Detail = {
-    title: "Detail",
-    body: " Combining our signature seamless knit with superior, sculpting design.• Figure - enhancing contours• Elasticated jacquard waistband• DRY technology• 56 % Nylon, 41 % Polyester, 3 % Elastane• Model is 5'5"
-};
+const data = [
+    {
+        title: "Detail",
+        body: " Combining our signature seamless knit with superior, sculpting design.• Figure - enhancing contours• Elasticated jacquard waistband• DRY technology• 56 % Nylon, 41 % Polyester, 3 % Elastane• Model is 5'5"
+    },
+    {
+        title: "Care",
+        body: "Machine wash or hand wash with cold water. Do not dry clean it."
+    },
+    {
+        title: "Delivery",
+        body: "Free shipping for orders over 99AUD. Internatonal shipping available."
+    }
+]
 
-
-const Care = {
-    title: "Care",
-    body: "Machine wash or hand wash with cold water. Do not dry clean it."
-}
-
-const Delivery = {
-    title: "Delivery",
-    body: "Free shipping for orders over 99AUD. Internatonal shipping available."
-}
-
-const ProductInstruction = () => {
+const ProductInstruction = ({reviews}) => {
     return (
         <List
             style={{ textAlign: "center", alignItems: "center" }}
@@ -27,12 +28,13 @@ const ProductInstruction = () => {
             aria-labelledby="nested-list-subheader"
         >
             <Divider />
-            <EachProductInstruction props={Detail} />
-            <Divider />
-            <EachProductInstruction props={Care} />
-            <Divider />
-            <EachProductInstruction props={Delivery} />
-            <Divider/>
+            <ProductReviewItem/>
+            {data.map(each => {
+                return (<Fragment>
+                    <EachProductInstruction props={each} />
+                    <Divider title="Reviews"/>
+                </Fragment>)
+            })}
         </List>
     )
 

@@ -7,9 +7,7 @@ export default function ReviewTabContainer({ productName, productId }) {
 
     return (
         <div className="review" >
-            <div className="review-tab" style={{ display: "flex", marginLeft: "40%" }}>
-                <p className="create-review-link" onClick={() => setOpen(true)}>Write a review</p>
-            </div>
+            <p className="create-review-link" onClick={() => setOpen(true)}>Write a review</p>
             <div className="review-modal">
                 <ReivewModal openStatus={openStatus} handleClose={() => setOpen(false)}>
                     <ReviewForm productName={productName} productId={productId} initialState="" />

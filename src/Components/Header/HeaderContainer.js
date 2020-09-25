@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Promo from './Promo';
 import CartDrawer from "../Cart/CartDrawerContainer";
 import Divider from '@material-ui/core/Divider';
 import DesktopNavBar from "./Desktop.NavBar"
@@ -60,15 +58,10 @@ export default function HeaderContainer(props) {
             <main >
                 <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                 <MobileNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
-                <div className={classes.root}>
-
-                </div>
                 <Divider />
                 {invalidSearch && <Grid item><b>No results.</b><br />
                     Try checking your spelling or use more general terms.</Grid>}
-                <Grid item xs={12}>
-                    <Promo style={{ marginTop: "50px" }} />
-                </Grid>
+                <p className="Promo">FREE SHIPPING FOR ORDERS OVER $99</p>
                 <Divider />
             </main>
             <CartDrawer openStatus={openCartDrawer} open={() => { setOpenCartDrawer(true) }}

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductContainer from '../Product/ProductContainer';
-// Display the layout of product lists.
+
 export default function ProductList({ display }) {
 
     return (

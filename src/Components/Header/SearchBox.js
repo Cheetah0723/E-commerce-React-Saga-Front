@@ -1,27 +1,15 @@
 import React from 'react';
-import SearchIcon from '@material-ui/icons/Search';
-import { TextField, ClickAwayListener, IconButton, InputAdornment } from '@material-ui/core';
-import SearchBoxController from "./SearchBoxController"
+import useSearchBox from './CustomHook';
+import {  FormControl, Button } from 'react-bootstrap';
 
 export default function SearchBox({ onClick }) {
-    const { _handleKeyDown } = SearchBoxController()
+    const { _handleKeyDown } = useSearchBox()
 
     return (
-        <div className="SearchBox" onClick={onClick}>
-                <TextField id="standard-search" placeholder="Color or size" type="search"
-                    variant="outlined"
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment>
-                                <IconButton>
-                                    <SearchIcon />
-                                </IconButton>
-                            </InputAdornment>
-                        )
-                    }}
-                    onChange={_handleKeyDown}
-                    onKeyPress={_handleKeyDown}
-                />
+        <div className="SearchBox">
+            <FormControl type="text" placeholder="Search" className="mr-sm-3" onChange={_handleKeyDown} onKeyPress={_handleKeyDown} />
+            <Button variant="outline-primary" onClick={onClick}>Search</Button>
         </div>
     );
 }
+

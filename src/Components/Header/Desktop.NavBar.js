@@ -1,8 +1,9 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button, Col } from 'react-bootstrap';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SearchBox from "./SearchBox"
 
-const DesktopNavBar = ({ openDrawer, closeDrawer }) => (
+const DesktopNavBar = ({ openDrawer, closeDrawer, search }) => (
     <div className="nav-bar">
         <Navbar bg="light" variant="light">
             <Navbar.Brand href="/">Logo</Navbar.Brand>
@@ -12,8 +13,7 @@ const DesktopNavBar = ({ openDrawer, closeDrawer }) => (
                 <Nav.Link href="/sales">Sales</Nav.Link>
             </Nav>
             <Form inline className="ml-auto">
-                <FormControl type="text" placeholder="Search" className="mr-sm-3" />
-                <Button variant="outline-primary">Search</Button>
+                <SearchBox className="mr-sm-3" onClick={search}/>
                 <div className="cart-icon  mr-sm-3" onClick={openDrawer} >
                     <ShoppingCartIcon />
                     <p>My Cart</p>

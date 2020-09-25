@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SAVE_SEARCH_INPUT } from '../../Actions/action.types';
 
 
-export default function SearchBoxController(props) {
+export default function useSearchBox(props) {
     let searchPhrase = [];
 
     const dispatch = useDispatch();

@@ -47,16 +47,17 @@ export default function HeaderContainer(props) {
     const [openCartDrawer, setOpenCartDrawer] = useState(false);
     const [invalidSearch, setInvalidSearch] = useState(false);
 
+    const search = () => {
+
+    }
 
     //  const itemsInCart = useSelector(selectProductsInCart)
 
-    // <ToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
-    // <MobileToolBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
 
     return (
         <div className={openCartDrawer ? classes.shiftTextLeft : classes.shiftTextRight}>
             <main >
-                <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
+                <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} search={search} />
                 <MobileNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                 <Divider />
                 {invalidSearch && <Grid item><b>No results.</b><br />

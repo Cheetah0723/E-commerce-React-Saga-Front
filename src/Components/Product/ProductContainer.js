@@ -15,11 +15,10 @@ export default function ProductContainer({ item }) {
     }
 
     return (
-        <Card className="ProductContainer" key={item.id}>
-            <img className="card-image" src={require('../../' + item.img)} alt={item.name}
-                onClick={() => {
-                    history.push("/product/" + item.id, item.id);
-                }} />
+        <Card className="ProductContainer" key={item.id}  onClick={() => {
+            history.push("/product/" + item.id, item.id);
+        }}>
+            <img className="card-image" src={require('../../' + item.img)} alt={item.name} />
             <CardContent>
                 {item.salesRate < 1 && <div className="row">
                     <p className="sales-price-label">SALE</p>

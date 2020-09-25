@@ -3,7 +3,7 @@ import Homepage from './Pages/Home.page';
 import Footer from './Components/Footer/Footer';
 import './App.scss';
 import ReviewForm from "./Components/Review/ReviewForm"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import history from './history';
 import ProductDetail from "./Pages/ProductDetail.page";
 import ProductListPage from "./Pages/ProductList.page";
@@ -12,7 +12,7 @@ import Sales from './Pages/Sales.page';
 import Cart from "./Components/Cart/CartDrawer"
 import OrderConfirmation from "./Pages/OrderConfirmation.page"
 import HeaderContainer from "./Components/Header/HeaderContainer"
-
+import {withRouter} from 'react-router';
 
 // BUG
 //import ReviewModal from "./Components/Review/ReviewModal"
@@ -27,13 +27,13 @@ export default function App() {
       <HeaderContainer />
       <Router history={history}>
         <Switch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/all" exact component={ProductListPage} />
-          <Route path="/sales" exact component={Sales} />
-          <Route path="/product/:id" exact component={ProductDetail} />
-          <Route path='/checkoutInfo' exact component={Checkout} />
-          <Route path='./cart' exact component={Cart} />
-          <Route path='./orderConfirmation' exact omponent={OrderConfirmation} />
+          <Route exact path="/" component={withRouter(Homepage)} />
+          <Route exact path="/all" component={withRouter(ProductListPage)} />
+          <Route exact path="/sales" component={withRouter(Sales)} />
+          <Route exact path="/product/:id" component={withRouter(ProductDetail)} />
+          <Route exact path='/checkoutInfo' component={withRouter(Checkout)} />
+          <Route exact path='./cart' component={withRouter(Cart)} />
+          <Route exact path='./orderConfirmation' component={withRouter(OrderConfirmation)} />
         </Switch>
       </Router>
       <Footer />

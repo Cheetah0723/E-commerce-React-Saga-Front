@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { findById } from "../../Actions/search.action"
+import { Container, Row, Col } from 'reactstrap';
 
 export default function ProductImg({ id }) {
     var product = findById(id);
@@ -17,17 +18,19 @@ export default function ProductImg({ id }) {
 
     return (
         <Fragment>
-            <div className="sub-img-container">
-                <img className="sub-image-1" src={require('../../' + product.img2)} alt="product2"
-                    onClick={changeImg} name={product.img2} />
+            <Row>
+                <Col xs={4}>
+                    <img className="sub-image-1" src={require('../../' + product.img2)} alt="product2"
+                        onClick={changeImg} name={product.img2} />
 
-                <img className="sub-image-2" src={require('../../' + product.img)} alt="product1"
-                    onClick={changeImg} name={product.img} />
-            </div>
-            <div className="main-img-container">
-                <img className="main-image" src={require('../../' + currentImg)} alt="large"
-                />
-            </div>
+                    <img className="sub-image-2" src={require('../../' + product.img)} alt="product1"
+                        onClick={changeImg} name={product.img} />
+                </Col>
+                <Col xs={8}>
+                    <img className="main-image" src={require('../../' + currentImg)} alt="large"
+                    />
+                </Col>
+            </Row>
         </Fragment>
     )
 

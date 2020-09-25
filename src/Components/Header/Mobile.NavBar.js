@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Col } from 'react-bootstrap';
-import Cart from "../Cart/CartIcon";
+import { Navbar, Nav } from 'react-bootstrap';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const MobileNavBar = ({ openDrawer, closeDrawer }) => (
     <div className="mobile-nav-bar">
@@ -10,7 +10,10 @@ const MobileNavBar = ({ openDrawer, closeDrawer }) => (
                     <Nav.Link href="/all">Shop</Nav.Link>
                     <Nav.Link href="/sales">Sales</Nav.Link>
                 </Nav>
-                <Cart className="float-right" onClick={openDrawer} close={closeDrawer} className="mr-sm-2" />
+                <div className="cart-icon mr-sm-2" onClick={openDrawer} >
+                    <ShoppingCartIcon />
+                    <p>My Cart</p>
+                </div>
         </Navbar>
     </div>
 );

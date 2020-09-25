@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from "react-redux"
-import { Button } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import ProductInstruction from '../ProductDetail/ProductInstructions';
 import AddToCartButton from '../ProductDetail/AddToCartButton';

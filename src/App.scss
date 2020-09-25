@@ -433,25 +433,29 @@
   .new-price-label {
     font-size: 1rem;
     font-weight: 600;
-    align-self: flex-start;
+    text-align: left;
+    margin-bottom: 0;
   }
 
   .sales-price {
     font-size: 1.2rem;
     font-weight: 600;
-    align-self: flex-end;
+    text-align: left;
+    margin-bottom: 0;
   }
 
   .new-price {
     font-weight: 600;
     font-size: 1.2rem;
-    align-self: flex-end;
+    text-align: left;
+    margin-bottom: 0;
   }
 
   .item-color {
     color: lightslategray;
     font-size: 1rem;
     font-weight: 200;
+    margin-bottom: 0;
   }
 
   .card-image {

@@ -1,10 +1,10 @@
 import React from 'react';
-import CreditCardIcons from "../CreditCardIcons"
+import SNSIcons from "./SNSIcons"
 import renderer from 'react-test-renderer';
 
-describe.skip("CreditCardIcons", () => {
+describe.skip("SNSICons", () => {
 it('renders correctly', () => {
-    const component = renderer.create(<CreditCardIcons />);
+    const component = renderer.create(<SNSIcons/>);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

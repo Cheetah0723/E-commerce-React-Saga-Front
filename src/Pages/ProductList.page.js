@@ -4,8 +4,6 @@ import { findSalesItems } from "../Actions/search.action"
 import Sorting from '../Components/Sorting/Sorting';
 import FilterView from "../Components/Filter/container.filter"
 import ProductList from "../Components/ProductList/ProductList"
-import HeaderContainer from '../Components/Header/HeaderContainer';
-import Footer from '../Components/Footer/Footer';
 import { categoryData, categoryDataHighToLow, categoryDataLowToHigh, newest } from "../Data/category"
 
 export function useDisplay(filter) {

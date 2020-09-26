@@ -11,7 +11,7 @@ export default function Homepage() {
 
     return (
         <div className="Homepage">
-            <div className="hp-promotion-image" style={{ position: "relative" }}>
+            <div className="hp-promotion-image">
                 <div className="centered-title" ><b>BUILD YOUR LEGACY</b></div>
                 <div className="centered-text" >Lift like the legends in authentic bodybuilding cuts.</div>
                 <Button className="view-all-btn" onClick={() => history.push("/all")}
@@ -29,7 +29,6 @@ export default function Homepage() {
                     }}><b>SHOP</b></Button>
                 <img className="sub-image" src={require('../product-photos/hp-photo-3.jpeg')} alt="hp-top" />
                 <img className="mobile-sub-image" src={require('../product-photos/hp-photo-3-mobile.jpeg')} alt="hp-top" />
-
             </div>
             <div className="hp-new-release">
                 <Grid container

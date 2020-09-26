@@ -14,7 +14,7 @@ export default function BootStrapInstaTileView({ handleClick }) {
 
     return (
         <Carousel
-            style={{ marginTop: "5px", marginLeft: "4%", marginRight: "4%" }}
+            style={{ height: "200px", marginTop: "5px", marginLeft: "4%", marginRight: "4%" }}
             arrowLeft={<Icon name="chevron left" size='huge' />}
             arrowRight={<Icon name="chevron right" size='huge' />}
             slidesPerPage={6}

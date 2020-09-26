@@ -1,5 +1,5 @@
 import {
-    selectCurrency, selectTotal, selectReview, selectOrder, selectProductId,
+    selectCurrency, selectTotal, selectReview, selectProductId,
     selectProductsInCart, selectPaymentMethod
 } from "../Selectors"
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import ProductList from '../Components/ProductList/ProductList';
+import ProductList from '../Components/Product/ProductList';
 import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import { findNewReleases } from '../Actions/search.action';

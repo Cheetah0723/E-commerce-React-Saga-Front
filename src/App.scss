@@ -28,16 +28,13 @@
       margin-left: 4%;
       margin-right: 4%;
       width: 92%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-gap: 0.5rem;
     }
   }
 
   @media screen and (min-width: 401px) {
-    .product-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      grid-gap: 0.5rem;
-    }
-
     .centered-title {
       position: absolute;
       top: 40%;
@@ -199,7 +196,7 @@
     width: 100%;
   }
 
-  .review{
+  .review {
     margin-bottom: 2rem;
   }
 
@@ -346,20 +343,27 @@
   margin-right: 4%;
   display: grid;
 
-  .main {
-    width: 100%;
+  .sorting{
+    margin-left: 12%;
+    width:100px;
+  }
+
+  .product-list {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 0.5rem;
   }
 
   @media (max-width: 400x) {
     .sort-select {
       grid-column-start: 5;
       grid-row: 1;
-      width: auto;
+      max-width: 200px;
     }
 
     .list-container {
       width: 100%;
+      grid-column-start: 6;
 
       .product-list {
         display: grid;
@@ -413,6 +417,8 @@
   border-radius: 1%;
   z-index: 100;
   box-shadow: 0.5rem;
+  max-height: 420px;
+  max-width: 320px;
 
   .item-name {
     font-size: 1rem;
@@ -462,6 +468,7 @@
     cursor: pointer;
     width: 100%;
     height: auto;
+    max-width: 350px;
   }
 
   .sales-price {
@@ -747,8 +754,7 @@ img {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     text-align: center;
-    margin-top:1rem;
-
+    margin-top: 1rem;
   }
 }
 
@@ -821,7 +827,6 @@ img {
   }
 }
 
-.carousel{
-  height:100px;
-
+.carousel {
+  height: 100px;
 }

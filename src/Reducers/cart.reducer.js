@@ -2,7 +2,7 @@ import {
     CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, UPDATE_CURRENCY,
     ADD_QUANTITY, ADD_SHIPPING
 } from '../Actions/action.types';
-import { loadState, validatePrice } from '../Components/Util';
+import { loadState} from '../Components/Util';
 
 //TODO intial state should be from the local storage???
 const initialState = loadState("CartReducer");

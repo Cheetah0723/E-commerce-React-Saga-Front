@@ -3,8 +3,9 @@ import { useSelector } from "react-redux"
 import { findSalesItems } from "../Actions/search.action"
 import Sorting from '../Components/Sorting/Sorting';
 import FilterView from "../Components/Filter/container.filter"
-import ProductList from "../Components/ProductList/ProductList"
+import ProductList from "../Components/Product/ProductList"
 import { categoryData, categoryDataHighToLow, categoryDataLowToHigh, newest } from "../Data/category"
+import { Col, Row } from "reactstrap"
 
 export function useDisplay(filter) {
     let initialData = filter === "sales" ? findSalesItems() : categoryData
@@ -48,17 +49,19 @@ export default function ProductListPage({ sales }) {
 
     return (
         <div className="AllProducts">
-            <div className="main">
-                <div className="sort-select">
-                    <Sorting onSort={sortDisplayList} />
-                </div>
-                <div className="filters">
+            <Row>
+                <Col xs={12} md={3}>
+                    <div className="sorting">
+                        <Sorting onSort={sortDisplayList} />
+                    </div>
                     <FilterView handleFilter={handleFilter} />
-                </div>
-                <div className="list-container">
-                    <ProductList display={displayData} />
-                </div>
-            </div>
+                </Col>
+                <Col xs={12} md={9}>
+                    <div className="product-list">
+                        <ProductList display={displayData} />
+                    </div>
+                </Col>
+            </Row>
         </div>
     );
 }

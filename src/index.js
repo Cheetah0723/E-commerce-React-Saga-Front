@@ -8,7 +8,6 @@ import App from "./App"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts/Montserrat/Montserrat-Regular.ttf';
 
-
 const store = configureStore();
 
 ReactDOM.render(

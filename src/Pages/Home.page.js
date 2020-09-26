@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import ProductList from '../Components/ProductList/ProductList';
 import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
-import HeaderContainer from '../Components/Header/HeaderContainer';
 import { findNewReleases } from '../Actions/search.action';
 import history from '../history';
 

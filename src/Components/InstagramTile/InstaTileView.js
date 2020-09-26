@@ -4,7 +4,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { Icon } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
-export default function InstaTileView({ handleClick }) {
+export default function BootStrapInstaTileView({ handleClick }) {
 
     const imgStyle = {
         width: '100%',

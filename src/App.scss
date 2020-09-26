@@ -343,9 +343,9 @@
   margin-right: 4%;
   display: grid;
 
-  .sorting{
+  .sorting {
     margin-left: 12%;
-    width:100px;
+    width: 100px;
   }
 
   .product-list {
@@ -417,7 +417,7 @@
   border-radius: 1%;
   z-index: 100;
   box-shadow: 0.5rem;
-  max-height: 420px;
+  max-height: 440px;
   max-width: 320px;
 
   .item-name {
@@ -430,20 +430,18 @@
     cursor: pointer;
   }
 
-  .sales-price-label {
-    color: red;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .new-price-label {
+  .price-label {
     font-size: 1rem;
     font-weight: 600;
     text-align: left;
     margin-bottom: 0;
   }
 
-  .sales-price {
+  .sales {
+    color: red;
+  }
+
+  .price {
     font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
@@ -532,6 +530,17 @@
     width: 3rem;
     height: 3.5rem;
   }
+}
+
+.SizeTabWithoutLabel {
+  width: 100%;
+
+  .button-group-item {
+    top: 50%;
+    color: white;
+    font-size: 1rem;
+    width: 4rem;
+  }
 
   .button-group-item,
   .disabledTab {
@@ -542,15 +551,19 @@
     margin-right: 0.6rem;
   }
 
-  .SizeTabWithoutLabel {
-    width: 100%;
-    justify-items: stretch;
-    align-items: stretch;
+  .button-group-item-clicked,
+  .button-group-item:hover,
+  .button-group-item:active {
+    background-color: black;
+    color: white;
+    width: 4rem;
   }
 
   .disabledTab,
   .disabledTab:hover,
   .disabledTab:active {
+    width: 3rem;
+    height: 3.5rem;
     color: black;
     background-color: white;
   }
@@ -755,22 +768,6 @@ img {
     font-size: 1rem;
     text-align: center;
     margin-top: 1rem;
-  }
-}
-
-.SizeTabWithoutLabel {
-  .button-group-items {
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 1rem;
-  }
-
-  .button-group-item-clicked,
-  .button-group-item:hover,
-  .button-group-item:active {
-    background-color: black;
-    color: white;
   }
 }
 

@@ -31,13 +31,13 @@ export default function SizeTab({ sizeDisplay, onChange }) {
 
     return (
         <Fragment>
-            <ToggleButtonGroup className="SizeTabWithoutLabel" aria-label="outlined secondary button group"
+            <ToggleButtonGroup size="medium" className="SizeTabWithoutLabel" aria-label="outlined secondary button group"
                 value={size} exclusive>
                 {sizeList.items.map(each => {
                     let index = sizeList.items.indexOf(each);
                     return (
                         <ToggleButton className={clickState[index] ? "button-group-item-clicked" : availability[index] ? "button-group-item" : "disabledTab"}
-                            value={each} key={each} onClick={() => changeSize(index, each)}
+                            value={each} key={each} onClick={() => changeSize(index, each)} aria-label={each}
                             disabled={!availability[index]}>{each}</ToggleButton>
                     );
                 })}

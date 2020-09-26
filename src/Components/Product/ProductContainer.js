@@ -24,12 +24,12 @@ export default function ProductContainer({ item }) {
             <CardContent>
                 <Col>
                     {item.salesRate < 1 && <Fragment>
-                        <p className="sales-price-label">SALE</p>
-                        <p className="sales-price"> ${price * item.salesRate}{currency}</p>
+                        <p className="sales price-label">SALE</p>
+                        <p className="sales price"> ${price * item.salesRate}{currency}</p>
                     </Fragment>}
                     {item.salesRate === 1 && <Fragment>
-                        <p className="new-price-label">New</p>
-                        <p className="new-price">${price}{currency}</p>
+                        <p className="price-label">New</p>
+                        <p className="price">${price}{currency}</p>
                     </Fragment>
                     }
 

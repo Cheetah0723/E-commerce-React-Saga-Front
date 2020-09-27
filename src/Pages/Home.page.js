@@ -48,16 +48,14 @@ export default function Homepage() {
                 <div className="hp-list">
                     <ProductList display={displayData} />
                 </div>
+                <div className="hp-insta-slider" style={{ marginTop: "60px" }}>
+                    <div style={{ textAlign: "center", }}>
+                        <p style={{ fontSize: "25px" }} >AS SEEN ON INSTAGRAM</p>
+                        <p style={{ fontSize: "16px" }}>Shop our favourite looks here</p></div>
+                    <InstaController style={{ width: "100%" }} />
+                </div>
             </div>
         </div>
     );
 }
 
-/**
- *      <div className="hp-insta-slider" style={{ marginTop: "60px" }}>
-                <div style={{ textAlign: "center", }}>
-                    <p style={{ fontSize: "25px" }} >AS SEEN ON INSTAGRAM</p>
-                    <p style={{ fontSize: "16px" }}>Shop our favourite looks here</p></div>
-                <InstaController style={{ width: "100%" }} />
-            </div>
- */

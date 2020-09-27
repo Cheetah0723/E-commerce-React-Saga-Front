@@ -20,7 +20,7 @@ export default function ProductContainer({ item }) {
         <Card className="ProductContainer" key={item.id} onClick={() => {
             history.push("/product/" + item.id, item.id);
         }}>
-            <img className="card-image" src={require('../../' + item.img)} alt={item.name} />
+            <img className="card-image" src= {item.img} alt={item.name} />
             <CardContent>
                 <Col>
                     {item.salesRate < 1 && <Fragment>

@@ -27,8 +27,8 @@ export default function Homepage() {
                         borderRadius: "25px",
                         fontFamily: "'Montserrat', sans-serif",
                     }}><b>SHOP</b></Button>
-                <img className="sub-image" src={require('../product-photos/hp-photo-3.jpeg')} alt="hp-top" />
-                <img className="mobile-sub-image" src={require('../product-photos/hp-photo-3-mobile.jpeg')} alt="hp-top" />
+                <img className="sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3.jpeg" alt="hp-top" />
+                <img className="mobile-sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3-mobile.jpeg" alt="hp-top" />
             </div>
             <div className="hp-new-release">
                 <Grid container

@@ -3,66 +3,66 @@ export const categoryData = [{
     id: 1,
     name: "Flex Leggings",
     color: "pink",
-    img: "product-photos/pink-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-front.png",
     AUprice: 60,
     USprice: 40,
     category: "bottoms",
     texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/pink-back.png"
+   img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-back.png"
 },
 {
     id: 2,
     name: "Flex Leggings",
     color: "light grey",
-    img: "product-photos/ltgrey-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-front.png",
     AUprice: 60,
     USprice: 40,
     category: "bottoms",
     texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/ltgrey-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-back.png"
 },
 {
     id: 3,
     name: "Flex Hightwaist Leggings",
     color: "dark grey",
-    img: "product-photos/dkgrey-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-front.png",
     AUprice: 80,
     USprice: 60,
     category: "bottoms",
     texture: ["56% Nylon", "39% Polyester", "5% Elastane"],
     new: false,
     salesRate: 0.8,
-    img2: "product-photos/dkgrey-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-back.png"
 },
 {
     id: 4,
     name: "Crunch Leggings",
     color: "blue",
-    img: "product-photos/blue-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-front.png",
     AUprice: 80,
     USprice: 60,
     category: "bottoms",
     texture: ["87% Nylon", "13% Spandex"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/blue-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-back.png"
 },
 {
     id: 5,
     name: "Energia Leggings",
     color: "orange",
-    img: "product-photos/org-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-front.png",
     AUprice: 90,
     USprice: 70,
     category: "bottoms",
     texture: ["54% Nylon", "38% Polyester", "8% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/org-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-back.png"
 },
 ]
 
@@ -71,65 +71,65 @@ export const categoryDataHighToLow = [
         id: 5,
         name: "Energia Leggings",
         color: "orange",
-        img: "product-photos/org-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-front.png",
         AUprice: 90,
         USprice: 70,
         category: "bottoms",
         texture: ["54% Nylon", "38% Polyester", "8% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/org-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-back.png"
     },
     {
         id: 4,
         name: "Crunch Leggings",
         color: "blue",
-        img: "product-photos/blue-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-front.png",
         AUprice: 80,
         USprice: 60,
         category: "bottoms",
         texture: ["87% Nylon", "13% Spandex"],
         salesRate: 1,
-        img2: "product-photos/blue-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-back.png"
     },
     {
         id: 3,
         name: "Flex Hightwaist Leggings",
         color: "dark grey",
-        img: "product-photos/dkgrey-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-front.png",
         AUprice: 80,
         USprice: 60,
         category: "bottoms",
         texture: ["56% Nylon", "39% Polyester", "5% Elastane"],
         new: false,
         salesRate: 0.8,
-        img2: "product-photos/dkgrey-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-back.png"
     },
     {
         id: 1,
         name: "Flex Leggings",
         color: "pink",
-        img: "product-photos/pink-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-front.png",
         AUprice: 60,
         USprice: 40,
         category: "bottoms",
         texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/pink-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-back.png"
     },
     {
         id: 2,
         name: "Flex Leggings",
         color: "light grey",
-        img: "product-photos/ltgrey-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-front.png",
         AUprice: 60,
         USprice: 40,
         category: "bottoms",
         texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/ltgrey-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-back.png"
     },
 ]
 
@@ -138,66 +138,66 @@ export const categoryDataLowToHigh = [
         id: 1,
         name: "Flex Leggings",
         color: "pink",
-        img: "product-photos/pink-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-front.png",
         AUprice: 60,
         USprice: 40,
         category: "bottoms",
         texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/pink-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-back.png"
     },
     {
         id: 2,
         name: "Flex Leggings",
         color: "light grey",
-        img: "product-photos/ltgrey-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-front.png",
         AUprice: 60,
         USprice: 40,
         category: "bottoms",
         texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/ltgrey-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-back.png"
     },
     {
         id: 3,
         name: "Flex Hightwaist Leggings",
         color: "dark grey",
-        img: "product-photos/dkgrey-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-front.png",
         AUprice: 80,
         USprice: 60,
         category: "bottoms",
         texture: ["56% Nylon", "39% Polyester", "5% Elastane"],
         new: false,
         salesRate: 0.8,
-        img2: "product-photos/dkgrey-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/dkgrey-back.png"
     },
     {
         id: 4,
         name: "Crunch Leggings",
         color: "blue",
-        img: "product-photos/blue-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-front.png",
         AUprice: 80,
         USprice: 60,
         category: "bottoms",
         texture: ["87% Nylon", "13% Spandex"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/blue-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-back.png"
     },
     {
         id: 5,
         name: "Energia Leggings",
         color: "orange",
-        img: "product-photos/org-front.png",
+        img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-front.png",
         AUprice: 90,
         USprice: 70,
         category: "bottoms",
         texture: ["54% Nylon", "38% Polyester", "8% Elastane"],
         new: true,
         salesRate: 1,
-        img2: "product-photos/org-back.png"
+        img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-back.png"
     },
 ]
 
@@ -205,52 +205,52 @@ export const newest = [{
     id: 1,
     name: "Flex Leggings",
     color: "pink",
-    img: "product-photos/pink-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-front.png",
     AUprice: 60,
     USprice: 40,
     category: "bottoms",
     texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/pink-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/pink-back.png"
 },
 {
     id: 2,
     name: "Flex Leggings",
     color: "light grey",
-    img: "product-photos/ltgrey-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-front.png",
     AUprice: 60,
     USprice: 40,
     category: "bottoms",
     texture: ["56% Nylon", "41% Polyester", "3% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/ltgrey-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/ltgrey-back.png"
 },
 {
     id: 4,
     name: "Crunch Leggings",
     color: "blue",
-    img: "product-photos/blue-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-front.png",
     AUprice: 80,
     USprice: 60,
     category: "bottoms",
     texture: ["87% Nylon", "13% Spandex"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/blue-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/blue-back.png"
 },
 {
     id: 5,
     name: "Energia Leggings",
     color: "orange",
-    img: "product-photos/org-front.png",
+    img: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-front.png",
     AUprice: 90,
     USprice: 70,
     category: "bottoms",
     texture: ["54% Nylon", "38% Polyester", "8% Elastane"],
     new: true,
     salesRate: 1,
-    img2: "product-photos/org-back.png"
+    img2: "https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/org-back.png"
 },
 ]

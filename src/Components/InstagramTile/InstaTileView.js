@@ -32,13 +32,13 @@ export default function BootStrapInstaTileView({ handleClick }) {
                 }
             }}
         >
-            <img src={require('../../product-photos/insta-1.JPG')} onClick={click} key="1" name="1" style={imgStyle} alt="insta1" />
-            <img src={require('../../product-photos/insta-2.JPG')} onClick={click} key="2" name="2" style={imgStyle} alt="insta2" />
-            <img src={require('../../product-photos/insta-3.JPG')} onClick={click} key="3" name="3" style={imgStyle} alt="insta3" />
-            <img src={require('../../product-photos/insta-4.JPG')} onClick={click} key="4" name="4" style={imgStyle} alt="insta4" />
-            <img src={require('../../product-photos/insta-5.JPG')} onClick={click} key="5" name="5" style={imgStyle} alt="insta5" />
-            <img src={require('../../product-photos/insta-6.JPG')} onClick={click} key="6" name="6" style={imgStyle} alt="insta6" />
-            <img src={require('../../product-photos/insta-7.JPG')} onClick={click} key="7" name="7" style={imgStyle} alt="insta7" />
+            <img src='https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-1.JPG' onClick={click} key="1" name="1" style={imgStyle} alt="insta1" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-2.JPG" onClick={click} key="2" name="2" style={imgStyle} alt="insta2" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-3.JPG" onClick={click} key="3" name="3" style={imgStyle} alt="insta3" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-4.JPG" onClick={click} key="4" name="4" style={imgStyle} alt="insta4" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-5.JPG" onClick={click} key="5" name="5" style={imgStyle} alt="insta5" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-6.JPG" onClick={click} key="6" name="6" style={imgStyle} alt="insta6" />
+            <img src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/insta-7.JPG" onClick={click} key="7" name="7" style={imgStyle} alt="insta7" />
         </Carousel>
     );
 }

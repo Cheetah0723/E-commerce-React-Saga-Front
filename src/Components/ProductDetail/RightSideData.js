@@ -7,7 +7,7 @@ import SizeTab from '../SizeTab/SizeTab';
 import useProduct from "./useProduct"
 import ReviewTabContainer from "../Review/ReviewTabContainer"
 import ReviewForm from "../Review/ReviewForm"
-import useData from "./useData"
+import useAddToCart from "./useAddToCart"
 import { selectCurrency } from '../Selectors';
 
 export default function RightSideData({ id }) {
@@ -16,7 +16,7 @@ export default function RightSideData({ id }) {
     const { product, setProduct, sizeAvailability, colorCode, reviews,
     } = useProduct(id)
 
-    const { handleAddToCart } = useData(product, currency)
+    const { handleAddToCart } = useAddToCart(product, currency)
 
     const price = currency === "AUD" ? product.AUprice : product.USprice
 

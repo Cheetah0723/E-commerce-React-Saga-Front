@@ -16,7 +16,7 @@ export default function CartItem({ item }) {
     return (
         <div className="product-outer-container" key={item.name + item.color}>
             <div key="1">
-                <img className="card-image" src={require('../../' + item.img)} alt={item.name}
+                <img className="card-image" src={item.img} alt={item.name}
                     style={{
                         width: '4.375rem',
                         height: '4.375rem',

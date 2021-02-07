@@ -8,7 +8,6 @@ const initialState = loadState("CartReducer");
 
 function CartReducer(state = initialState, action) {
     let newState = Object.assign({}, state);
-
     switch (action.type) {
         case UPDATE_CURRENCY:
             newState.currency = action.data

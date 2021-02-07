@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 @mixin btn {
+  vertical-align: middle;
   padding-bottom: 1rem;
   color: white;
   font-size: 1.2rem;
@@ -15,6 +16,11 @@
 
 @mixin center {
   width: 90%;
+  align-self: center;
+}
+
+.align-center {
+  text-align: center;
   align-self: center;
 }
 
@@ -669,33 +675,13 @@ img {
   background-color: white;
   height: 100%;
 
-  @media screen and (max-width: 415px) {
-    .footer-item-1,
-    .footer-item-2,
-    .footer-item-3 {
-      padding-left: 5%;
-      width: 50px;
-      padding-right: 5%;
+  .sns-icon-group {
+    text-align: center;
+    align-items: center;
+
+    .sns-icon {
+      margin-right: 1.25rem;
     }
-  }
-
-  @media screen and (min-width: 416px) {
-    .col-1 {
-      padding-left: 5%;
-    }
-
-    .col-2 {
-      padding-left: 5%;
-      padding-right: 5%;
-    }
-  }
-
-  .row {
-    display: flex;
-  }
-
-  .center-align {
-    margin-left: 40%;
   }
 }
 
@@ -857,9 +843,5 @@ img {
   margin-top: 1rem;
   cursor: pointer;
   background-color: black;
-  color:white;
-}
-
-.cart-row{
-  align-self: center;
+  color: white;
 }

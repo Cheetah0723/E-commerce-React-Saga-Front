@@ -15,7 +15,7 @@ export default function CartItem({ item }) {
     const sub = () => dispatch(subQuantity(item.id, item.size, price))
 
     return (
-        <Row className="cart-row">
+        <Row className="align-center">
             <Col xs={4}>
                 <img className="card-image" src={item.img} alt={item.name}
                     style={{

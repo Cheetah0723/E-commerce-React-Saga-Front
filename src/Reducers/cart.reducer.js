@@ -2,9 +2,8 @@ import {
     CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, UPDATE_CURRENCY,
     ADD_QUANTITY, ADD_SHIPPING
 } from '../Actions/action.types';
-import { loadState } from '../Components/Util';
 
-const initialState = loadState("CartReducer");
+const initialState = { addedItems: [], total: 0, id: 0, size: "", currency: "AUD" }
 
 function CartReducer(state = initialState, action) {
     let newState = Object.assign({}, state);

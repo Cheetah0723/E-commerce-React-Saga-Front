@@ -1,6 +1,18 @@
 import {
-    CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, SAVE_DATA,UPDATE_CURRENCY
+    CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, SAVE_DATA, UPDATE_CURRENCY
 } from './action.types';
+
+/**************Thunk Actions *********************/
+export const addToCartThunk = () => async (dispatch, getState) => {
+    //If an item has been added to the cart multiple times, increase the quantity instead.
+    const cartReducer = getState().cartReducer
+
+
+
+}
+
+
+/************** Actions *********************/
 
 export const addToCart = (product, size, price) => {
     return {

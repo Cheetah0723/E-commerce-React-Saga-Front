@@ -1,7 +1,6 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import RootReducer from './Reducers/root.reducer';
 import throttle from 'lodash/throttle'
-import { loadState, saveState } from './Components/Util'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 
@@ -22,12 +21,6 @@ const configureStore = () => {
             store.replaceReducer(require('./Reducers/root.reducer').default);
         });
     }
-
-    store.subscribe(throttle(() => {
-        saveState({
-            CartReducer: store.getState().CartReducer,
-        })
-    }, 1000))
 
     return store;
 }

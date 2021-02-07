@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FilterColorTab from './color.filter';
 import SizeTab from './size.filter';
 import useFilter from "./useFilter"
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -17,9 +18,9 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function FilterView({handleFilter}) {
+export default function FilterView({ handleFilter }) {
     const classes = useStyles();
-    const { findColor, findSize, clearAll, showClear } = useFilter({handleFilter})
+    const { findColor, findSize, clearAll, showClear } = useFilter({ handleFilter })
 
     return (
         <List
@@ -30,6 +31,6 @@ export default function FilterView({handleFilter}) {
         >
             <FilterColorTab onSelect={findColor} />
             <SizeTab onSelect={findSize} />
-            {showClear && <p style={{ marginTop: "1rem", cursor:"pointer" }} onClick={clearAll}>Clear Filter</p>}
+            {showClear && <Button id="clear-filter-btn" onClick={clearAll}>Clear Filter</Button>}
         </List>)
 }

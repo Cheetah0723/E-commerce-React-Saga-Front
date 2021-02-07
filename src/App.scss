@@ -740,8 +740,8 @@ img {
     .nav-bar {
       width: 100%;
       font-size: 1.2rem;
-      
-      .logo{
+
+      .logo {
         text-align: center;
       }
 
@@ -850,4 +850,11 @@ img {
 
 .email-field {
   width: 100%;
+}
+
+#clear-filter-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: black;
+  color:white;
 }

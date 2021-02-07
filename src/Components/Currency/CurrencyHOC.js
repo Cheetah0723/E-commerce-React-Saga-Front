@@ -31,7 +31,7 @@ export default function CurrencyHOC() {
     return (
         <Fragment >
             <Button id="switchCurrencyBtn" onClick={handleClick}>
-                Select Currency: {currency}</Button>
+                 Currency: {currency}</Button>
             <Dialog
                 open={openStatus}
                 onClose={handleClose}

@@ -12,6 +12,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import history from "../../history"
+import { Col } from 'reactstrap';
 
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
@@ -21,13 +22,14 @@ const NavBar = ({ openDrawer }) => (
             <Nav.Link href="/all">Shop</Nav.Link>
             <Nav.Link href="/sales">Sales</Nav.Link>
         </Nav>
-        <Form inline className="ml-auto">
+        <Form inline className="ml-auto desktop">
             <CurrencyHOC />
             <Cart handleClick={openDrawer} />
         </Form>
-        <div className="mobile-menu">
+        <Form inline className="ml-auto mobile-menu">
             <MobileMenu handleClick={openDrawer} />
-        </div>
+        </Form>
+        <div className=" mobile-menu"><Cart handleClick={openDrawer} /></div>
     </Navbar>
 );
 
@@ -103,7 +105,6 @@ const MobileMenu = ({ handleClick }) => {
                                         <MenuItem onClick={() => history.push("/all")}>Shop</MenuItem>
                                         <MenuItem onClick={() => history.push("/sales")}>Sales</MenuItem>
                                         <MenuItem><CurrencyHOC /></MenuItem>
-                                        <MenuItem><Cart handleClick={handleClick} /></MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

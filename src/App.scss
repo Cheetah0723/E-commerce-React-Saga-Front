@@ -756,7 +756,7 @@ img {
       }
 
       .nav-bar-links,
-      .ml-auto {
+      .desktop {
         display: none;
       }
     }
@@ -794,6 +794,7 @@ img {
   font-size: 1rem;
   margin-right: 1rem;
   height: 2.5rem;
+  width: 11rem;
 }
 
 #checkout-btn {

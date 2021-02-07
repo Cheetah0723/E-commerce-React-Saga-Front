@@ -4,24 +4,6 @@ import { useSelector, useDispatch } from "react-redux"
 import Model from "./Model"
 import { CREATE_ORDER } from "../../Actions/action.types"
 
-
-export function useGoogle() {
-
-    const { clearCart } = Model()
-
-    const handlePayment = () => {
-        //TODO
-        //Use Redux to complete this!!!
-
-        //Should use a single handle payment method,
-        //And pass parameter as GooglePay
-        clearCart(); //TODO bug
-    }
-
-    return { handlePayment }
-
-}
-
 export function usePaypal() {
     const [successful, setSuccessful] = useState(false)
     const { clearCart } = Model()

@@ -740,6 +740,10 @@ img {
     .nav-bar {
       width: 100%;
       font-size: 1.2rem;
+      
+      .logo{
+        text-align: center;
+      }
 
       form {
         font-size: 1.2rem;
@@ -747,6 +751,8 @@ img {
 
       .mobile-menu {
         display: block;
+        align-self: left;
+        z-index: 1;
       }
 
       .nav-bar-links,

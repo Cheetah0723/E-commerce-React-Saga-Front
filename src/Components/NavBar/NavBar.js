@@ -16,6 +16,9 @@ import { Col } from 'reactstrap';
 
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
+        <Form inline className="mobile-menu">
+            <MobileMenu handleClick={openDrawer} />
+        </Form>
         <Navbar.Brand className="logo" href="/">Logo</Navbar.Brand>
         <Nav className="nav-bar-links">
             <Nav.Link href="/">Home</Nav.Link>
@@ -26,10 +29,7 @@ const NavBar = ({ openDrawer }) => (
             <CurrencyHOC />
             <Cart handleClick={openDrawer} />
         </Form>
-        <Form inline className="ml-auto mobile-menu">
-            <MobileMenu handleClick={openDrawer} />
-        </Form>
-        <div className=" mobile-menu"><Cart handleClick={openDrawer} /></div>
+        <div className="ml-auto mobile-menu"><Cart handleClick={openDrawer} /></div>
     </Navbar>
 );
 

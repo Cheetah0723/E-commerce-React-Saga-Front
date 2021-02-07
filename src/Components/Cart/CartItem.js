@@ -15,7 +15,7 @@ export default function CartItem({ item }) {
     const sub = () => dispatch(subQuantity(item.id, item.size, price))
 
     return (
-        <Row>
+        <Row className="cart-row">
             <Col xs={4}>
                 <img className="card-image" src={item.img} alt={item.name}
                     style={{
@@ -25,7 +25,7 @@ export default function CartItem({ item }) {
             </Col>
             <Col xs={6}>
                 {item.name}
-                {item.size} / {item.color}
+                {item.size} / <br/>{item.color} / {item.size}
                 <ButtonGroup aria-label="outlined secondary button group">
                     <Button data-test="add-quantity-btn" onClick={add}
                         style={{ width: "0.625rem" }}>+</Button>

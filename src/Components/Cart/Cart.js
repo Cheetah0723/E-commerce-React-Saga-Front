@@ -24,27 +24,27 @@ export default function Cart({ showButton }) {
         (items && items.length > 0 ? <Fragment>
             {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
             <br /><br />
-            <Row>
-                <Col xs={2} id="left">SUBTOTAL</Col>
-                <Col xs={7} id="middle"></Col>
-                <Col xs={3} id="right"> ${totalFromState}.00<br /><br /> </Col>
+            <Row className="cart-row">
+                <Col xs={2}>SUBTOTAL</Col>
+                <Col xs={7}></Col>
+                <Col xs={3}> ${totalFromState}.00<br /><br /> </Col>
             </Row>
             {shipping === 0 ? <Row>SHIPPING CALCULATED AT <br />CHECKOUT<br /> </Row>
                 : <Fragment>
-                    <Row>
-                        <Col xs={2} id="left">SHIPPING</Col>
-                        <Col xs={7} id="middle"></Col>
-                        <Col xs={3} id="right">  ${shipping}.00<br /><br /></Col>
+                    <Row className="cart-row">
+                        <Col xs={2}>SHIPPING</Col>
+                        <Col xs={7}></Col>
+                        <Col xs={3}>  ${shipping}.00<br /><br /></Col>
                     </Row>
-                    <Row>
-                        <Col xs={2} id="left">TOTAL</Col>
-                        <Col xs={7} id="middle"></Col>
-                        <Col xs={3} id="right">${shipping + totalFromState}.00<br /><br /> </Col>
+                    <Row className="cart-row">
+                        <Col xs={2}>TOTAL</Col>
+                        <Col xs={7}></Col>
+                        <Col xs={3}>${shipping + totalFromState}.00<br /><br /> </Col>
                     </Row>
                 </Fragment>
             }
             {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
-            {totalFromState > 0 && <Paypal id="paypal-btn" total={totalFromState} />}
+            {totalFromState > 0 &&  <Row className="cart-row"><Paypal id="paypal-btn" total={totalFromState} /></Row>}
         </Fragment> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)
     );
 }

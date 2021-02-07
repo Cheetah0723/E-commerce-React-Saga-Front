@@ -6,11 +6,6 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 
 const configureStore = () => {
-    const persistedCart = loadState("CartReducer");
-    const persistedState = {
-        CartReducer: persistedCart,
-
-    };
     let middleware = applyMiddleware(thunk, logger);
 
     if (process.env.NODE_ENV !== 'production') {

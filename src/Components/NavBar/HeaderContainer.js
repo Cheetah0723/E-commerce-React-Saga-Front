@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import CartDrawer from "../Cart/CartDrawerContainer";
 import Divider from '@material-ui/core/Divider';
-import DesktopNavBar from "./Desktop.NavBar"
-import MobileNavBar from "./Mobile.NavBar"
-import { selectProductsInCart } from '../Selectors';
+import NavBar from "./NavBar"
 
 const useStyles = makeStyles(theme => ({
     menuButton: {
@@ -41,27 +38,16 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function HeaderContainer(props) {
+export default function HeaderContainer() {
     const classes = useStyles();
 
     const [openCartDrawer, setOpenCartDrawer] = useState(false);
-    const [invalidSearch, setInvalidSearch] = useState(false);
-
-    const search = () => {
-
-    }
-
-    //  const itemsInCart = useSelector(selectProductsInCart)
-
 
     return (
         <div className={openCartDrawer ? classes.shiftTextLeft : classes.shiftTextRight}>
             <main >
-                <DesktopNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} search={search} />
-                <MobileNavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
+                <NavBar openDrawer={() => { setOpenCartDrawer(true) }} closeDrawer={() => setOpenCartDrawer(false)} />
                 <Divider />
-                {invalidSearch && <Grid item><b>No results.</b><br />
-                    Try checking your spelling or use more general terms.</Grid>}
                 <p className="Promo">FREE SHIPPING FOR ORDERS OVER $99</p>
                 <Divider />
             </main>
@@ -70,3 +56,8 @@ export default function HeaderContainer(props) {
         </div>
     )
 }
+
+/**
+ *  {invalidSearch && <Grid item><b>No results.</b><br />
+                    Try checking your spelling or use more general terms.</Grid>}
+ */

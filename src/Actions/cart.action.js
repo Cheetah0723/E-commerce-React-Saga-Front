@@ -2,7 +2,6 @@ import {
     CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, SAVE_DATA,UPDATE_CURRENCY
 } from './action.types';
 
-//add cart action
 export const addToCart = (product, size, price) => {
     return {
         type: ADD_TO_CART,
@@ -12,7 +11,6 @@ export const addToCart = (product, size, price) => {
     }
 }
 
-//remove item action
 export const removeItem = (id, size, price) => {
     return {
         type: REMOVE_ITEM,
@@ -21,7 +19,7 @@ export const removeItem = (id, size, price) => {
         price: price
     }
 }
-//subtract qt action
+
 export const subQuantity = (id, size, price) => {
     return {
         type: SUB_QUANTITY,
@@ -30,7 +28,7 @@ export const subQuantity = (id, size, price) => {
         price: price
     }
 }
-//add qt action
+
 export const addQuantity = (id, size, price) => {
     return {
         type: ADD_QUANTITY,

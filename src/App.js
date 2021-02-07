@@ -11,7 +11,7 @@ import Checkout from './Pages/Checkout.page';
 import Sales from './Pages/Sales.page';
 import Cart from "./Components/Cart/CartDrawer"
 import OrderConfirmation from "./Pages/OrderConfirmation.page"
-import HeaderContainer from "./Components/Header/HeaderContainer"
+import HeaderContainer from "./Components/NavBar/HeaderContainer"
 import {withRouter} from 'react-router';
 
 // BUG

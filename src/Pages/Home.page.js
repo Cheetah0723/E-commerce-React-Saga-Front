@@ -5,6 +5,7 @@ import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import { findNewReleases } from '../Actions/search.action';
 import history from '../history';
+import { Row, Col } from 'reactstrap';
 
 export default function Homepage() {
     const displayData = findNewReleases()
@@ -31,20 +32,15 @@ export default function Homepage() {
                 <img className="mobile-sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3-mobile.jpeg" alt="hp-top" />
             </div>
             <div className="hp-new-release">
-                <Grid container
-                    spacing={3}
-                    direction="row"
-                    justify="center"
-                    alignItems="flex-start"
-                >
-                    <Grid item xs={4}>
+                <Row>
+                    <Col sm={4} md={4}>
                         <b className="womens"> WOMENS</b>
                         <br />
                         <b className="new-release">NEW RELEASES</b>
-                    </Grid>
-                    <Grid item xs={6}></Grid>
-                    <Grid item xs={2}><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Grid>
-                </Grid>
+                    </Col>
+                    <Col sm={6} md={6}></Col>
+                    <Col sm={2} md={2}><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Col>
+                </Row>
                 <div className="hp-list">
                     <ProductList display={displayData} />
                 </div>

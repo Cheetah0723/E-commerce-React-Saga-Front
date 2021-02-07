@@ -1,8 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
-import { useSelector } from 'react-redux'
+import { useState, useCallback } from 'react';
 import { findById, showStockStatus, findBackgroundColor } from '../../Actions/search.action';
-import { selectCurrency } from '../Selectors';
-import { getReviewsByProductId } from "../Review/ApiCalls"
+//import { selectCurrency } from '../Selectors';
+//import { getReviewsByProductId } from "../Review/ApiCalls"
 
 
 export default function ProductDetailController(id) {

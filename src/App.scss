@@ -1,5 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
+@mixin btn {
+  margin-top: 50px;
+  color: white;
+  font-size: 1.2rem;
+  background-color: black;
+  width: 260px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
+  align-self: center;
+}
+
 /** Cart  **/
 .product-outer-container {
   display: flex;
@@ -19,37 +31,39 @@
   font-family: "Montserrat, sans-serif";
 }
 
-@media screen and (min-width: 401px) {
-  .hp-new-release {
-    margin-top: 20rem;}
-}
-
-@media screen and (max-width: 400px) {
-  .hp-new-release {
-    margin-top: 3rem;}
-}
-
 .Homepage {
+  @media screen and (min-width: 401px) {
+    .hp-new-release {
+      margin-top: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .hp-new-release {
+      margin-top: 3rem;
+    }
+  }
+
   .hp-new-release {
     width: 100%;
-    
+
     .hp-list {
       margin-left: 4%;
       margin-right: 4%;
       width: 92%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       grid-gap: 0.5rem;
     }
   }
 
-  .hp-promotion-image{
-    position:relative;
+  .hp-promotion-image {
+    position: relative;
   }
 
   @media screen and (min-width: 401px) {
-    .hp-promotion-image{
-      max-height:500px;
+    .hp-promotion-image {
+      max-height: 500px;
     }
 
     .centered-title {
@@ -640,102 +654,6 @@
   }
 }
 
-.toolbar {
-  width: 100%;
-  position: fixed;
-  background-color: white;
-  height: 56px;
-  top: 0;
-  left: 0;
-
-  .toolbar_navigation {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0 1rem;
-  }
-
-  .toolbar_navigation_items ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex: center;
-  }
-
-  .toolbar_logo {
-    padding-left: 5%;
-    padding-right: 7%;
-  }
-
-  .toolbar_navigation_items {
-    text-decoration: none;
-  }
-
-  .toolbar_navigation_items li {
-    padding: 0 1.5rem;
-    font-size: 0.75rem;
-    font-family: "Montserrat", sans-serif;
-    color: black;
-    cursor: pointer;
-  }
-
-  .toolbar_navigation_items li:hover,
-  .toolbar_navigation_items li:active {
-    color: #4183c4;
-  }
-
-  .toolbar_right {
-    display: flex;
-  }
-
-  .spacer {
-    flex: 0.5;
-  }
-
-  @media screen and (max-width: 400px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 401px) {
-    .toolbar {
-      display: none;
-    }
-  }
-}
-
-.mobile_toolbar {
-  width: 100%;
-
-  .mobile_toolbar_navigation_items {
-    display: flex;
-  }
-
-  .mobile_toolbar_navigation {
-    display: flex;
-  }
-
-  .mobile_toolbar_right {
-    display: flex;
-  }
-
-  .left-button {
-    width: 50%;
-    left: 0;
-  }
-
-  .right-button {
-    width: 50%;
-    right: 0;
-  }
-
-  @media screen and (min-width: 1243px) {
-    .mobile_toolbar {
-      display: none;
-    }
-  }
-}
-
 img {
   cursor: pointer;
 }
@@ -774,18 +692,17 @@ img {
   }
 }
 
-@media screen and (max-width: 400px) {
-  .Promo {
-    font-family: "Montserrat", sans-serif;
+.Promo {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 1rem;
+
+  @media screen and (max-width: 400px) {
     font-size: 0.625rem;
   }
-}
-@media screen and (min-width: 401px) {
-  .Promo {
-    font-family: "Montserrat", sans-serif;
+
+  @media screen and (min-width: 401px) {
     font-size: 1rem;
-    text-align: center;
-    margin-top: 1rem;
   }
 }
 
@@ -797,10 +714,10 @@ img {
     form {
       font-size: 1.2rem;
     }
-  }
 
-  .mobile-nav-bar {
-    display: none;
+    .ml-auto {
+      cursor: pointer;
+    }
   }
 }
 
@@ -810,10 +727,6 @@ img {
     background-color: white;
 
     .nav-bar {
-      display: none;
-    }
-
-    .mobile-nav-bar {
       width: 100%;
       font-size: 1.2rem;
 
@@ -844,4 +757,48 @@ img {
 
 .carousel {
   height: 100px;
+}
+
+#cart-btn {
+  @include btn;
+}
+
+.cart {
+  width: 100%;
+  padding-left: 0rem;
+  padding-right: 0rem;
+
+  #switchCurrencyBtn {
+    @include btn;
+  }
+
+  #checkout-btn {
+    @include btn;
+    align-self: center;
+    background-color: #007db5;
+  }
+
+  #paypal-btn {
+    @include btn;
+    height: 4rem;
+  }
+
+  .product-in-cart {
+    padding-block-start: 3px;
+  }
+}
+
+#add-to-cart-btn {
+  padding-top: 10;
+  height: 4rem;
+  margin-top: 10;
+  border-radius: 25px;
+  color: white;
+  background-color: #007db5;
+}
+
+.cart-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
 }

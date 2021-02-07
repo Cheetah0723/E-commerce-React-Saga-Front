@@ -92,19 +92,9 @@ export default function CartDrawerContainer({ openStatus, close }) {
                 }}
             >
                 <CloseSharpIcon onClick={close} />
-                <p style={{ textAlign: "center", fontFamily: "'Montserrat', sans-serif", fontSize: "1.25rem", }} pl={1} >YOUR BAG</p>
+                <p className="cart-title" pl={1} >YOUR BAG</p>
                 <Cart showButton={true} />
-                <Button onClick={close} className="close-btn"  style={{
-                    marginTop: "50px",
-                    color: "white",
-                    fontSize: "1.2rem",
-                    backgroundColor: "black",
-                    width: "260px",
-                    marginLeft: "10px",
-                    borderRadius: "25px",
-                    fontFamily: "'Montserrat', sans-serif",
-                }}
-                >CONTINUE SHOPPING</Button>
+                <Button onClick={close} id="cart-btn"  >CONTINUE SHOPPING</Button>
                 <br />
             </Drawer>
         </div>

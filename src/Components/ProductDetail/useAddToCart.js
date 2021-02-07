@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../Actions/cart.action';
+import { addToCartThunk } from '../../Actions/cart.action';
 
 export default function useAddToCart(product, size, currency) {
     const dispatch = useDispatch();
@@ -9,14 +9,9 @@ export default function useAddToCart(product, size, currency) {
             alert("Please select a size.");
         }
         else {
-            dispatchAddToCart(product);
+            const price = currency === "AUD" ? product.AUprice : product.USprice
+            dispatch(addToCartThunk(product, size, price))
         }
-    }
-
-    const dispatchAddToCart = () => {
-        console.log("size", size)
-        const price = currency === "AUD" ? product.AUprice : product.USprice
-        dispatch(addToCart(product, size, price))
     }
 
     return { handleAddToCart }

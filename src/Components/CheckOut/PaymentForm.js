@@ -14,7 +14,6 @@ export default function PaymentForm({ handleChange }) {
                 onChange={e => handleChange(e.target.value)}>
                 <FormControlLabel value="Stripe" control={<Radio />} label="Credit Card" />
                 <FormControlLabel value="PayPal" control={<Radio />} label="PayPal" />
-                <FormControlLabel value="GooglePay" control={<Radio />} label="Google Pay" />
             </RadioGroup>
         </FormControl>
     )

@@ -3,14 +3,15 @@ import {
 } from './action.types';
 
 /**************Thunk Actions *********************/
-export const addToCartThunk = () => async (dispatch, getState) => {
-    //If an item has been added to the cart multiple times, increase the quantity instead.
-    const cartReducer = getState().cartReducer
-
-
-
+export const addToCartThunk = (product, size, price) => async (dispatch, getState) => {
+    const itemsInCart = getState().CartReducer.addedItems
+    const itemExist = itemsInCart.find(item => product.id === item.id && size === item.size)
+    if (itemExist) { // Increase the item quantity instead.
+        dispatch(addQuantity(product.id, size, price))
+    } else { // Add the item into the cart
+        dispatch(addToCart(product, size, price))
+    }
 }
-
 
 /************** Actions *********************/
 

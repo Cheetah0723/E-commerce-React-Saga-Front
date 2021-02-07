@@ -7,7 +7,6 @@ import CheckoutForm from "../Components/CheckOut/CheckoutForm"
 import { useDispatch, useStore } from "react-redux"
 import { ADD_BUYER_INFO, SET_PAYMENT_METHOD } from "../Actions/action.types"
 import { selectTotal, selectPaymentMethod } from "../Components/Selectors"
-import GooglePay from "../Components/Payment/GooglePay"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
 import Button from '@material-ui/core/Button';
@@ -44,7 +43,6 @@ export default function Checkout() {
             {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} onBack={goToCart} />}
             {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} />}
             {activeStep === 2 && <CheckOutReivew onBack={handleBack} />}
-            {activeStep === 2 && paymentMethod === "GooglePay" && <GooglePay />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
             <Button disabled={activeStep === 0} onClick={handleBack}>

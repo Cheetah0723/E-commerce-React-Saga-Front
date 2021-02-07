@@ -499,6 +499,7 @@
     width: 100%;
     height: auto;
     max-width: 350px;
+    align-self: center;
   }
 
   .sales-price {
@@ -763,29 +764,23 @@ img {
   @include btn;
 }
 
-.cart {
-  width: 100%;
-  padding-left: 0rem;
-  padding-right: 0rem;
+#switchCurrencyBtn {
+  @include btn;
+}
 
-  #switchCurrencyBtn {
-    @include btn;
-  }
+#checkout-btn {
+  @include btn;
+  align-self: center;
+  background-color: #007db5;
+}
 
-  #checkout-btn {
-    @include btn;
-    align-self: center;
-    background-color: #007db5;
-  }
+#paypal-btn {
+  @include btn;
+  height: 4rem;
+}
 
-  #paypal-btn {
-    @include btn;
-    height: 4rem;
-  }
-
-  .product-in-cart {
-    padding-block-start: 3px;
-  }
+.product-in-cart {
+  padding-block-start: 3px;
 }
 
 #add-to-cart-btn {
@@ -801,4 +796,12 @@ img {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
+}
+
+.close-cart-icon {
+  cursor: pointer;
+}
+
+#cart {
+  padding: 0.5rem;
 }

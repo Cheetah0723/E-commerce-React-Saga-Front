@@ -21,17 +21,13 @@ export default function Cart({ showButton }) {
     const shipping = totalFromState >= 99 ? 0 : 10;
 
     return (
-        (items && items.length > 0 ? <div className="cart">
+        (items && items.length > 0 ? <Fragment>
+            {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
+            <br /><br />
             <Row>
-                <div  className="product-in-cart">
-                    {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
-                </div>
-                <br /><br />
-                <Row>
-                    <Col xs={2} id="left">SUBTOTAL</Col>
-                    <Col xs={7} id="middle"></Col>
-                    <Col xs={3} id="right"> ${totalFromState}.00<br /><br /> </Col>
-                </Row>
+                <Col xs={2} id="left">SUBTOTAL</Col>
+                <Col xs={7} id="middle"></Col>
+                <Col xs={3} id="right"> ${totalFromState}.00<br /><br /> </Col>
             </Row>
             {shipping === 0 ? <Row>SHIPPING CALCULATED AT <br />CHECKOUT<br /> </Row>
                 : <Fragment>
@@ -47,9 +43,9 @@ export default function Cart({ showButton }) {
                     </Row>
                 </Fragment>
             }
-            {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br /> 
+            {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
             {totalFromState > 0 && <Paypal id="paypal-btn" total={totalFromState} />}
-        </div> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)
+        </Fragment> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)
     );
 }
 

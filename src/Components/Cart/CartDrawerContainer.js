@@ -91,9 +91,9 @@ export default function CartDrawerContainer({ openStatus, close }) {
                     paper: classes.drawerPaper,
                 }}
             >
-                <CloseSharpIcon onClick={close} />
+                <CloseSharpIcon className="close-cart-icon" onClick={close} />
                 <p className="cart-title" pl={1} >YOUR BAG</p>
-                <Cart showButton={true} />
+                <Cart showButton={true} id="cart"/>
                 <Button onClick={close} id="cart-btn"  >CONTINUE SHOPPING</Button>
                 <br />
             </Drawer>

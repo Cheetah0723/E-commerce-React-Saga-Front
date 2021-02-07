@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from "react-redux"
 import FormControl from '@material-ui/core/FormControl';
 import ProductInstruction from '../ProductDetail/ProductInstructions';
 import AddToCartButton from '../ProductDetail/AddToCartButton';
 import SizeTab from '../SizeTab/SizeTab';
-import useProduct from "./useProduct"
 import ReviewTabContainer from "../Review/ReviewTabContainer"
 import ReviewForm from "../Review/ReviewForm"
 import useAddToCart from "./useAddToCart"
 import { selectCurrency } from '../Selectors';
+import { showStockStatus, findById } from "../../Actions/search.action"
 
 export default function RightSideData({ id }) {
-
+    const [size, setSize] = useState("")
+    const product = findById(id)
+    const [reviews, setReviews] = useState([])  //TODO
+    const sizeAvailability =  showStockStatus(id)
     const currency = useSelector(selectCurrency)
-    const { product, setProduct, sizeAvailability, colorCode, reviews,
-    } = useProduct(id)
 
-    const { handleAddToCart } = useAddToCart(product, currency)
+    const { handleAddToCart } = useAddToCart(product, size, currency)
 
     const price = currency === "AUD" ? product.AUprice : product.USprice
 
     const handleChangeSize = value => {
-        setProduct({ ...product, size: value })
+        setSize(value)
     };
 
     let reviewsParsed = Array.isArray(reviews) ? reviews : []

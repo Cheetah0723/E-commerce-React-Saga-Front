@@ -1,4 +1,3 @@
-import  { useCallback } from 'react';
 import { findByColor } from '../../Actions/search.action';
 import { useSelector, useDispatch } from 'react-redux';
 import { SAVE_SEARCH_INPUT } from '../../Actions/action.types';
@@ -9,13 +8,10 @@ export default function useSearchBox(props) {
 
     const dispatch = useDispatch();
 
-    const dispatchSearch = useCallback(
-        (input) => dispatch({
+    const dispatchSearch =   (input) => dispatch({
             type: SAVE_SEARCH_INPUT,
             input: input
-        }),
-        [dispatch]
-    )
+        })
 
     // Submit the search input when the user clicked the search icon or pressed the enter key
     function submitSearch(value) {

@@ -2,7 +2,7 @@ import {
     CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, UPDATE_CURRENCY,
     ADD_QUANTITY, ADD_SHIPPING
 } from '../Actions/action.types';
-import { loadState} from '../Components/Util';
+import { loadState } from '../Components/Util';
 
 const initialState = loadState("CartReducer");
 
@@ -16,6 +16,7 @@ function CartReducer(state = initialState, action) {
         case ADD_TO_CART:
             newState.total = parseInt(state.total) + action.price
             let existed_item
+            let newItem = { ...action.data, size: action.size }
             if (newState.addedItems.length > 0) {
                 existed_item = newState.addedItems.find(item => newState.id === item.id && item.size === newState.size);
                 if (existed_item !== undefined) {
@@ -23,7 +24,7 @@ function CartReducer(state = initialState, action) {
                 }
             }
             if (!existed_item) {
-                newState.addedItems.push({ ...action.data, quantity: 1 });
+                newState.addedItems.push({ ...newItem, quantity: 1 });
             }
             return newState;
         case REMOVE_ITEM:

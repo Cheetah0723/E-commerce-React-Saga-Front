@@ -1,4 +1,4 @@
-import React, {useCallback } from "react"
+import React from "react"
 import CheckoutStepper from "../Components/CheckOut/CheckoutStepper"
 import PaymentForm from "../Components/CheckOut/PaymentForm"
 import CheckOutReivew from "../Components/CheckOut/CheckoutReivew"
@@ -22,27 +22,21 @@ export default function Checkout() {
     const { activeStep, handleNext, handleBack, goToCart } = useStep()
     const paymentMethod = selectPaymentMethod(store)
 
-    const addBuyerInfo = useCallback(
-        (data) => {
+    const addBuyerInfo =  (data) => {
             dispatch({
                 type: ADD_BUYER_INFO,
                 data: data
             })
             handleNext()
-        },
-        [dispatch],
-    )
+        }
 
-    const addPaymentMethod = useCallback(
-        (data) => {
+    const addPaymentMethod =   (data) => {
             dispatch({
                 type: SET_PAYMENT_METHOD,
                 paymentMethod: data,
                 total: total
             })
-        },
-        [dispatch],
-    )
+        }
 
     return (
         <div className="checkout-page">

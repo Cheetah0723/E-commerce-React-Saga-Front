@@ -5,12 +5,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function EachProductInstruction(props) {
     const [open, setOpen] = React.useState(false);
 
     return (
-        <div className="ProductInstruction">
+        <div className="ProductInstruction" key={uuidv4()}>
             <ListItem button onClick={() => {
                 setOpen(open => !open)
             }}>

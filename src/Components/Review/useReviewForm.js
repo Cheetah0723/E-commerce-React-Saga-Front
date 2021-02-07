@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { useStore, useDispatch } from "react-redux"
 import { selectProductId } from "../Selectors"
 import { CREATE_REVIEW } from "../../Actions/action.types"
@@ -46,8 +46,7 @@ export default function useReviewForm() {
         return newErrors
     }
 
-    const submit = useCallback(
-        (data) => {
+    const submit =  (data) => {
             dispatch({
                 type: CREATE_REVIEW,
                 review: data
@@ -57,9 +56,7 @@ export default function useReviewForm() {
             // TODO
             // set the store state to be loading => successful => 
             // let the view to check the store to update the feedback
-        },
-        [dispatch],
-    )
+        }
 
     const handleSubmit = () => {
         const newError = isValid(state)

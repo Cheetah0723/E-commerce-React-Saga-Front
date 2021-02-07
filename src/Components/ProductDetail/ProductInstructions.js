@@ -4,6 +4,7 @@ import EachProductInstruction from "./ProductInstructionItem";
 import { Divider } from '@material-ui/core';
 import { Fragment } from 'react';
 import ProductReviewItem from "./ProductReviewItem"
+import { v4 as uuidv4 } from 'uuid';
 
 const data = [
     {
@@ -30,7 +31,7 @@ const ProductInstruction = ({reviews}) => {
             <Divider />
             <ProductReviewItem/>
             {data.map(each => {
-                return (<Fragment>
+                return (<Fragment key={uuidv4()}>
                     <EachProductInstruction props={each} />
                     <Divider title="Reviews"/>
                 </Fragment>)

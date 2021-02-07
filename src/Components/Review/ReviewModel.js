@@ -1,15 +1,13 @@
-import { useCallback } from 'react';
+
 import { getReviewsByProductId } from "./ApiCalls"
 
 
 
 export default function ReviewModel({ productId }) {
 
-    const getReviews = useCallback(() => {
+    const getReviews = () => {
         getReviewsByProductId(productId)
-    },
-        [productId],
-    )
+    }
 
     return { getReviews }
 }

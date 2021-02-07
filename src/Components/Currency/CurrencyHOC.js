@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Fragment } from "react"
+import React, { useState,  Fragment } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { selectCurrency } from "../Selectors";
 import { Button, Dialog } from '@material-ui/core';
@@ -14,13 +14,10 @@ export function useCurrency() {
 
     const dispatch = useDispatch()
 
-    const handleSubmit = useCallback(
-        (value) => {
-            dispatch(updateCurrency(value))
-            handleClose()
-        },
-        [dispatch],
-    )
+    const handleSubmit = (value) => {
+        dispatch(updateCurrency(value))
+        handleClose()
+    }
 
     return { openStatus, handleClick, handleClose, handleSubmit, currency }
 }
@@ -31,7 +28,7 @@ export default function CurrencyHOC() {
     return (
         <Fragment >
             <Button id="switchCurrencyBtn" onClick={handleClick}>
-                 Currency: {currency}</Button>
+                Currency: {currency}</Button>
             <Dialog
                 open={openStatus}
                 onClose={handleClose}

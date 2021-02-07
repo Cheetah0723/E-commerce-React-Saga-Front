@@ -6,6 +6,7 @@ import {
 const initialState = { addedItems: [], total: 0, id: 0, size: "", currency: "AUD" }
 
 function CartReducer(state = initialState, action) {
+    if (action.id === "" || action.size === "") { return state }
     let newState = Object.assign({}, state);
     switch (action.type) {
         case UPDATE_CURRENCY:
@@ -13,20 +14,10 @@ function CartReducer(state = initialState, action) {
             return newState
         case ADD_TO_CART:
             newState.total = parseInt(state.total) + action.price
-            let existed_item
-            let newItem = { ...action.data, size: action.size }
-            if (newState.addedItems.length > 0) {
-                existed_item = newState.addedItems.find(item => newState.id === item.id && item.size === newState.size);
-                if (existed_item !== undefined) {
-                    existed_item.quantity += 1
-                }
-            }
-            if (!existed_item) {
-                newState.addedItems.push({ ...newItem, quantity: 1 });
-            }
+            newState.addedItems.push({ ...action.data, size: action.size, quantity: 1 });
             return newState;
         case REMOVE_ITEM:
-            if (action.id === "" || action.size === "" || state.addedItems.length === 0) { return state }
+            if (state.addedItems.length === 0) { return state }
             //TODO here I need to set it.
             let itemToRemove = state.addedItems.find(item => action.id === item.id && action.size === item.size);
             if (!itemToRemove) { return state }
@@ -35,7 +26,7 @@ function CartReducer(state = initialState, action) {
             newState.addedItems = state.addedItems.filter(item => action.id !== item.id && action.size !== item.size);
             return newState;
         case SUB_QUANTITY:
-            if (action.id === "" || action.size === "" || state.addedItems.length === 0) { return }
+            if (state.addedItems.length === 0) { return }
             newState = Object.assign({}, state)
             let itemToSub = newState.addedItems.find(item => action.id === item.id && action.size === item.size);
             if (itemToSub === undefined) {
@@ -48,11 +39,10 @@ function CartReducer(state = initialState, action) {
                 : newState.addedItems
             return newState;
         case ADD_QUANTITY:
-            if (action.id === "" || action.size === "") { return state }
             let itemToAdd = newState.addedItems.find(item => action.id === item.id && action.size === item.size);
-            if (itemToAdd) { // If this item exists in the cart
+            if (itemToAdd) {
                 itemToAdd.quantity += 1;
-                newState.newTotal = parseInt(state.total) + action.price
+                newState.total = parseInt(state.total) + action.price
                 //Delete the previous data of this product
                 newState.addedItems = state.addedItems.filter(item => item.id !== action.id && action.size !== item.size)
                 //And add the updated product data back to the state

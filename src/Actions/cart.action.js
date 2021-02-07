@@ -6,9 +6,9 @@ import {
 export const addToCartThunk = (product, size, price) => async (dispatch, getState) => {
     const itemsInCart = getState().CartReducer.addedItems
     const itemExist = itemsInCart.find(item => product.id === item.id && size === item.size)
-    if (itemExist) { // Increase the item quantity instead.
+    if (itemExist) { 
         dispatch(addQuantity(product.id, size, price))
-    } else { // Add the item into the cart
+    } else {
         dispatch(addToCart(product, size, price))
     }
 }

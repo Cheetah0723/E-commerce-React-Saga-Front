@@ -10,6 +10,7 @@
   border-radius: 25px;
   font-family: "Montserrat", sans-serif;
   align-self: center;
+  text-align: center;
 }
 
 @mixin center {
@@ -37,13 +38,13 @@
 }
 
 .Homepage {
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 416px) {
     .hp-new-release {
       margin-top: 20rem;
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 415px) {
     .hp-new-release {
       margin-top: 3rem;
     }
@@ -66,7 +67,7 @@
     position: relative;
   }
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 415px) {
     .hp-promotion-image {
       max-height: 500px;
     }
@@ -121,7 +122,7 @@
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 415px) {
     .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -318,7 +319,7 @@
     width: 100%;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 415px) {
     .main {
       grid-template-columns: 1fr;
       width: 100%;
@@ -349,7 +350,7 @@
     }
   }
 
-  @media (min-width: 401px) {
+  @media (min-width: 416px) {
     .main {
       width: 100%;
       display: grid;
@@ -391,7 +392,7 @@
     grid-gap: 0.5rem;
   }
 
-  @media (max-width: 400x) {
+  @media (max-width: 415x) {
     .sort-select {
       grid-column-start: 5;
       grid-row: 1;
@@ -414,7 +415,7 @@
     }
   }
 
-  @media (min-width: 401px) {
+  @media (min-width: 416px) {
     .list-container {
       grid-column-start: 5;
       grid-row: 2;
@@ -514,7 +515,7 @@
     font-size: 0.75rem;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 415px) {
     padding: 0;
 
     .item-color {
@@ -668,7 +669,7 @@ img {
   background-color: white;
   height: 100%;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 415px) {
     .footer-item-1,
     .footer-item-2,
     .footer-item-3 {
@@ -678,7 +679,7 @@ img {
     }
   }
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 416px) {
     .col-1 {
       padding-left: 5%;
     }
@@ -703,16 +704,16 @@ img {
   text-align: center;
   margin-top: 1rem;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 415px) {
     font-size: 0.625rem;
   }
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 416px) {
     font-size: 1rem;
   }
 }
 
-@media screen and (min-width: 401px) {
+@media screen and (min-width: 416px) {
   .nav-bar {
     width: 100%;
     font-size: 1.2rem;
@@ -721,13 +722,17 @@ img {
       font-size: 1.2rem;
     }
 
+    .mobile-menu {
+      display: none;
+    }
+
     .ml-auto {
       cursor: pointer;
     }
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
   .App {
     width: 100%;
     background-color: white;
@@ -738,6 +743,15 @@ img {
 
       form {
         font-size: 1.2rem;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-bar-links,
+      .ml-auto {
+        display: none;
       }
     }
   }
@@ -771,6 +785,9 @@ img {
 
 #switchCurrencyBtn {
   @include btn;
+  font-size: 1rem;
+  margin-right: 1rem;
+  height: 2.5rem;
 }
 
 #checkout-btn {
@@ -826,5 +843,5 @@ img {
 }
 
 .email-field {
-  width:100%;
+  width: 100%;
 }

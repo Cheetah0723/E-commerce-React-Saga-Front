@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, Fragment } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { selectCurrency } from "../Selectors";
 import { Button, Dialog } from '@material-ui/core';
@@ -29,7 +29,7 @@ export default function CurrencyHOC() {
     const { openStatus, handleClick, handleClose, handleSubmit, currency } = useCurrency()
 
     return (
-        <div>
+        <Fragment >
             <Button id="switchCurrencyBtn" onClick={handleClick}>
                 Select Currency: {currency}</Button>
             <Dialog
@@ -42,6 +42,6 @@ export default function CurrencyHOC() {
 
                 <CurrencyForm currency={currency} handleSubmit={handleSubmit} />
             </Dialog>
-        </div>
+        </Fragment>
     )
 }

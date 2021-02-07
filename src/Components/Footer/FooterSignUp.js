@@ -1,10 +1,23 @@
 import React, { useState, Fragment } from 'react';
 import { Button } from '@material-ui/core';
 import SignUpModal from './SignUpModal';
-import FooterSignUpController from "./FooterSignUpController"
+
+const useFooterSignUp = () => {
+    const [openModal, setOpenModal] = useState(false);
+
+    const openSignUpModal = () => {
+        setOpenModal(true);
+    }
+
+    const closeSignUpModal = () => {
+        setOpenModal(false);
+    }
+
+    return { openModal, openSignUpModal, closeSignUpModal }
+}
 
 const FooterSignUp = () => {
-    const { openModal, openSignUpModal, closeSignUpModal } = FooterSignUpController()
+    const { openModal, openSignUpModal, closeSignUpModal } = useFooterSignUp()
 
     return (
         <Fragment>

@@ -12,11 +12,15 @@ const NavBar = ({ openDrawer }) => (
             <Nav.Link href="/sales">Sales</Nav.Link>
         </Nav>
         <Form inline className="ml-auto">
+            <CurrencyHOC />
             <div className="cart-icon  mr-sm-3" onClick={openDrawer} >
                 <ShoppingCartIcon />
                 <p>My Cart</p>
             </div>
         </Form>
+        <div className="mobile-menu">
+            
+        </div>
     </Navbar>
 );
 

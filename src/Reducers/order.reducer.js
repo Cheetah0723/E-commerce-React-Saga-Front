@@ -69,7 +69,6 @@ const OrderReducer = (state = initialState, action) => {
         case ADD_BUYER_INFO:
             if (action.data === undefined) { return state }
             newState = Object.assign({}, initialState)
-            console.log("buyer info receieved", action.data)
             newState.customerEmail = action.data.email
             newState.customerFName = action.data.fName
             newState.customerLName = action.data.lName

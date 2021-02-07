@@ -4,7 +4,6 @@ import {
 } from '../Actions/action.types';
 import { loadState} from '../Components/Util';
 
-//TODO intial state should be from the local storage???
 const initialState = loadState("CartReducer");
 
 function CartReducer(state = initialState, action) {

@@ -12,6 +12,11 @@
   align-self: center;
 }
 
+@mixin center {
+  width: 90%;
+  align-self: center;
+}
+
 /** Cart  **/
 .product-outer-container {
   display: flex;
@@ -812,11 +817,14 @@ img {
 }
 
 .currency-select {
-  align-self: center;
-  width: 90%;
+  @include center;
   margin-bottom: 1rem;
 }
 
-#currency-dialog-title{
+#currency-dialog-title {
   align-self: center;
+}
+
+.email-field {
+  width:100%;
 }

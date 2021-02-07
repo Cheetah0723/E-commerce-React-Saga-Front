@@ -39,27 +39,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function SignUpModal(props) {
+export default function SignUpModal({ openStatus, handleClose }) {
     const classes = useStyles();
-
-
-const signupInfo = ""
-const change=()=>{}
 
     return (
         <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
             className={classes.modal}
-            open={props.openStatus}
-            onClose={props.handleClose}
+            open={openStatus}
+            onClose={handleClose}
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
                 timeout: 500,
             }}
         >
-            <Fade in={props.openStatus}>
+            <Fade in={openStatus}>
                 <div className={classes.paper}>
                     <Grid container
                         direction="column"
@@ -74,38 +70,19 @@ const change=()=>{}
                             <p> Sign up for emails to get special news and offers<br /> from the Nike family of brands.</p>
                         </Grid>
                         <form key="checkout-info-form" >
-                            <Grid item key="email-grid"   >
+                            <Grid item >
                                 <TextField
-                                    error={signupInfo!==undefined && signupInfo.emailError !== "" ? true : false}
+                                    className="email-field"
                                     id="email"
                                     name="email"
                                     label="Email*"
-                                    onChange={e => change(e)}
-                                    helperText={signupInfo.emailError}
                                     variant="filled"
                                 />
                             </Grid>
                             <Grid item key="dob-and-preference">
-                                <Grid container
-                                    direction="row"
-                                    justify="center"
-                                    className={classes.root}
-                                >
-                                    <Grid item xs={6} key="dob">
-
-
-                                    </Grid>
-                                    <Grid item xs={6} key="preference">
-                                        bottom group
-                                    </Grid>
-                                </Grid>
-                                <Button className={classes.button}>Signup</Button>
-
+                                <Button className={classes.button} onClick={handleClose}>Signup</Button>
                             </Grid>
-
                         </form>
-
-
                     </Grid>
                 </div>
             </Fade>

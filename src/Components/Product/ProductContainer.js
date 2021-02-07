@@ -10,7 +10,7 @@ import { Col } from 'reactstrap';
 
 export default function ProductContainer({ item }) {
     const currency = useSelector(selectCurrency)
-    const price = currency === "AUD" ? item.AUprice : item.USprice
+    const price = currency === "AU" ? item.AUprice : item.USprice
 
     if (item === undefined) {
         return <div></div>

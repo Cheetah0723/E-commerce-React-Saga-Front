@@ -12,7 +12,7 @@ const env = 'sandbox'; // you can set here to 'production' for production
 
 export default function Paypal() {
     const { onSuccess, onCancel, onError } = usePaypal()
-    const currency = useSelector(selectCurrency)  //AUD or USD
+    const currency = useSelector(selectCurrency)  //AU or US
     const total = useSelector(selectTotal)
 
     return (

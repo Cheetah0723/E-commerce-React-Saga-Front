@@ -39,6 +39,7 @@ export default function CurrencyHOC() {
                 maxWidth="lg"
                 className="dialog-container"
             >
+
                 <CurrencyForm currency={currency} handleSubmit={handleSubmit} />
             </Dialog>
         </div>

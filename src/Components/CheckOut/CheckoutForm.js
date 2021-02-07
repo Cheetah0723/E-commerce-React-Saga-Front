@@ -60,8 +60,8 @@ const NewCheckoutForm = props => {
                 onChange={handleChange}
                 value={values.country}
             >
-                <MenuItem value="AU">Australia</MenuItem>
-                <MenuItem value="US">United States</MenuItem>
+                <MenuItem value="AUD">Australia</MenuItem>
+                <MenuItem value="USD">United States</MenuItem>
             </Field>
             <InputLabel className="col" id="state">Street Address</InputLabel>
             <Field

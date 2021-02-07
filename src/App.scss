@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 @mixin btn {
-  margin-top: 50px;
+  padding-bottom: 1rem;
   color: white;
   font-size: 1.2rem;
   background-color: black;
@@ -804,4 +804,19 @@ img {
 
 #cart {
   padding: 0.5rem;
+}
+
+.MuiDialog-root {
+  width: 40rem;
+  height: 20rem;
+}
+
+.currency-select {
+  align-self: center;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+#currency-dialog-title{
+  align-self: center;
 }

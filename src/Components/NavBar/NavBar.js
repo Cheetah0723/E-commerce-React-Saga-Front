@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Form } from 'react-bootstrap';
+import { Navbar, Nav, NavbarBrand, NavLink, Form } from 'reactstrap';
 import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import CurrencyHOC from "../Currency/CurrencyHOC"
@@ -12,18 +12,15 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import history from "../../history"
-import { Col } from 'reactstrap';
 
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
-        <Form inline className="mobile-menu">
-            <MobileMenu handleClick={openDrawer} />
-        </Form>
-        <Navbar.Brand className="logo" href="/">Logo</Navbar.Brand>
+        <MobileMenu handleClick={openDrawer} />
+        <NavbarBrand className="logo" href="/">Logo</NavbarBrand>
         <Nav className="nav-bar-links">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/all">Shop</Nav.Link>
-            <Nav.Link href="/sales">Sales</Nav.Link>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/all">Shop</NavLink>
+            <NavLink href="/sales">Sales</NavLink>
         </Nav>
         <Form inline className="ml-auto desktop">
             <CurrencyHOC />
@@ -47,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const MobileMenu = ({ handleClick }) => {
+const MobileMenu = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -82,36 +79,34 @@ const MobileMenu = ({ handleClick }) => {
     }, [open]);
 
     return (
-        <div className={classes.root}>
-            <div>
-                <Button
-                    ref={anchorRef}
-                    aria-controls={open ? 'menu-list-grow' : undefined}
-                    aria-haspopup="true"
-                    onClick={handleToggle}
-                >
-                    <MenuIcon />
-                </Button>
-                <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-                    {({ TransitionProps, placement }) => (
-                        <Grow
-                            {...TransitionProps}
-                            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                        >
-                            <Paper>
-                                <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        <MenuItem onClick={() => history.push("/")}>Home</MenuItem>
-                                        <MenuItem onClick={() => history.push("/all")}>Shop</MenuItem>
-                                        <MenuItem onClick={() => history.push("/sales")}>Sales</MenuItem>
-                                        <MenuItem><CurrencyHOC /></MenuItem>
-                                    </MenuList>
-                                </ClickAwayListener>
-                            </Paper>
-                        </Grow>
-                    )}
-                </Popper>
-            </div>
+        <div className={classes.root + " mobile-menu"}>
+            <Button
+                ref={anchorRef}
+                aria-controls={open ? 'menu-list-grow' : undefined}
+                aria-haspopup="true"
+                onClick={handleToggle}
+            >
+                <MenuIcon />
+            </Button>
+            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                {({ TransitionProps, placement }) => (
+                    <Grow
+                        {...TransitionProps}
+                        style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                    >
+                        <Paper>
+                            <ClickAwayListener onClickAway={handleClose}>
+                                <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                                    <MenuItem onClick={() => history.push("/")}>Home</MenuItem>
+                                    <MenuItem onClick={() => history.push("/all")}>Shop</MenuItem>
+                                    <MenuItem onClick={() => history.push("/sales")}>Sales</MenuItem>
+                                    <MenuItem><CurrencyHOC /></MenuItem>
+                                </MenuList>
+                            </ClickAwayListener>
+                        </Paper>
+                    </Grow>
+                )}
+            </Popper>
         </div>
     );
 }

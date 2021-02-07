@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import FooterSignUp from './FooterSignUp';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'reactstrap';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';

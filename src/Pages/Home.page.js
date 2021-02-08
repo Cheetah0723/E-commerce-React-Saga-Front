@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductList from '../Components/Product/ProductList';
-import InstaController from '../Components/InstagramTile/InstaController';
+//import InstaController from '../Components/InstagramTile/InstaController';
 import { Button } from '@material-ui/core';
 import { findNewReleases } from '../Actions/search.action';
 import history from '../history';
@@ -28,12 +28,14 @@ export default function Homepage() {
                     <Col className="ml-auto" ><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Col>
                 </Row>
                 <ProductList display={displayData} />
-                <div className="insta-area">
-                    <p style={{ fontSize: "1.563rem" }} >AS SEEN ON INSTAGRAM</p>
-                    <p style={{ fontSize: "1rem" }}>Shop our favourite looks here</p></div>
-                <InstaController />
             </div>
         </div>
     );
 }
 
+/**
+ *             <div className="insta-area">
+                    <p style={{ fontSize: "1.563rem" }} >AS SEEN ON INSTAGRAM</p>
+                    <p style={{ fontSize: "1rem" }}>Shop our favourite looks here</p></div>
+                <InstaController />
+ */

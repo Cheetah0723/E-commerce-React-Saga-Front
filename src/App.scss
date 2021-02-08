@@ -88,7 +88,7 @@
     width: 100%;
     display: block;
     height: auto;
-    max-height: 50rem;
+    max-height: 100rem;
   }
 
   .mobile-sub-image {
@@ -224,6 +224,7 @@
   background-color: white;
   .main-image {
     width: 100%;
+    height: auto;
   }
 
   .review {
@@ -318,6 +319,7 @@
     }
 
     .sub-image-1 {
+      display:block;
       width: 70%;
       margin-left: 15%;
       grid-column: 1/2;
@@ -325,6 +327,7 @@
     }
 
     .sub-image-2 {
+      display:block;
       width: 70%;
       margin-left: 15%;
       grid-column: 3/4;
@@ -349,11 +352,13 @@
     }
 
     .sub-image-1 {
+      display:block;
       width: 100%;
       margin-left: 15%;
     }
 
     .sub-image-2 {
+      display:block;
       width: 100%;
       margin-top: 2.5rem;
       margin-left: 15%;

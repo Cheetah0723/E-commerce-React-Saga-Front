@@ -16,24 +16,22 @@ export const selectPaymentReducer = (state) => {
     return state.PaymentReducer
 }
 
-
-
 /**** Reselectors **********/
 export const selectTotal = createSelector(
     selectCartReducer,
     reducer => reducer.total
 )
 
-export const selectCartFilter = createSelector(
+export const selectTotalQuantity = createSelector(
     selectCartReducer,
-    reducer => reducer.id
+    reducer => reducer.addedItems.length || 0
 )
 
 export const selectProductsInCart =
-createSelector(
-    selectCartReducer,
-    reducer => reducer.addedItems
-)
+    createSelector(
+        selectCartReducer,
+        reducer => reducer.addedItems
+    )
 
 export const selectCurrency = createSelector(
     selectCartReducer,
@@ -50,7 +48,7 @@ export const selectProductId = createSelector(
     reducer => reducer.currentProductId
 )
 
-export const selectPaymentMethod =createSelector(
+export const selectPaymentMethod = createSelector(
     selectOrderReducer,
     reducer => reducer.paymentMethod
 )

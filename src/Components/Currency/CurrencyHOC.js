@@ -35,6 +35,7 @@ export default function CurrencyHOC() {
                 aria-labelledby="max-width-dialog-title"
                 maxWidth="lg"
                 className="dialog-container"
+                style={{ alignItems: "center", justifyContent: "center" }}
             >
 
                 <CurrencyForm currency={currency} handleSubmit={handleSubmit} />

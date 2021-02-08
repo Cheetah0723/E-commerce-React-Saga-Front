@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavbarBrand, NavLink, Form } from 'reactstrap';
 import Button from '@material-ui/core/Button';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import CurrencyHOC from "../Currency/CurrencyHOC"
 import MenuIcon from '@material-ui/icons/Menu';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
@@ -12,6 +10,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import history from "../../history"
+import CurrencyHOC from "../Currency/CurrencyHOC"
+import Cart from "./CartIcon"
 
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
@@ -29,11 +29,6 @@ const NavBar = ({ openDrawer }) => (
         <div className="ml-auto mobile-menu"><Cart handleClick={openDrawer} /></div>
     </Navbar>
 );
-
-const Cart = ({ handleClick }) => (<div className="cart-icon  mr-sm-3" onClick={handleClick} >
-    <ShoppingCartIcon />
-    <p>My Cart</p>
-</div>)
 
 const useStyles = makeStyles((theme) => ({
     root: {

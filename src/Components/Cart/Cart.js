@@ -29,24 +29,20 @@ export default function Cart({ showButton }) {
                 <Col xs={7}></Col>
                 <Col xs={3}> ${totalFromState}.00<br /><br /> </Col>
             </Row>
-            {shipping === 0 ? <Row>SHIPPING CALCULATED AT <br />CHECKOUT<br /> </Row>
-                : <Fragment>
-                    <Row className="align-center">
-                        <Col xs={2}>SHIPPING</Col>
-                        <Col xs={7}></Col>
-                        <Col xs={3}>  ${shipping}.00<br /><br /></Col>
-                    </Row>
-                    <Row className="align-center">
-                        <Col xs={2}>TOTAL</Col>
-                        <Col xs={7}></Col>
-                        <Col xs={3}>${shipping + totalFromState}.00<br /><br /> </Col>
-                    </Row>
-                </Fragment>
-            }
+            <Fragment>
+                <Row className="align-center">
+                    <Col xs={2}>SHIPPING</Col>
+                    <Col xs={7}></Col>
+                    <Col xs={3}>  ${shipping}.00<br /><br /></Col>
+                </Row>
+                <Row className="align-center">
+                    <Col xs={2}>TOTAL</Col>
+                    <Col xs={7}></Col>
+                    <Col xs={3}>${shipping + totalFromState}.00<br /><br /> </Col>
+                </Row>
+            </Fragment>
             {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
-            {totalFromState > 0 &&  <Row className="align-center"><Paypal id="paypal-btn" total={totalFromState} /></Row>}
+            {totalFromState > 0 && <Row className="align-center"><Paypal id="paypal-btn" total={totalFromState} /></Row>}
         </Fragment> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)
     );
 }
-
-

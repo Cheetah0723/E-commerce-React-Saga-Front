@@ -43,7 +43,6 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 100%;
     margin-top: 3rem;
   }
 
@@ -88,7 +87,6 @@
     width: 100%;
     display: block;
     height: auto;
-    max-height: 100rem;
   }
 
   .mobile-sub-image {
@@ -120,17 +118,6 @@
     align-self: flex-end;
   }
 
-  .insta-area {
-    text-align: center;
-    margin-top: 3rem;
-
-    .insta {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      max-height: 25rem;
-    }
-  }
   @media screen and (max-width: 415px) {
     .view-all-btn {
       top: 23.5rem;
@@ -161,8 +148,6 @@
     .mobile-sub-image {
       width: 100%;
       height:auto;
-      max-width: 100%;
-      max-height: 100px;
       display: block;
     }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { Icon } from 'semantic-ui-react';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 export default function BootStrapInstaTileView({ handleClick }) {
 
@@ -14,8 +15,8 @@ export default function BootStrapInstaTileView({ handleClick }) {
     return (
         <Carousel
             style={{ height: "200px", marginTop: "5px", marginLeft: "4%", marginRight: "4%" }}
-            arrowLeft={<Icon name="chevron left" size='huge' />}
-            arrowRight={<Icon name="chevron right" size='huge' />}
+            arrowLeft={<ArrowBackIosIcon />}
+            arrowRight={<ArrowForwardIosIcon />}
             slidesPerPage={6}
             arrows
             infinite

@@ -2,7 +2,6 @@ import React from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { Icon } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
 
 export default function BootStrapInstaTileView({ handleClick }) {
 

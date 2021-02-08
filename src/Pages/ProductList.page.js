@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { findSalesItems } from "../Actions/search.action"
-import Sorting from '../Components/Sorting/Sorting';
+import Sorting from '../Components/Filter/Sorting';
 import FilterView from "../Components/Filter/container.filter"
 import ProductList from "../Components/Product/ProductList"
 import { categoryData, categoryDataHighToLow, categoryDataLowToHigh, newest } from "../Data/category"
@@ -49,11 +49,9 @@ export default function ProductListPage({ sales }) {
 
     return (
         <div className="AllProducts">
-            <Row>
+            <Row className="ml-auto">
                 <Col xs={12} md={3}>
-                    <div className="sorting">
-                        <Sorting onSort={sortDisplayList} />
-                    </div>
+                    <Sorting onSort={sortDisplayList} />
                     <FilterView handleFilter={handleFilter} />
                 </Col>
                 <Col xs={12} md={9}>

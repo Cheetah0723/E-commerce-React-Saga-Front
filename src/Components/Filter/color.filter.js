@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
@@ -8,7 +8,6 @@ export default function FilterColorTab({ onSelect }) {
     return (
         <div className="FilterTab">
             <p className="filter-label">FILTER BY COLOR</p>
-            <Divider />
             <ButtonGroup aria-label="outlined secondary button group">
                 <Button className="tab-btn blue-btn"
                     onClick={(e) => onSelect(e.currentTarget.value)}

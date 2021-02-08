@@ -9,9 +9,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
-        maxWidth: 300,
-        paddingLeft: theme.spacing(6),
-        paddingRight: theme.spacing(6),
+        maxWidth: 300
     },
     nested: {
         paddingLeft: theme.spacing(4),
@@ -29,8 +27,8 @@ export default function FilterView({ handleFilter }) {
             className={classes.root}
             style={{ fontFamily: "'Roboto', sans-serif" }}
         >
-            <FilterColorTab onSelect={findColor} />
-            <SizeTab onSelect={findSize} />
+                <FilterColorTab onSelect={findColor} />
+                <SizeTab onSelect={findSize} />
             {showClear && <Button id="clear-filter-btn" onClick={clearAll}>Clear Filter</Button>}
         </List>)
 }

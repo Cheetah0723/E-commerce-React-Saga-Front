@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import SizeTab from '../SizeTab/SizeTab';
 
 export default function FilterSizeTab({ onSelect }) {

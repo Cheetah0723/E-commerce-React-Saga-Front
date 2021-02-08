@@ -21,6 +21,7 @@ export function findBySingleSize(size) {
     //TODO get the index of the size in the sizeList
     let upperCaseSize = size.toUpperCase();
     //let stock = stockData.map(product => product.stock).filter(stockStatus => stockStatus.quantity >0);
+    // eslint-disable-next-line
     let result = stockData.map(product => {
         let availbleProduct = product.stock.find(item => item.size === upperCaseSize && item.quantity > 0)
         if (availbleProduct !== undefined && availbleProduct !== null) {
@@ -104,6 +105,6 @@ export const saveSearchInput = (input) => {
 
 
 export function findInstaRecordById(id) {
-    let result = instaData.find(each => each.id===id)
+    let result = instaData.find(each => each.id === id)
     return result;
 }

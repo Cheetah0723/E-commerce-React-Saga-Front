@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import RightSideData from '../Components/ProductDetail/RightSideData'
 import ProductImg from '../Components/ProductDetail/ProductImg'
 import { Container, Row, Col } from 'reactstrap';

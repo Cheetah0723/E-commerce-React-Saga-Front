@@ -16,6 +16,7 @@ const initialState = {
     "products": []
 }
 
+// eslint-disable-next-line
 const mockState = {
     "currency": "AUD",
     "customerEmail": "jin0925aki@live.cn",

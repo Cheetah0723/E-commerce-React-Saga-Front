@@ -23,6 +23,7 @@ export default function useSearchBox(props) {
         if (mounted) {
             let searchResults = [];
             let midResult = [];
+            // eslint-disable-next-line
             target.map(each => {
                 if (each.color !== [] && each.color !== undefined) {
                     // Append products to the searchResults

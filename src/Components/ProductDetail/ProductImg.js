@@ -14,6 +14,7 @@ export default function ProductImg({ id }) {
         if (product.img2 !== undefined) {
             setImg(product.img2);
         }
+        // eslint-disable-next-line
     }, [id]);
 
     return (

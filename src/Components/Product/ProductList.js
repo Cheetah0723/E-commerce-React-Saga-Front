@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ProductContainer from './ProductContainer';
 
 export default function ProductList({ display }) {
 
     return (
-        <Fragment>
+        <div className="product-list">
             {display.map((item) =>
                 <ProductContainer item={item} key={item.id} />
             )}
-        </Fragment>
+        </div>
     )
 }

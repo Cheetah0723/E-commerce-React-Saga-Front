@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
 
 export default function FilterColorTab({ onSelect }) {
 

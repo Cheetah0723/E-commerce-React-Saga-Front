@@ -1,6 +1,5 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import RootReducer from './Reducers/root.reducer';
-import throttle from 'lodash/throttle'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 

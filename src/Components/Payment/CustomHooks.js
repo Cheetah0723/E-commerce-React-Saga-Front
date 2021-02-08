@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
-import { selectCurrency, selectTotal } from "../Selectors"
-import { useSelector, useDispatch } from "react-redux"
+//import { selectCurrency, selectTotal } from "../Selectors"
+import { useDispatch } from "react-redux"
 import Model from "./Model"
 import { CREATE_ORDER } from "../../Actions/action.types"
 
@@ -22,6 +22,7 @@ export function usePaypal() {
         if (successful) {
             createOrder()
         }
+        // eslint-disable-next-line 
     }, [successful])
 
     const onSuccess = (payment) => {

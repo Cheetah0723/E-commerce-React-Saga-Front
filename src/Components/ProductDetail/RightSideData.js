@@ -13,6 +13,7 @@ import { showStockStatus, findById } from "../../Actions/search.action"
 export default function RightSideData({ id }) {
     const [size, setSize] = useState("")
     const product = findById(id)
+    // eslint-disable-next-line 
     const [reviews, setReviews] = useState([])  //TODO
     const sizeAvailability =  showStockStatus(id)
     const currency = useSelector(selectCurrency)

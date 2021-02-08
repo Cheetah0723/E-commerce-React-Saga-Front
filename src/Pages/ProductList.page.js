@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { findSalesItems } from "../Actions/search.action"
-import Sorting from '../Components/Filter/Sorting';
-import FilterView from "../Components/Filter/container.filter"
+import Sorting from '../Components/FilterSorting/Sorting';
+import FilterView from "../Components/FilterSorting/container.filter"
 import ProductList from "../Components/Product/ProductList"
 import { categoryData, categoryDataHighToLow, categoryDataLowToHigh, newest } from "../Data/category"
 import { Col, Row } from "reactstrap"
@@ -29,6 +29,7 @@ export function useDisplay(filter) {
 
     useEffect(() => {
         setDisplay(searchResult.length === 0 ? initialData : searchResult)
+        // eslint-disable-next-line
     }, [searchResult])
 
     function sortDisplayList(option) {
@@ -55,9 +56,7 @@ export default function ProductListPage({ sales }) {
                     <FilterView handleFilter={handleFilter} />
                 </Col>
                 <Col xs={12} md={9}>
-                    <div className="product-list">
                         <ProductList display={displayData} />
-                    </div>
                 </Col>
             </Row>
         </div>

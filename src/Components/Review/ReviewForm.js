@@ -25,7 +25,7 @@ export default function ReviewForm({ productName, productId, initialState }) {
             <ReviewBarRating value={state.length}
                 handleClick={data => save("length", data)} readOnly={readOnly} name="length" />
             <p>COMFORT *</p>
-            <ReviewBarRating value={state.comfort} value={state.title}
+            <ReviewBarRating value={state.comfort}
                 handleClick={data => save("comfort", data)} readOnly={readOnly} name="comfort" />
             <div className="col">
                 <p>YOUR REVIEW *</p>

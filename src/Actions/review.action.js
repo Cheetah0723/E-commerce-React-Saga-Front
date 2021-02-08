@@ -43,10 +43,11 @@ export const saveProductId = (id) => {
     }
 }
 
+//TODO check reducer
 export const addRating = (type, data) => {
     return {
         type: ADD_RATING,
-        type: type,
+        ratingType: type,
         data: data
     }
 }

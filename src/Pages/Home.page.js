@@ -14,41 +14,24 @@ export default function Homepage() {
             <div className="hp-promotion-image">
                 <div className="centered-title" ><b>BUILD YOUR LEGACY</b></div>
                 <div className="centered-text" >Lift like the legends in authentic bodybuilding cuts.</div>
-                <Button className="view-all-btn" onClick={() => history.push("/all")}
-                    style={{
-                        position: "absolute",
-                        top: "58%",
-                        left: "10%",
-                        color: "white",
-                        fontSize: "16px",
-                        backgroundColor: "black",
-                        width: "120px",
-                        marginLeft: "10px",
-                        borderRadius: "25px",
-                        fontFamily: "'Montserrat', sans-serif",
-                    }}><b>SHOP</b></Button>
+                <Button className="view-all-btn" onClick={() => history.push("/all")}><b>SHOP</b></Button>
                 <img className="sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3.jpeg" alt="hp-top" />
                 <img className="mobile-sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3-mobile.jpeg" alt="hp-top" />
             </div>
-            <div className="hp-new-release">
-                <Row>
+            <div>
+                <Row className="hp-new-release">
                     <Col sm={4} md={4}>
                         <b className="womens"> WOMENS</b>
                         <br />
                         <b className="new-release">NEW RELEASES</b>
                     </Col>
-                    <Col sm={6} md={6}></Col>
-                    <Col sm={2} md={2}><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Col>
+                    <Col className="ml-auto" ><p className="view-all-link" onClick={() => history.push("/all")}>View All</p></Col>
                 </Row>
-                <div className="hp-list">
-                    <ProductList display={displayData} />
-                </div>
-                <div className="hp-insta-slider" style={{ marginTop: "60px" }}>
-                    <div style={{ textAlign: "center", }}>
-                        <p style={{ fontSize: "25px" }} >AS SEEN ON INSTAGRAM</p>
-                        <p style={{ fontSize: "16px" }}>Shop our favourite looks here</p></div>
-                    <InstaController style={{ width: "100%" }} />
-                </div>
+                <ProductList display={displayData} />
+                <div className="insta-area">
+                    <p style={{ fontSize: "1.563rem" }} >AS SEEN ON INSTAGRAM</p>
+                    <p style={{ fontSize: "1rem" }}>Shop our favourite looks here</p></div>
+                <InstaController />
             </div>
         </div>
     );

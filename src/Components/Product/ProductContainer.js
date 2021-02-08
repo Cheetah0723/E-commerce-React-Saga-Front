@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import history from '../../history';
 import { useSelector } from "react-redux"
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { selectCurrency } from '../Selectors';
 import { Col } from 'reactstrap';
@@ -21,11 +20,10 @@ export default function ProductContainer({ item }) {
             history.push("/product/" + item.id, item.id);
         }}>
             <img className="card-image" src= {item.img} alt={item.name} />
-            <CardContent>
                 <Col>
                     {item.salesRate < 1 && <Fragment>
                         <p className="sales price-label">SALE</p>
-                        <p className="sales price"> ${price * item.salesRate}{currency}</p>
+                        <p className="sales price"> {price * item.salesRate}{currency}</p>
                     </Fragment>}
                     {item.salesRate === 1 && <Fragment>
                         <p className="price-label">New</p>
@@ -38,7 +36,6 @@ export default function ProductContainer({ item }) {
                     </Typography>
                     <p className="item-color" >{item.color}</p>
                 </Col>
-            </CardContent>
         </Card>
     );
 }

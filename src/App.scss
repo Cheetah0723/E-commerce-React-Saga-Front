@@ -41,76 +41,114 @@
 .Homepage {
   .hp-new-release {
     width: 100%;
-
-    @media screen and (min-width: 416px) {
-      margin-top: 20rem;
-    }
-    @media screen and (max-width: 415px) {
-      margin-top: 3rem;
-    }
-
-    .hp-list {
-      margin-left: 4%;
-      margin-right: 4%;
-      width: 92%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      grid-gap: 0.5rem;
-    }
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin-top: 3rem;
   }
 
-  @media screen and (min-width: 415px) {
-    .centered-title {
-      position: absolute;
-      top: 40%;
-      left: 7.5rem;
+  .view-all-btn {
+    position: absolute;
+    top: 23rem;
+    left: 12%;
+    color: white;
+    font-size: 1rem;
+    background-color: black;
+    width: 7.5rem;
+    border-radius: 1.563rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .centered-title {
+    position: absolute;
+    top: 40%;
+    left: 7.5rem;
+    color: white;
+    font-size: 40px;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+  .centered-text {
+    position: absolute;
+    top: 20rem;
+    left: 11.25rem;
+    color: white;
+    font-size: 1.25rem;
+  }
+
+  .womens {
+    margin-left: 3.75rem;
+    margin-top: 7.5rem;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .sub-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    max-height: 50rem;
+  }
+
+  .mobile-sub-image {
+    display: none;
+  }
+
+  .product-list {
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: 0.5rem;
+  }
+
+  .new-release {
+    margin-left: 3.75rem;
+    font-size: 1.75rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .view-all-link {
+    cursor: pointer;
+    padding-right: 2rem;
+    text-align: right;
+    color: black;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    align-self: flex-end;
+  }
+
+  .insta-area {
+    text-align: center;
+    margin-top: 3rem;
+
+    .insta {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 25rem;
+    }
+  }
+  @media screen and (max-width: 415px) {
+    .view-all-btn {
+      top: 23.5rem;
+      left: 10%;
       color: white;
-      font-size: 40px;
-      margin-left: 4%;
-      margin-right: 4%;
+      width: 7.5rem;
+    }
+
+    .centered-title {
+      top: 11.5rem;
+      left: 2rem;
     }
 
     .centered-text {
-      position: absolute;
-      top: 50%;
-      left: 10rem;
-      color: white;
-      font-size: 20px;
-      margin-left: 20px;
+      top: 19.5rem;
+      left: 3rem;
     }
 
-    .sub-image {
-      width: 100%;
-      display: block;
-    }
-
-    .mobile-sub-image {
-      display: none;
-    }
-
-    .womens {
-      margin-left: 60px;
-      margin-top: 120px;
-      font-size: 1rem;
-      font-family: "Montserrat", sans-serif;
-    }
-    .new-release {
-      margin-left: 60px;
-      font-size: 28px;
-      font-family: "Montserrat", sans-serif;
-    }
-    .view-all-link {
-      cursor: pointer;
-      padding-right: 10%;
-      text-align: right;
-      color: black;
-      text-decoration: underline;
-      font-size: 20px;
-      align-self: flex-end;
-    }
-  }
-
-  @media screen and (max-width: 415px) {
     .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
@@ -124,50 +162,16 @@
       width: 100%;
       display: block;
     }
-    .centered-title {
-      position: absolute;
-      top: 42%;
-      left: 10%;
-      color: white;
-      font-size: 20px;
-    }
-    .centered-text {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      color: white;
-      font-size: 12px;
-    }
-    .view-all-btn {
-      position: absolute;
-      top: 70%;
-      left: 5%;
-      color: white;
-      font-size: 16px;
-      background-color: black;
-      width: 120px;
-      border-radius: 25px;
-      font-family: "Montserrat", sans-serif;
-    }
+
     .womens {
-      margin-left: 20px;
-      margin-top: 40px;
-      font-size: 10px;
-      font-family: "Montserrat", sans-serif;
+      margin-left: 1.25rem;
+      margin-top: 2.5rem;
     }
     .new-release {
-      margin-left: 20px;
-      font-size: 14px;
-      font-family: "Montserrat", sans-serif;
+      margin-left: 1.3rem;
     }
     .view-all-link {
-      text-align: right;
-      color: black;
-      text-decoration: underline;
-      font-size: 10px;
-      margin-right: 100px;
-      align-self: buttom;
-      font-family: "Montserrat", sans-serif;
+      margin-right: 0;
     }
   }
 }
@@ -310,11 +314,6 @@
       width: 100%;
     }
 
-    .sub-img-container {
-      width: 15rem;
-      grid-row: 2;
-    }
-
     .sub-image-1 {
       width: 70%;
       margin-left: 15%;
@@ -374,7 +373,7 @@
     }
   }
 
-  .product-list{
+  .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1rem;
@@ -395,13 +394,12 @@
 .ProductContainer {
   width: 100%;
   border-radius: 1%;
-  z-index: 100;
+  z-index: 1;
   box-shadow: 0.5rem;
-  max-height: 440px;
-  max-width: 320px;
+  max-height: 27.5rem;
+  max-width: 20rem;
 
   .item-name {
-    font-size: 1rem;
     color: #444444;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     line-height: 2.1rem;
@@ -461,17 +459,23 @@
     padding: 0;
 
     .item-color {
-      text-align: center;
-      font-family: "Roboto", sans-serif;
       font-size: 1rem;
-      color: #4444;
     }
 
     .item-price {
-      text-align: center;
-      font-family: "Montserrat", sans-serif;
       font-size: 1.2rem;
-      font-weight: bold;
+    }
+
+    .price {
+      font-size: 1rem;
+    }
+
+    .item-name {
+      font-size: 0.8rem;
+    }
+
+    .item-color{
+      font-size: 0.8rem;
     }
   }
 }

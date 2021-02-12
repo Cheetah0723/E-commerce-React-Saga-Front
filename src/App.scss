@@ -124,7 +124,7 @@
     margin-right: 4%;
     width: 92%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, JPGmax(160px, 1fr));
     grid-gap: 0.5rem;
   }
 
@@ -164,7 +164,7 @@
 
     .product-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+      grid-template-columns: repeat(auto-fit, JPGmax(4.5rem, 1fr));
       grid-gap: 0.5rem;
     }
 
@@ -285,7 +285,7 @@
 
   .review-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, JPGmax(230px, 1fr));
     grid-gap: 1rem;
     margin-top: 1rem;
   }
@@ -351,7 +351,7 @@
     }
   }
 
-  @media (min-width: 416px) {
+  @media (JPG-width: 416px) {
     .main {
       width: 100%;
       display: grid;
@@ -638,7 +638,8 @@ img {
 
 .Footer {
   background-color: white;
-  height: 100%;
+  height: auto;
+  width:100%;
 
   .sns-icon-group {
     text-align: center;

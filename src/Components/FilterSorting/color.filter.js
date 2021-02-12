@@ -11,11 +11,11 @@ export default function FilterColorTab({ onSelect }) {
                 <Button className="tab-btn blue-btn"
                     onClick={(e) => onSelect(e.currentTarget.value)}
                     value="blue" >✓</Button>
-                <Button className="tab-btn dk-grey-btn"
-                    onClick={(e) => onSelect(e.currentTarget.value)} value="dark grey">✓</Button>
+                <Button className="tab-btn black-btn"
+                    onClick={(e) => onSelect(e.currentTarget.value)} value="black">✓</Button>
                 <Button className="tab-btn lt-grey-btn"
                     onClick={(e) => onSelect(e.currentTarget.value)} value="light grey">✓</Button>
-                <Button className="tab-btn orange-btn" onClick={(e) => onSelect(e.currentTarget.value)} value="orange">✓</Button>
+                <Button className="tab-btn red-btn" onClick={(e) => onSelect(e.currentTarget.value)} value="red">✓</Button>
                 <Button className="tab-btn pink-btn" onClick={(e) => onSelect(e.currentTarget.value)} value="pink">✓</Button>
             </ButtonGroup>
         </div>

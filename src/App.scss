@@ -399,6 +399,10 @@
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    padding-top:0;
   }
 
   .price-label {
@@ -431,6 +435,8 @@
     font-size: 1rem;
     font-weight: 200;
     margin-bottom: 0;
+    padding-top:0;
+    margin-top:0;
   }
 
   .card-image {
@@ -655,7 +661,8 @@ img {
 @media screen and (max-width: 415px) {
   .App {
     width: 100%;
-    height:auto;
+    height:100%;
+    margin: 0;
     background-color: white;
 
     .nav-bar {

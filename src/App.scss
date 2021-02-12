@@ -124,7 +124,7 @@
     margin-right: 4%;
     width: 92%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, JPGmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 0.5rem;
   }
 

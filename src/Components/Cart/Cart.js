@@ -42,7 +42,7 @@ export default function Cart({ showButton }) {
                 </Row>
             </Fragment>
             {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
-            {totalFromState > 0 && <Row className="align-center"><Paypal id="paypal-btn" total={totalFromState} /></Row>}
+            {totalFromState > 0 && <Paypal total={totalFromState} />}
         </Fragment> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)
     );
 }

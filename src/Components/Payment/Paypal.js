@@ -16,9 +16,9 @@ export default function Paypal() {
     const total = useSelector(selectTotal)
 
     return (
-        <PaypalExpressBtn env={env} client={CLIENT} currency={currency}
+        <PaypalExpressBtn id="paypal-btn" env={env} client={CLIENT} currency={currency}
             total={total > 99 ? total : (total + 10)} onError={onError}
-            shipping={1}
+            shipping={1} style={{size:"responsive", tagline:"false", }}
             onSuccess={onSuccess} onCancel={onCancel} />
     );
 }

@@ -24,7 +24,7 @@ export const selectTotal = createSelector(
 
 export const selectTotalQuantity = createSelector(
     selectCartReducer,
-    reducer => reducer.addedItems.length || 0
+    reducer => reducer.addedItems.map(each => each.quantity).reduce((result, item) => result + item, 0)
 )
 
 export const selectProductsInCart =

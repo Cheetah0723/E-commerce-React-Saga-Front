@@ -33,14 +33,14 @@ export function usePaypal() {
     const onCancel = (data) => {
         setSuccessful(false)
         // User pressed "cancel" or close Paypal's popup!
-        console.log('The payment was cancelled!', data);
+       // console.log('The payment was cancelled!', data);
         // You can bind the "data" object's value to your state or props or whatever here, please see below for sample returned data
     }
 
     const onError = (err) => {
         setSuccessful(false)
         // The main Paypal's script cannot be loaded or somethings block the loading of that script!
-        console.log("Error!", err);
+     //   console.log("Error!", err);
         // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }

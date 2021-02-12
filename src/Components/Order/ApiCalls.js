@@ -2,7 +2,7 @@
 export async function createOrder(order) {
     const url = "http://localhost:8080/api/orders/"
     const jsonOrder = JSON.stringify(order)
-    console.log("jsonOrder", jsonOrder)
+ //   console.log("jsonOrder", jsonOrder)
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -10,7 +10,7 @@ export async function createOrder(order) {
         },
         body: jsonOrder
     })
-    console.log("response", response)
+   // console.log("response", response)
     return response.status === 200 ? response.json() : ""
 }
 

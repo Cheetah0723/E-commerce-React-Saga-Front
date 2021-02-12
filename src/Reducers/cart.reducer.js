@@ -23,31 +23,23 @@ function CartReducer(state = initialState, action) {
             if (!itemToRemove) { return state }
             //calculating the total
             newState.total = parseInt(state.total) - action.price
-            newState.addedItems = state.addedItems.filter(item => action.id !== item.id && action.size !== item.size);
+            newState.addedItems = newState.addedItems.filter(item => action.id !== item.id && action.size !== item.size);
             return newState;
         case SUB_QUANTITY:
             if (state.addedItems.length === 0) { return }
-            newState = Object.assign({}, state)
             let itemToSub = newState.addedItems.find(item => action.id === item.id && action.size === item.size);
-            if (itemToSub === undefined) {
-                return state;
+            if (itemToSub && itemToSub.quantity > 0) {
+                alert("found item ")
+                newState.total = parseInt(state.total) - action.price
+                itemToSub.quantity -= 1
             }
-            newState.total = parseInt(state.total) === 0 ? 0 : parseInt(state.total) - action.price
-            itemToSub.quantity -= 1
-            console.log("itemToSub.quantity", itemToSub.quantity)
-            newState.addedItems = (itemToSub.quantity === 0) ?
-                newState.addedItems.filter(item => item.id !== action.id && action.size !== item.size)
-                : newState.addedItems
+            newState.addedItems = newState.addedItems.filter(item => item.quantity !== 0)
             return newState;
         case ADD_QUANTITY:
             let itemToAdd = newState.addedItems.find(item => action.id === item.id && action.size === item.size);
             if (itemToAdd) {
-                itemToAdd.quantity += 1;
+                itemToAdd.quantity += 1
                 newState.total = parseInt(state.total) + action.price
-                //Delete the previous data of this product
-                newState.addedItems = state.addedItems.filter(item => item.id !== action.id && action.size !== item.size)
-                //And add the updated product data back to the state
-                newState.addedItems.push(itemToAdd);
             }
             return newState;
         case ADD_SHIPPING:

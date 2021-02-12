@@ -38,6 +38,16 @@
   .logo {
     text-align: center;
   }
+
+  .cart-page {
+    align-items: top;
+
+    .close-btn,
+    .check-out-btn {
+      background-color: black;
+      color: white;
+    }
+  }
 }
 .cart-icon {
   display: flex;
@@ -351,7 +361,7 @@
     }
   }
 
-  @media (JPG-width: 416px) {
+  @media (min-width: 416px) {
     .main {
       width: 100%;
       display: grid;
@@ -364,13 +374,15 @@
 
     .sub-image-1 {
       display: block;
-      width: 100%;
+      width: 12rem;
+      height: auto;
       margin-left: 15%;
     }
 
     .sub-image-2 {
       display: block;
-      width: 100%;
+      width: 12rem;
+      height: auto;
       margin-top: 2.5rem;
       margin-left: 15%;
     }
@@ -639,7 +651,7 @@ img {
 .Footer {
   background-color: white;
   height: auto;
-  width:100%;
+  width: 100%;
 
   .sns-icon-group {
     text-align: center;
@@ -670,7 +682,7 @@ img {
     font-size: 1.2rem;
   }
 
-  .mobile-menu {
+  #mobile-menu {
     display: none;
   }
 }
@@ -684,12 +696,6 @@ img {
         font-size: 1.2rem;
       }
 
-      .mobile-menu {
-        display: block;
-        align-self: left;
-        z-index: 1;
-      }
-
       .nav-bar-links,
       .desktop {
         display: none;
@@ -697,16 +703,14 @@ img {
     }
   }
 
-  .line {
-    display: flex;
+  #mobile-menu {
+    display: block;
+    align-self: left;
+    z-index: 1;
   }
 
-  .cart-page {
-    .close-btn,
-    .check-out-btn {
-      background-color: black;
-      color: white;
-    }
+  .line {
+    display: flex;
   }
 }
 

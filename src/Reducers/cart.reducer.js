@@ -34,6 +34,7 @@ function CartReducer(state = initialState, action) {
             }
             newState.total = parseInt(state.total) === 0 ? 0 : parseInt(state.total) - action.price
             itemToSub.quantity -= 1
+            console.log("itemToSub.quantity", itemToSub.quantity)
             newState.addedItems = (itemToSub.quantity === 0) ?
                 newState.addedItems.filter(item => item.id !== action.id && action.size !== item.size)
                 : newState.addedItems

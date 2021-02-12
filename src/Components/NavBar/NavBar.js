@@ -74,7 +74,7 @@ const MobileMenu = () => {
     }, [open]);
 
     return (
-        <div className={classes.root + " mobile-menu"}>
+        <div className={classes.root} id="mobile-menu">
             <Button
                 ref={anchorRef}
                 aria-controls={open ? 'menu-list-grow' : undefined}

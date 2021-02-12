@@ -15,7 +15,7 @@ export default function RightSideData({ id }) {
     const product = findById(id)
     // eslint-disable-next-line 
     const [reviews, setReviews] = useState([])  //TODO
-    const sizeAvailability =  showStockStatus(id)
+    const sizeAvailability = showStockStatus(id)
     const currency = useSelector(selectCurrency)
 
     const { handleAddToCart } = useAddToCart(product, size, currency)
@@ -44,15 +44,10 @@ export default function RightSideData({ id }) {
             <p className="colors">{product.color}</p>
             <br />
             <ReviewTabContainer productName={product.name} productId={product.id} />
-            <FormControl variant="outlined"
-                className="form">
-                <p className="select-size">SELECT SIZE</p>
-                <div className="size-tab">
-                    <SizeTab onChange={size => handleChangeSize(size)} sizeDisplay={sizeAvailability} />
-                </div>
-                <AddToCartButton onAddToCart={handleAddToCart} />
-                <ProductInstruction reviews={reviewBody} />
-            </FormControl>
+            <p className="select-size">SELECT SIZE</p>
+            <SizeTab onChange={size => handleChangeSize(size)} sizeDisplay={sizeAvailability} />
+            <AddToCartButton onAddToCart={handleAddToCart} />
+            <ProductInstruction reviews={reviewBody} />
         </div>
     )
 

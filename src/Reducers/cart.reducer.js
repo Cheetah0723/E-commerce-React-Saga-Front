@@ -29,7 +29,6 @@ function CartReducer(state = initialState, action) {
             if (state.addedItems.length === 0) { return }
             let itemToSub = newState.addedItems.find(item => action.id === item.id && action.size === item.size);
             if (itemToSub && itemToSub.quantity > 0) {
-                alert("found item ")
                 newState.total = parseInt(state.total) - action.price
                 itemToSub.quantity -= 1
             }

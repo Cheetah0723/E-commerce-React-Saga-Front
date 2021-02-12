@@ -15,8 +15,8 @@ export default function Homepage() {
                 <div className="centered-title" ><b>BUILD YOUR LEGACY</b></div>
                 <div className="centered-text" >Lift like the legends in authentic bodybuilding cuts.</div>
                 <Button className="view-all-btn" onClick={() => history.push("/all")}><b>SHOP</b></Button>
-                <img className="sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3.jpeg" alt="hp-top" />
-                <img className="mobile-sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3-mobile.jpeg" alt="hp-top" />
+                <img className="sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3.JPG" alt="hp-top" />
+                <img className="mobile-sub-image" src="https://my-ec-react.s3-ap-southeast-2.amazonaws.com/product-photos/hp-photo-3-mobile.JPG" alt="hp-top" />
             </div>
             <div>
                 <Row className="hp-new-release">

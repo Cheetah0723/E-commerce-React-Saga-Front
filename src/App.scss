@@ -48,7 +48,7 @@
 
   .view-all-btn {
     position: absolute;
-    top: 23rem;
+    top: 28.5rem;
     left: 12%;
     color: white;
     font-size: 1rem;
@@ -60,7 +60,7 @@
 
   .centered-title {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 7.5rem;
     color: white;
     font-size: 40px;
@@ -70,7 +70,7 @@
 
   .centered-text {
     position: absolute;
-    top: 20rem;
+    top: 26rem;
     left: 11.25rem;
     color: white;
     font-size: 1.25rem;
@@ -655,6 +655,7 @@ img {
 @media screen and (max-width: 415px) {
   .App {
     width: 100%;
+    height:auto;
     background-color: white;
 
     .nav-bar {

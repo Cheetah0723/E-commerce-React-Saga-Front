@@ -5,8 +5,14 @@ import { Button, MenuItem, InputLabel } from '@material-ui/core';
 import { TextField, Select, } from 'formik-material-ui';
 import { Row, Col } from 'reactstrap';
 
-const NewCheckoutForm = (values, handleChange, handleSubmit) => (
-    <Form onSubmit={handleSubmit}>
+const NewCheckoutForm = props => {
+    const {
+        values,
+        handleChange,
+        handleSubmit
+    } = props
+
+    return (<Form onSubmit={handleSubmit}>
         <Row>
             <Col sm={6} md={6}>
                 <InputLabel id="fName">First Name</InputLabel>
@@ -137,7 +143,8 @@ const NewCheckoutForm = (values, handleChange, handleSubmit) => (
             onClick={handleSubmit}
         >CONTINUE</Button>
     </Form>
-)
+    )
+}
 
 const CheckoutForm = withFormik({
     mapPropsToValues: () => ({

@@ -27,7 +27,7 @@ export default function App() {
       <HeaderContainer />
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={withRouter(Checkout)} />
+          <Route exact path="/" component={withRouter(Homepage)} />
           <Route exact path="/all" component={withRouter(ProductListPage)} />
           <Route exact path="/sales" component={withRouter(Sales)} />
           <Route exact path="/product/:id" component={withRouter(ProductDetail)} />

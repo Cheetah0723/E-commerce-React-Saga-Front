@@ -30,7 +30,7 @@ export default function ProductContainer({ item }) {
                 </Fragment>
                 }
 
-                <p className="item-name" variant="subtitle1" gutterBottom>  {item.name}</p>
+                <p className="item-name" variant="subtitle1">  {item.name}</p>
                 <p className="item-color" >{item.color}</p>
             </Col>
         </Card>

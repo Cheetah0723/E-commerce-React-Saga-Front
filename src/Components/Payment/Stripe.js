@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import {
     CardElement,
@@ -7,6 +7,28 @@ import {
     useElements,
 } from '@stripe/react-stripe-js';
 
+const useOptions = () => {
+    const options = useMemo(
+        () => ({
+            style: {
+                base: {
+                    color: "#424770",
+                    letterSpacing: "0.025em",
+                    fontFamily: "Source Code Pro, monospace",
+                    "::placeholder": {
+                        color: "#aab7c4"
+                    }
+                },
+                invalid: {
+                    color: "#9e2146"
+                }
+            }
+        }),
+        []
+    );
+
+    return options;
+};
 
 const CheckoutForm = () => {
     const stripe = useStripe();
@@ -27,15 +49,16 @@ const CheckoutForm = () => {
                 options={{
                     style: {
                         base: {
-                            fontSize: '1rem',
-                            color: '#424770',
-                            '::placeholder': {
-                                color: '#aab7c4',
-                            },
+                            color: "#424770",
+                            letterSpacing: "0.025em",
+                            fontFamily: "Source Code Pro, monospace",
+                            "::placeholder": {
+                                color: "#aab7c4"
+                            }
                         },
                         invalid: {
-                            color: '#9e2146',
-                        },
+                            color: "#9e2146"
+                        }
                     },
                 }}
 

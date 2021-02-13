@@ -21,6 +21,10 @@ export default function Checkout() {
     const buyerInfo = useSelector(selectBuyerInfo)
     const currency = useSelector(selectCurrency)
 
+    //TODO
+    //Use effect:
+    // If the cart is empty, redirect to the home page.
+
     const addBuyerInfo = (data) => {
         dispatch({
             type: ADD_BUYER_INFO,
@@ -35,26 +39,22 @@ export default function Checkout() {
             paymentMethod: data,
             total: total
         })
+        handleNext()
     }
 
     return (
         <div className="checkout-page">
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
-            <Stripe />
-            <Button disabled={activeStep === 0} onClick={handleBack}> Back </Button>
-            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo}  />}
-            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} />}
-            {activeStep === 2 && <CheckOutReivew onBack={handleBack} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
+            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} />}
+            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} onBack={handleBack}/>}
+            {activeStep === 2 && <CheckOutReivew onBack={handleBack} onContinue={handleNext} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-            >
-                {activeStep === steps.length - 1 ? 'Finish' : 'CONTINUE'}
-            </Button>
             }
         </div>
     )
 }
+
+
+//   <Button disabled={activeStep === 0} onClick={handleBack}> Back </Button>
+         

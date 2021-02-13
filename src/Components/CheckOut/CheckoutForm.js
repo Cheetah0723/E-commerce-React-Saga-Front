@@ -86,7 +86,7 @@ const NewCheckoutForm = props => {
                 <Field
                     className="field"
                     component={Select}
-                    labelId="state" id="select" name="state"
+                    name="state"
                     variant="outlined"
                     onChange={handleChange}
                     value={values.state}

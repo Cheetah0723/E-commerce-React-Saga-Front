@@ -46,7 +46,7 @@ function CartReducer(state = initialState, action) {
             newState.total = parseInt(state.total) < 99 ? parseInt(state.total) : parseInt(state.total) + 10
             return newState;
         case SAVE_ORDER_CONFIRMATION:
-            return { ...newState, order }
+            return { ...newState, order:action.data }
         case CLEAR_CART:
             return {
                 addedItems: [],

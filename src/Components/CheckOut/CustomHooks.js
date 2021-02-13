@@ -16,12 +16,7 @@ export function useStep() {
         setActiveStep((activeStep) => activeStep - 1);
     };
 
-    const goToCart = () => {
-        //TODO swipe to the cart page
-        //history.push()
-
-    }
-    return { activeStep, handleNext, handleBack, goToCart }
+    return { activeStep, handleNext, handleBack }
 }
 
 

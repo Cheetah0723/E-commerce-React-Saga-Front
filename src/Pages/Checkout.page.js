@@ -42,7 +42,7 @@ export default function Checkout() {
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
             <Stripe />
             <Button disabled={activeStep === 0} onClick={handleBack}> Back </Button>
-            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} onBack={goToCart} />}
+            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo}  />}
             {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} />}
             {activeStep === 2 && <CheckOutReivew onBack={handleBack} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
@@ -58,12 +58,3 @@ export default function Checkout() {
         </div>
     )
 }
-
-
-/**
- *            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} onBack={goToCart} />}
-            {activeStep === 1 &&   <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod}  />}
-            {activeStep === 2 &&   <CheckOutReivew onBack={handleBack} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
-            {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
-            {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
- */

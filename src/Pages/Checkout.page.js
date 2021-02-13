@@ -31,17 +31,16 @@ export default function Checkout() {
         handleNext()
     }
 
-    const addPaymentMethod = (data) => {
-        setPaymentMethod(data)
-        handleNext()
+    const addPaymentMethod = () => {
+        setPaymentMethod(paymentMethod)
     }
 
     return (
         <div className="checkout-page">
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
             {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} />}
-            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} onBack={handleBack} />}
-            {activeStep === 2 && <CheckOutReivew onBack={handleBack} onContinue={handleNext} buyerInfo={buyerInfo} paymentMethod={paymentMethod} shippingFee={total > 90 ? 0 : 10} />}
+            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={handleNext} onBack={handleBack} />}
+            {activeStep === 2 && <CheckOutReivew onBack={handleBack} onContinue={handleNext} buyerInfo={buyerInfo} paymentMethod={paymentMethod} shippingFee={total > 99 ? 0 : 10} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
             }

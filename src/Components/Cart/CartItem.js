@@ -19,13 +19,12 @@ export default function CartItem({ item }) {
             <Col xs={4}>
                 <img className="card-image" src={item.img} alt={item.name}
                     style={{
-                        width: '4.375rem',
-                        height: '4.375rem',
+                        width: '5rem',
+                        height: '5rem',
                     }} />
             </Col>
             <Col xs={6}>
-                {item.name}
-                {item.size} / <br/>{item.color} / {item.size}
+                {item.name} <br/>{item.color} / {item.size}
                 <ButtonGroup aria-label="outlined secondary button group">
                     <Button data-test="add-quantity-btn" onClick={add}
                         style={{ width: "0.625rem" }}>+</Button>

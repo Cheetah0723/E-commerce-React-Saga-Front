@@ -12,7 +12,7 @@ export default function Cart({ showButton }) {
     const totalFromState = useSelector(selectTotal)
     const items = useSelector(selectProductsInCart)
 
-    const handleCheckOut = (totalFromState) => {
+    const handleCheckOut = () => {
         if (totalFromState > 0) {
             history.push("/checkoutInfo");
         }
@@ -22,14 +22,13 @@ export default function Cart({ showButton }) {
 
     return (
         (items && items.length > 0 ? <Fragment>
-            {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
-            <br /><br />
-            <Row className="align-center">
-                <Col xs={2}>SUBTOTAL</Col>
-                <Col xs={7}></Col>
-                <Col xs={3}> ${totalFromState}.00<br /><br /> </Col>
-            </Row>
-            <Fragment>
+            <div className="items-in-cart">
+                {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
+                <Row className="align-center">
+                    <Col xs={2}>SUBTOTAL</Col>
+                    <Col xs={7}></Col>
+                    <Col xs={3}> ${totalFromState}.00<br /><br /> </Col>
+                </Row>
                 <Row className="align-center">
                     <Col xs={2}>SHIPPING</Col>
                     <Col xs={7}></Col>
@@ -40,7 +39,7 @@ export default function Cart({ showButton }) {
                     <Col xs={7}></Col>
                     <Col xs={3}>${shipping + totalFromState}.00<br /><br /> </Col>
                 </Row>
-            </Fragment>
+            </div>
             {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
             {totalFromState > 0 && <Paypal total={totalFromState} />}
         </Fragment> : <p style={{ textAlign: "center", }} pl={1}>YOUR BAG IS CURRENTLY EMPTY.</p>)

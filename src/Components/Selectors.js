@@ -16,12 +16,11 @@ export const selectPaymentReducer = (state) => {
     return state.PaymentReducer
 }
 
-/**** Reselectors **********/
-export const selectTotal = createSelector(
-    selectCartReducer,
-    reducer => reducer.total
-)
+export const selectTotal = (state) => {
+    return state.CartReducer.total
+}
 
+/**** Reselectors **********/
 export const selectTotalQuantity = createSelector(
     selectCartReducer,
     reducer => reducer.addedItems.map(each => each.quantity).reduce((result, item) => result + item, 0)

@@ -10,7 +10,6 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import PaymentIcon from '@material-ui/icons/Payment';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DoneIcon from '@material-ui/icons/Done';
-import "./Checkout.css"
 
 const ColorlibConnector = withStyles({
     alternativeLabel: {

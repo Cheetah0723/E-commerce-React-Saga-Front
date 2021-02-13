@@ -4,38 +4,36 @@ import PaymentForm from "../Components/CheckOut/PaymentForm"
 import CheckOutReivew from "../Components/CheckOut/CheckoutReivew"
 import { useStep } from "../Components/CheckOut/CustomHooks"
 import CheckoutForm from "../Components/CheckOut/CheckoutForm"
-import { useDispatch, useStore } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { ADD_BUYER_INFO, SET_PAYMENT_METHOD } from "../Actions/action.types"
 import { selectTotal, selectPaymentMethod } from "../Components/Selectors"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
 import Button from '@material-ui/core/Button';
 
-
 const steps = ['Shipping Address', 'Secure Payment', 'Review Order', 'Order Complete']
 
 export default function Checkout() {
     const dispatch = useDispatch();
-    const store = useStore().getState()
-    const total = selectTotal(store)
+    const total = useSelector(selectTotal)
     const { activeStep, handleNext, handleBack, goToCart } = useStep()
-    const paymentMethod = selectPaymentMethod(store)
+    const paymentMethod = useSelector(selectPaymentMethod)
 
-    const addBuyerInfo =  (data) => {
-            dispatch({
-                type: ADD_BUYER_INFO,
-                data: data
-            })
-            handleNext()
-        }
+    const addBuyerInfo = (data) => {
+        dispatch({
+            type: ADD_BUYER_INFO,
+            data: data
+        })
+        handleNext()
+    }
 
-    const addPaymentMethod =   (data) => {
-            dispatch({
-                type: SET_PAYMENT_METHOD,
-                paymentMethod: data,
-                total: total
-            })
-        }
+    const addPaymentMethod = (data) => {
+        dispatch({
+            type: SET_PAYMENT_METHOD,
+            paymentMethod: data,
+            total: total
+        })
+    }
 
     return (
         <div className="checkout-page">

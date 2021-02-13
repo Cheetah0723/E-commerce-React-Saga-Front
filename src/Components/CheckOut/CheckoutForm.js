@@ -1,159 +1,143 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { withFormik } from 'formik';
+import { Button, MenuItem, InputLabel } from '@material-ui/core';
+import { TextField, Select, } from 'formik-material-ui';
+import { Row, Col } from 'reactstrap';
 
-import {
-    Button,
-    MenuItem,
-    InputLabel,
-} from '@material-ui/core';
-import {
-    TextField,
-    Select,
-} from 'formik-material-ui';
-import Box from '@material-ui/core/Box';
-import "./Checkout.css"
-
-const NewCheckoutForm = props => {
-    const {
-        values,
-        handleChange,
-        handleSubmit,
-    } = props
-
-    return <div className="check-out-form">
-        <Form onSubmit={handleSubmit}>
-            <div className="row">
-                <div className="col-left">
-                    <InputLabel className="col" id="state">First Name</InputLabel>
-                    <Field
-                        className="col"
-                        component={TextField}
-                        name="fName"
-                        type="text"
-                        margin="normal"
-                        variant="outlined"
-                        size="small"
-                        onChange={handleChange}
-                        value={values.fName}
-                    />
-                </div>
-                <div className="col-right">
-                    <InputLabel className="col" id="state">Last Name</InputLabel>
-                    <Field
-                        className="col"
-                        component={TextField}
-                        name="lName"
-                        type="text"
-                        margin="normal"
-                        variant="outlined"
-                        size="small"
-                        onChange={handleChange}
-                        value={values.lName}
-                    />
-                </div>
-            </div>
-            <InputLabel id="country" className="row">Country</InputLabel>
-            <Field component={Select} className="row select"
-                variant="outlined"
-                labelId="country" id="select" name="country"
-                onChange={handleChange}
-                value={values.country}
-            >
-                <MenuItem value="AUD">Australia</MenuItem>
-                <MenuItem value="USD">United States</MenuItem>
-            </Field>
-            <InputLabel className="col" id="state">Street Address</InputLabel>
-            <Field
-                className="row"
-                component={TextField}
-                name="streetAddress"
-                type="text"
-                margin="normal"
-                variant="outlined"
-                size="small"
-                onChange={handleChange}
-                value={values.streetAddress}
-            />
-            <InputLabel className="col" id="state">Suburb</InputLabel>
-            <Field
-                className="row"
-                component={TextField}
-                name="suburb"
-                type="text"
-                margin="normal"
-                variant="outlined"
-                size="small"
-                onChange={handleChange}
-                value={values.suburb}
-            />
-            <div className="row">
-                <div className="col-left">
-                    <InputLabel className="col" id="state">State</InputLabel>
-                    <Field
-                        className="col select-half select"
-                        component={Select}
-                        labelId="state" id="select" name="state"
-                        variant="outlined"
-                        onChange={handleChange}
-                        value={values.state}
-                    >
-                        <MenuItem value="VIC">Victoria</MenuItem>
-                        <MenuItem value="NSW">United States</MenuItem>
-                        <MenuItem value="QLD">Queensland</MenuItem>
-                        <MenuItem value="NT">North Territory</MenuItem>
-                        <MenuItem value="PE">Perth</MenuItem>
-                        <MenuItem value="TAS">Tasmania</MenuItem>
-                    </Field>
-                </div>
-                <div className="col-right">
-                    <InputLabel className="col" id="state">Post Code</InputLabel>
-                    <Field
-                        className="col"
-                        component={TextField}
-                        name="postcode"
-                        type="number"
-                        margin="normal"
-                        variant="outlined"
-                        size="small"
-                        onChange={handleChange}
-                        value={values.postcode}
-                    />
-                </div>
-            </div>
-            <InputLabel className="col" id="state">Contact Phone Number</InputLabel>
-            <Field
-                className="row"
-                component={TextField}
-                name="phone"
-                type="number"
-                margin="normal"
-                variant="outlined"
-                size="small"
-                onChange={handleChange}
-                value={values.phone}
-            />
-            <InputLabel className="col" id="state">Email</InputLabel>
-            <Field
-                className="row"
-                component={TextField}
-                name="email"
-                type="email"
-                margin="normal"
-                variant="outlined"
-                size="small"
-                onChange={handleChange}
-                value={values.email}
-            />
-            <Box margin={1}>
-                <Button
-                    className="row submit-btn"
-                    onClick={handleSubmit}
-                >CONTINUE</Button>
-            </Box>
-        </Form>
-    </div>
-}
+const NewCheckoutForm = (values, handleChange, handleSubmit) => (
+    <Form onSubmit={handleSubmit}>
+        <Row>
+            <Col sm={6} md={6}>
+                <InputLabel id="fName">First Name</InputLabel>
+                <Field
+                    className="field"
+                    component={TextField}
+                    name="fName"
+                    type="text"
+                    margin="normal"
+                    variant="outlined"
+                    size="small"
+                    onChange={handleChange}
+                    value={values.fName}
+                />
+            </Col>
+            <Col sm={6} md={6}>
+                <InputLabel id="lName">Last Name</InputLabel>
+                <Field
+                    className="field"
+                    component={TextField}
+                    name="lName"
+                    type="text"
+                    margin="normal"
+                    variant="outlined"
+                    size="small"
+                    onChange={handleChange}
+                    value={values.lName}
+                />
+            </Col>
+        </Row>
+        <InputLabel id="country">Country</InputLabel>
+        <Field
+            component={Select}
+            className="field"
+            variant="outlined"
+            labelId="country"
+            name="country"
+            onChange={handleChange}
+            value={values.country}
+        >
+            <MenuItem value="AUD">Australia</MenuItem>
+            <MenuItem value="USD">United States</MenuItem>
+        </Field>
+        <InputLabel id="streetAddress">Street Address</InputLabel>
+        <Field
+            className="field"
+            component={TextField}
+            name="streetAddress"
+            type="text"
+            margin="normal"
+            variant="outlined"
+            size="small"
+            onChange={handleChange}
+            value={values.streetAddress}
+        />
+        <InputLabel id="suburb">Suburb</InputLabel>
+        <Field
+            className="field"
+            component={TextField}
+            name="suburb"
+            type="text"
+            margin="normal"
+            variant="outlined"
+            size="small"
+            onChange={handleChange}
+            value={values.suburb}
+        />
+        <Row>
+            <Col sm={6} md={6}>
+                <InputLabel id="state">State</InputLabel>
+                <Field
+                    className="field"
+                    component={Select}
+                    labelId="state" id="select" name="state"
+                    variant="outlined"
+                    onChange={handleChange}
+                    value={values.state}
+                >
+                    <MenuItem value="VIC">Victoria</MenuItem>
+                    <MenuItem value="NSW">United States</MenuItem>
+                    <MenuItem value="QLD">Queensland</MenuItem>
+                    <MenuItem value="NT">North Territory</MenuItem>
+                    <MenuItem value="PE">Perth</MenuItem>
+                    <MenuItem value="TAS">Tasmania</MenuItem>
+                </Field>
+            </Col>
+            <Col sm={6} md={6}>
+                <InputLabel id="postcode">Post Code</InputLabel>
+                <Field
+                    className="field"
+                    component={TextField}
+                    name="postcode"
+                    type="number"
+                    margin="normal"
+                    variant="outlined"
+                    size="small"
+                    onChange={handleChange}
+                    value={values.postcode}
+                />
+            </Col>
+        </Row>
+        <InputLabel id="phone">Contact Phone Number</InputLabel>
+        <Field
+            className="field"
+            component={TextField}
+            name="phone"
+            type="number"
+            margin="normal"
+            variant="outlined"
+            size="small"
+            onChange={handleChange}
+            value={values.phone}
+        />
+        <InputLabel id="email">Email</InputLabel>
+        <Field
+            className="field"
+            component={TextField}
+            name="email"
+            type="email"
+            margin="normal"
+            variant="outlined"
+            size="small"
+            onChange={handleChange}
+            value={values.email}
+        />
+        <Button
+            className="submit-btn"
+            onClick={handleSubmit}
+        >CONTINUE</Button>
+    </Form>
+)
 
 const CheckoutForm = withFormik({
     mapPropsToValues: () => ({

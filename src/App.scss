@@ -41,6 +41,14 @@
 
   .cart-page {
     align-items: top;
+    height: 100%;
+    overflow: scroll;
+
+    .items-in-cart {
+      padding: 0;
+      max-height: 70%;
+      overflow: scroll;
+    }
 
     .close-btn,
     .check-out-btn {
@@ -705,14 +713,10 @@ img {
   }
 }
 
-.carousel {
-  height: 100px;
-}
-
 #cart-btn {
   @include btn;
-  width:100%;
-  height:3rem;
+  width: 100%;
+  height: 3rem;
   margin-top: 1rem;
 }
 
@@ -726,9 +730,10 @@ img {
 
 #checkout-btn {
   @include btn;
+  margin-top: 1rem;
   align-self: center;
-  width:100%;
-  height:3rem;
+  width: 100%;
+  height: 3rem;
   background-color: #007db5;
   line-height: 0;
   margin-bottom: 0.5rem;
@@ -792,4 +797,29 @@ img {
   cursor: pointer;
   background-color: black;
   color: white;
+}
+
+.checkout-page {
+  width: 100%;
+
+  form {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+   
+
+    .field{
+      width:100%;
+      height: 2.5rem;
+      margin-bottom: 0,5rem;
+    }
+    
+    .submit-btn{
+      @include btn;
+      width:100%;
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
 }

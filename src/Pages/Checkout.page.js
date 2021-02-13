@@ -6,10 +6,9 @@ import { useStep } from "../Components/CheckOut/CustomHooks"
 import CheckoutForm from "../Components/CheckOut/CheckoutForm"
 import { useDispatch, useSelector } from "react-redux"
 import { ADD_BUYER_INFO, SET_PAYMENT_METHOD } from "../Actions/action.types"
-import { selectTotal, selectPaymentMethod, selectBuyerInfo, selectCurrency } from "../Components/Selectors"
+import { selectTotal, selectPaymentMethod, selectBuyerInfo, selectCurrency, selectProductsInCart } from "../Components/Selectors"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
-import Button from '@material-ui/core/Button';
 
 const steps = ['Shipping Address', 'Secure Payment', 'Review Order', 'Order Complete']
 
@@ -20,10 +19,13 @@ export default function Checkout() {
     const paymentMethod = useSelector(selectPaymentMethod)
     const buyerInfo = useSelector(selectBuyerInfo)
     const currency = useSelector(selectCurrency)
+    const itemInCart = useSelector(selectProductsInCart)
 
-    //TODO
-    //Use effect:
-    // If the cart is empty, redirect to the home page.
+    // eslint-disable-next-line
+    useEffect(() => {
+        if (!itemInCart || itemInCart.length === 0)
+            history.push("/")
+    }, [])
 
     const addBuyerInfo = (data) => {
         dispatch({
@@ -46,7 +48,7 @@ export default function Checkout() {
         <div className="checkout-page">
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
             {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} />}
-            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} onBack={handleBack}/>}
+            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} onBack={handleBack} />}
             {activeStep === 2 && <CheckOutReivew onBack={handleBack} onContinue={handleNext} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
@@ -55,6 +57,3 @@ export default function Checkout() {
     )
 }
 
-
-//   <Button disabled={activeStep === 0} onClick={handleBack}> Back </Button>
-         

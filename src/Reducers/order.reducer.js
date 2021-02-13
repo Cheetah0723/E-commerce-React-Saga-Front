@@ -2,8 +2,7 @@ import { ADD_BUYER_INFO, CLEAR_ORDER, SET_PAYMENT_METHOD, SAVE_ORDER_CONFIRMATIO
 
 const initialState = {
     buyerInfo: {}, // including currency
-    payment: {},
-    products: []
+    paymentMethod: {}
 }
 
 const OrderReducer = (state = initialState, action) => {
@@ -12,7 +11,7 @@ const OrderReducer = (state = initialState, action) => {
             if (!action.data) { return state }
             return { ...state, buyerInfo: action.data }
         case SET_PAYMENT_METHOD:
-            return { ...state, payment: { paymentMethod: action.paymentMethod, total: action.total } }
+            return { ...state, paymentMethod: action.paymentMethod }
         case SAVE_ORDER_CONFIRMATION:
             return action.data
         case CLEAR_ORDER:

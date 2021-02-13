@@ -1,6 +1,6 @@
 import {
     CLEAR_CART, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, UPDATE_CURRENCY,
-    ADD_QUANTITY, ADD_SHIPPING
+    ADD_QUANTITY, ADD_SHIPPING, SAVE_ORDER_CONFIRMATION
 } from '../Actions/action.types';
 
 const initialState = { addedItems: [], total: 0, id: 0, size: "", currency: "AUD" }

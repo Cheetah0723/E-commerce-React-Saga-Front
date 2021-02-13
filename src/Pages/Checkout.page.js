@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import CheckoutStepper from "../Components/CheckOut/CheckoutStepper"
 import PaymentForm from "../Components/CheckOut/PaymentForm"
 import CheckOutReivew from "../Components/CheckOut/CheckoutReivew"
 import { useStep } from "../Components/CheckOut/CustomHooks"
 import CheckoutForm from "../Components/CheckOut/CheckoutForm"
-import {  useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { selectTotal, selectCurrency, selectProductsInCart } from "../Components/Selectors"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
@@ -31,15 +31,11 @@ export default function Checkout() {
         handleNext()
     }
 
-    const addPaymentMethod = () => {
-        setPaymentMethod(paymentMethod)
-    }
-
     return (
         <div className="checkout-page">
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
             {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} />}
-            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={handleNext} onBack={handleBack} />}
+            {activeStep === 1 && <PaymentForm handleChange={data=> setPaymentMethod(data)} onContinue={handleNext} onBack={handleBack} />}
             {activeStep === 2 && <CheckOutReivew onBack={handleBack} onContinue={handleNext} buyerInfo={buyerInfo} paymentMethod={paymentMethod} shippingFee={total > 99 ? 0 : 10} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}

@@ -6,7 +6,7 @@ import { useStep } from "../Components/CheckOut/CustomHooks"
 import CheckoutForm from "../Components/CheckOut/CheckoutForm"
 import { useDispatch, useSelector } from "react-redux"
 import { ADD_BUYER_INFO, SET_PAYMENT_METHOD } from "../Actions/action.types"
-import { selectTotal, selectPaymentMethod } from "../Components/Selectors"
+import { selectTotal, selectPaymentMethod, selectBuyerInfo, selectCurrency } from "../Components/Selectors"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
 import Button from '@material-ui/core/Button';
@@ -16,13 +16,15 @@ const steps = ['Shipping Address', 'Secure Payment', 'Review Order', 'Order Comp
 export default function Checkout() {
     const dispatch = useDispatch();
     const total = useSelector(selectTotal)
-    const { activeStep, handleNext, handleBack, goToCart } = useStep()
+    const { activeStep, handleNext, handleBack } = useStep()
     const paymentMethod = useSelector(selectPaymentMethod)
+    const buyerInfo = useSelector(selectBuyerInfo)
+    const currency = useSelector(selectCurrency)
 
     const addBuyerInfo = (data) => {
         dispatch({
             type: ADD_BUYER_INFO,
-            data: data
+            data: { ...data, currency: currency }
         })
         handleNext()
     }
@@ -38,23 +40,30 @@ export default function Checkout() {
     return (
         <div className="checkout-page">
             <CheckoutStepper activeStep={activeStep} steps={steps} handleNext={handleNext} handleBack={handleBack} />
+            <Stripe />
+            <Button disabled={activeStep === 0} onClick={handleBack}> Back </Button>
             {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} onBack={goToCart} />}
-            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} />}
-            {activeStep === 2 && <CheckOutReivew onBack={handleBack} />}
+            {activeStep === 1 && <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod} />}
+            {activeStep === 2 && <CheckOutReivew onBack={handleBack} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
             {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
             {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
-            <Button disabled={activeStep === 0} onClick={handleBack}>
-                Back
-                </Button>
-            {(activeStep === 1) &&
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'CONTINUE'}
-                </Button>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={handleNext}
+            >
+                {activeStep === steps.length - 1 ? 'Finish' : 'CONTINUE'}
+            </Button>
             }
         </div>
     )
 }
+
+
+/**
+ *            {activeStep === 0 && <CheckoutForm onContinue={addBuyerInfo} onBack={goToCart} />}
+            {activeStep === 1 &&   <PaymentForm handleChange={addPaymentMethod} onContinue={addPaymentMethod}  />}
+            {activeStep === 2 &&   <CheckOutReivew onBack={handleBack} buyerInfo={buyerInfo} paymentMethod={paymentMethod} />}
+            {activeStep === 2 && paymentMethod === "PayPal" && <Paypal total={100} />}
+            {activeStep === 2 && paymentMethod === "Stripe" && <Stripe />}
+ */

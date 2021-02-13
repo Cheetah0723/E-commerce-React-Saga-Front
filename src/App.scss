@@ -807,7 +807,12 @@ img {
     margin-left: auto;
     margin-right: auto;
 
-   
+    .submit-btn{
+      @include btn;
+      width:100%;
+      margin-top: 1rem;
+      margin-left: 0;
+    }
 
     .field{
       width:100%;
@@ -815,6 +820,13 @@ img {
       margin-bottom: 0,5rem;
     }
     
+  }
+
+  .PaymentMethod{
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+
     .submit-btn{
       @include btn;
       width:100%;
@@ -822,4 +834,17 @@ img {
       margin-left: 0;
     }
   }
+
+  .check-out-shipping-payment{
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .change-button{
+      @include btn;
+      width:100%;
+      margin-left: 0;
+    }
+  }
 }
+

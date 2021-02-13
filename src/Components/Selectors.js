@@ -53,3 +53,7 @@ export const selectPaymentMethod = createSelector(
 )
 
 
+export const selectBuyerInfo = createSelector(
+    selectOrderReducer,
+    orderReducer => orderReducer.buyerInfo
+)

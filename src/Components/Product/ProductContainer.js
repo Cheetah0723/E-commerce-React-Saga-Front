@@ -29,7 +29,6 @@ export default function ProductContainer({ item }) {
                     <p className="price">${price}{currency}</p>
                 </Fragment>
                 }
-
                 <p className="item-name" variant="subtitle1">  {item.name}</p>
                 <p className="item-color" >{item.color}</p>
             </Col>

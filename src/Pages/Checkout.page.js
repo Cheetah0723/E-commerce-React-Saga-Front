@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import CheckoutStepper from "../Components/CheckOut/CheckoutStepper"
 import PaymentForm from "../Components/CheckOut/PaymentForm"
 import CheckOutReivew from "../Components/CheckOut/CheckoutReivew"
@@ -9,6 +9,7 @@ import { ADD_BUYER_INFO, SET_PAYMENT_METHOD } from "../Actions/action.types"
 import { selectTotal, selectPaymentMethod, selectBuyerInfo, selectCurrency, selectProductsInCart } from "../Components/Selectors"
 import Paypal from "../Components/Payment/Paypal"
 import Stripe from "../Components/Payment/Stripe"
+import history from "../history"
 
 const steps = ['Shipping Address', 'Secure Payment', 'Review Order', 'Order Complete']
 

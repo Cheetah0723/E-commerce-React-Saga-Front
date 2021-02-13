@@ -45,6 +45,8 @@ function CartReducer(state = initialState, action) {
             //shipping is 10 AUD for orders under 99AUD and free for orders above 99AUD.
             newState.total = parseInt(state.total) < 99 ? parseInt(state.total) : parseInt(state.total) + 10
             return newState;
+        case SAVE_ORDER_CONFIRMATION:
+            return { ...newState, order }
         case CLEAR_CART:
             return {
                 addedItems: [],

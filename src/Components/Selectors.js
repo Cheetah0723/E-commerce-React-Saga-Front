@@ -4,10 +4,6 @@ export const selectCartReducer = (state) => {
     return state.CartReducer
 }
 
-export const selectOrderReducer = (state) => {
-    return state.OrderReducer
-}
-
 export const selectReviewReducer = (state) => {
     return state.ReviewReducer
 }
@@ -47,13 +43,7 @@ export const selectProductId = createSelector(
     reducer => reducer.currentProductId
 )
 
-export const selectPaymentMethod = createSelector(
-    selectOrderReducer,
-    reducer => reducer.paymentMethod
-)
-
-
-export const selectBuyerInfo = createSelector(
-    selectOrderReducer,
-    orderReducer => orderReducer.buyerInfo
+export const selectOrderConfirmation = createSelector(
+    selectCartReducer,
+    reducer => reducer.order
 )

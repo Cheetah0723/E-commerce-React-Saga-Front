@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import { Row, Col } from 'reactstrap';
 
-const CheckoutReview = ({ shippingFee, onBack, buyerInfo, paymentMethod }) => (
+const CheckoutReview = ({ shippingFee, onBack, buyerInfo }) => (
     <div className="check-out-shipping-payment">
         <Col className="contact-confirm">
             <Row> First Name: {buyerInfo ? buyerInfo.fName : ""}  </Row>
@@ -14,7 +14,6 @@ const CheckoutReview = ({ shippingFee, onBack, buyerInfo, paymentMethod }) => (
             <Row>State:{buyerInfo ? buyerInfo.state : ""}</Row>
             <Row> Postcode:{buyerInfo ? buyerInfo.postcode : ""} </Row>
             <Row>  Country:{buyerInfo ? buyerInfo.country : ""} </Row>
-            <Row>Payment Method: {paymentMethod}</Row>
             <Row>Shipping・${shippingFee}.00</Row>
             <Button className="change-button" onClick={onBack}>Change</Button>
         </Col>

@@ -6,8 +6,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { Row } from 'reactstrap';
 
-const PaymentForm = ({ handleChange, onContinue, onBack }) => (
-    <div className="PaymentMethod">
+const PaymentForm = ({ handleChange, onContinue, onBack }) => {
+
+    return (<div className="PaymentMethod">
         <FormLabel component="legend">Payment Method</FormLabel>
         <RadioGroup defaultValue="Stripe" aria-label="Select a payment method" name="paymentMethod"
             onChange={e => handleChange(e.target.value)}>
@@ -18,7 +19,7 @@ const PaymentForm = ({ handleChange, onContinue, onBack }) => (
             <Button className="submit-btn" onClick={onContinue}>CONTINUE</Button>
             <Button id="payment-cancel-btn" onClick={onBack}> Back </Button>
         </Row>
-    </div>
-)
+    </div>)
+}
 
 export default PaymentForm

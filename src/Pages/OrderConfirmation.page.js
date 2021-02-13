@@ -1,9 +1,11 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { InputLabel } from '@material-ui/core';
+import {selectOrderConfirmation} from "../Components/Selectors"
 
 export default function OrderConfirmation() {
-    const order = useSelector(state => state.OrderReducer)
+    const order = useSelector(selectOrderConfirmation)
+
     const productsInOrder = order.OrderProducts
     const productView = productsInOrder.map(item => {
         const price = order.currency === "AUD" ? item.AUprice : item.USprice

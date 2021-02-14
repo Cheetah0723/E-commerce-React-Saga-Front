@@ -26,7 +26,7 @@ export default function ProductContainer({ item }) {
                 </Fragment>}
                 {item.salesRate === 1 && <Fragment>
                     <p className="price-label">New</p>
-                    <p className="price">${price}{currency}</p>
+                    <p className="price">{price}{currency}</p>
                 </Fragment>
                 }
                 <p className="item-name" variant="subtitle1">  {item.name}</p>

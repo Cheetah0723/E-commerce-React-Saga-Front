@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavbarBrand, NavLink, Form } from 'reactstrap';
+import { Navbar, Nav, NavLink, Form } from 'reactstrap';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -16,7 +16,6 @@ import Cart from "./CartIcon"
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
         <MobileMenu handleClick={openDrawer} />
-        <NavbarBrand className="logo" href="/">Logo</NavbarBrand>
         <Nav className="nav-bar-links">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/all">Shop</NavLink>

@@ -446,6 +446,7 @@
     padding-bottom: 0;
     margin-top: 0;
     padding-top: 0;
+    text-align: left;
   }
 
   .price-label {
@@ -480,6 +481,7 @@
     margin-bottom: 0;
     padding-top: 0;
     margin-top: 0;
+    text-align: left;
   }
 
   .card-image {
@@ -499,10 +501,6 @@
 
   @media (max-width: 415px) {
     padding: 0;
-
-    .item-color {
-      font-size: 1rem;
-    }
 
     .item-price {
       font-size: 1.2rem;
@@ -819,7 +817,6 @@ img {
       margin-top: 1rem;
       margin-left: 0;
     }
-    
   }
 
   .PaymentMethod {
@@ -848,7 +845,6 @@ img {
   }
 }
 
-
 .submit-btn {
   @include btn;
   width: 100%;
@@ -856,7 +852,8 @@ img {
   margin-left: 0;
 }
 
-#payment-cancel-btn, .cancel-btn {
+#payment-cancel-btn,
+.cancel-btn {
   @include btn;
   background-color: silver;
   color: black;

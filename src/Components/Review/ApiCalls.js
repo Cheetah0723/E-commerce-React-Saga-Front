@@ -17,7 +17,7 @@ export async function createReview(review) {
         }),
     })
     const body = await response.json()
-    console.log("response for createReview()", body)
+    //console.log("response for createReview()", body)
     return body
 }
 

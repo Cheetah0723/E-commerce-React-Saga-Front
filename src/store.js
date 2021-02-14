@@ -1,10 +1,9 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import RootReducer from './Reducers/root.reducer';
-import logger from 'redux-logger'
 import thunk from 'redux-thunk';
 
 const configureStore = () => {
-    let middleware = applyMiddleware(thunk, logger);
+    let middleware = applyMiddleware(thunk);
 
     if (process.env.NODE_ENV !== 'production') {
         const devToolsExtension = window.devToolsExtension;

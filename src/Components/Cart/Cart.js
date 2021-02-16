@@ -20,25 +20,21 @@ export default function Cart({ showButton }) {
 
     const shipping = totalFromState >= 99 ? 0 : 10;
 
+    const RowInCart = ({ leftText, rightText }) => (
+        <Row className="align-center">
+            <Col xs={2}>{leftText}</Col>
+            <Col xs={7}></Col>
+            <Col xs={3}> {rightText}<br /><br /> </Col>
+        </Row>
+    )
+
     return (
         (items && items.length > 0 ? <Fragment>
             <div className="items-in-cart">
                 {items ? items.map(each => <CartItem item={each} key={uuidv4()} />) : []}
-                <Row className="align-center">
-                    <Col xs={2}>SUBTOTAL</Col>
-                    <Col xs={7}></Col>
-                    <Col xs={3}> ${totalFromState}.00<br /><br /> </Col>
-                </Row>
-                <Row className="align-center">
-                    <Col xs={2}>SHIPPING</Col>
-                    <Col xs={7}></Col>
-                    <Col xs={3}>  ${shipping}.00<br /><br /></Col>
-                </Row>
-                <Row className="align-center">
-                    <Col xs={2}>TOTAL</Col>
-                    <Col xs={7}></Col>
-                    <Col xs={3}>${shipping + totalFromState}.00<br /><br /> </Col>
-                </Row>
+                <RowInCart leftText="SUBTOTAL" rightText={"$" + totalFromState + ".00"} />
+                <RowInCart leftText="SHIPPING" rightText={"$" + shipping + ".00"} />
+                <RowInCart leftText="TOTAL" rightText={"$" + (shipping + totalFromState) + ".00"} />
             </div>
             {showButton && <Button id="checkout-btn" onClick={handleCheckOut}>Check Out→</Button>}<br />
             {totalFromState > 0 && <Paypal total={totalFromState} />}

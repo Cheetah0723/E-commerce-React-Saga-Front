@@ -4,19 +4,19 @@ import Button from '@material-ui/core/Button';
 
 export default function FilterColorTab({ onSelect }) {
 
+    const colorBtns = [{ className: "tab-btn blue-btn", value: "blue" },
+    { className: "tab-btn black-btn", value: "black" },
+    { className: "tab-btn lt-grey-btn", value: "light grey" },
+    { className: "tab-btn red-btn", value: "red" },
+    { className: "tab-btn pink-btn", value: "pink" }]
+
     return (
         <div className="FilterTab">
             <p className="filter-label">FILTER BY COLOR</p>
             <ButtonGroup aria-label="outlined secondary button group">
-                <Button className="tab-btn blue-btn"
+                {colorBtns.map(each => (<Button className={each.className}
                     onClick={(e) => onSelect(e.currentTarget.value)}
-                    value="blue" >✓</Button>
-                <Button className="tab-btn black-btn"
-                    onClick={(e) => onSelect(e.currentTarget.value)} value="black">✓</Button>
-                <Button className="tab-btn lt-grey-btn"
-                    onClick={(e) => onSelect(e.currentTarget.value)} value="light grey">✓</Button>
-                <Button className="tab-btn red-btn" onClick={(e) => onSelect(e.currentTarget.value)} value="red">✓</Button>
-                <Button className="tab-btn pink-btn" onClick={(e) => onSelect(e.currentTarget.value)} value="pink">✓</Button>
+                    value={each.value}>✓</Button>))}
             </ButtonGroup>
         </div>
     );

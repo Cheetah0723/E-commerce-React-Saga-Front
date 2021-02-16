@@ -1,143 +1,44 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { withFormik } from 'formik';
-import { Button, MenuItem, InputLabel } from '@material-ui/core';
-import { TextField, Select, } from 'formik-material-ui';
+import { Button, InputLabel } from '@material-ui/core';
+import { TextField, } from 'formik-material-ui';
 import { Row, Col } from 'reactstrap';
+import { CustomTextField, CustomSelectField } from "../Form/CustomFileds"
 
-const NewCheckoutForm = props => {
+const MyCheckoutForm = props => {
     const {
         values,
         handleChange,
         handleSubmit
     } = props
 
+    const countryMenuItems = [{ value: "AU", label: "Australia" }, { value: "US", label: "United States" }]
+    const stateMenuItems = [{ value: "VIC", label: "Victoria" }, { value: "NSW", label: "Victoria" }, { value: "QLD", label: "Queensland" },
+    { value: "NT", label: "North Territory" }, { value: "PE", label: "Perth" }, { value: "TAS", label: "Tasmania" }]
+
     return (<Form onSubmit={handleSubmit}>
         <Row>
             <Col sm={6} md={6}>
-                <InputLabel id="fName">First Name</InputLabel>
-                <Field
-                    className="field"
-                    component={TextField}
-                    name="fName"
-                    type="text"
-                    margin="normal"
-                    variant="outlined"
-                    size="small"
-                    onChange={handleChange}
-                    value={values.fName}
-                />
+                <CustomTextField name="fName" handleChange={handleChange} value={values.fName} inputLabel="First Name" />
             </Col>
             <Col sm={6} md={6}>
-                <InputLabel id="lName">Last Name</InputLabel>
-                <Field
-                    className="field"
-                    component={TextField}
-                    name="lName"
-                    type="text"
-                    margin="normal"
-                    variant="outlined"
-                    size="small"
-                    onChange={handleChange}
-                    value={values.lName}
-                />
+                <CustomTextField name="lName" handleChange={handleChange} value={values.lName} inputLabel="Last Name" />
             </Col>
         </Row>
-        <InputLabel id="country">Country</InputLabel>
-        <Field
-            component={Select}
-            className="field"
-            variant="outlined"
-            labelId="country"
-            name="country"
-            onChange={handleChange}
-            value={values.country}
-        >
-            <MenuItem value="AU">Australia</MenuItem>
-            <MenuItem value="US">United States</MenuItem>
-        </Field>
-        <InputLabel id="streetAddress">Street Address</InputLabel>
-        <Field
-            className="field"
-            component={TextField}
-            name="streetAddress"
-            type="text"
-            margin="normal"
-            variant="outlined"
-            size="small"
-            onChange={handleChange}
-            value={values.streetAddress}
-        />
-        <InputLabel id="suburb">Suburb</InputLabel>
-        <Field
-            className="field"
-            component={TextField}
-            name="suburb"
-            type="text"
-            margin="normal"
-            variant="outlined"
-            size="small"
-            onChange={handleChange}
-            value={values.suburb}
-        />
+        <CustomSelectField name="country" handleChange={handleChange} value={values.country} menuItems={countryMenuItems} inputLabel="Country" />
+        <CustomTextField name="streetAddress" handleChange={handleChange} value={values.streetAddress} inputLabel="Street Address" />
+        <CustomTextField name="suburb" handleChange={handleChange} value={values.suburb} inputLabel="Suburb" />
         <Row>
             <Col sm={6} md={6}>
-                <InputLabel id="state">State</InputLabel>
-                <Field
-                    className="field"
-                    component={Select}
-                    name="state"
-                    variant="outlined"
-                    onChange={handleChange}
-                    value={values.state}
-                >
-                    <MenuItem value="VIC">Victoria</MenuItem>
-                    <MenuItem value="NSW">United States</MenuItem>
-                    <MenuItem value="QLD">Queensland</MenuItem>
-                    <MenuItem value="NT">North Territory</MenuItem>
-                    <MenuItem value="PE">Perth</MenuItem>
-                    <MenuItem value="TAS">Tasmania</MenuItem>
-                </Field>
+                <CustomSelectField name="state" handleChange={handleChange} value={values.state} menuItems={stateMenuItems} inputLabel="State" />
             </Col>
             <Col sm={6} md={6}>
-                <InputLabel id="postcode">Post Code</InputLabel>
-                <Field
-                    className="field"
-                    component={TextField}
-                    name="postcode"
-                    type="number"
-                    margin="normal"
-                    variant="outlined"
-                    size="small"
-                    onChange={handleChange}
-                    value={values.postcode}
-                />
+                <CustomTextField name="postcode" handleChange={handleChange} value={values.postcode} inputLabel="Post Code" />
             </Col>
         </Row>
-        <InputLabel id="phone">Contact Phone Number</InputLabel>
-        <Field
-            className="field"
-            component={TextField}
-            name="phone"
-            type="number"
-            margin="normal"
-            variant="outlined"
-            size="small"
-            onChange={handleChange}
-            value={values.phone}
-        />
-        <InputLabel id="email">Email</InputLabel>
-        <Field
-            className="field"
-            component={TextField}
-            name="email"
-            type="email"
-            margin="normal"
-            variant="outlined"
-            size="small"
-            onChange={handleChange}
-            value={values.email}
-        />
+        <CustomTextField name="phone" handleChange={handleChange} value={values.phone} inputLabel="Contact Phone Number" type="number" />
+        <CustomTextField name="email" handleChange={handleChange} value={values.email} inputLabel="Email" />
         <Button
             className="submit-btn"
             onClick={handleSubmit}
@@ -200,6 +101,6 @@ const CheckoutForm = withFormik({
     },
 
     displayName: 'BasicForm',
-})(NewCheckoutForm);
+})(MyCheckoutForm);
 
 export default CheckoutForm

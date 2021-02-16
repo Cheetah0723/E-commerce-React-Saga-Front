@@ -402,7 +402,9 @@
   display: grid;
 
   .sorting {
-    width: 100px;
+    width: 10rem;
+    margin-left: 0;
+    padding-left: 0;
 
     @media (min-width: 416px) {
       margin-left: 12%;
@@ -552,7 +554,7 @@
   .tab-btn {
     margin-right: 0.6rem;
     color: transparent;
-    width: 3rem;
+    width: 3.2rem;
     height: 3.5rem;
   }
 }
@@ -866,5 +868,3 @@ img {
   width: 5rem;
   height: 5rem;
 }
-
-

@@ -10,8 +10,8 @@ import ProductListPage from "./Pages/ProductList.page";
 import Checkout from './Pages/Checkout.page';
 import Sales from './Pages/Sales.page';
 import OrderConfirmation from "./Pages/OrderConfirmation.page"
-import HeaderContainer from "./Components/NavBar/HeaderContainer"
-import {withRouter} from 'react-router';
+import Header from "./Components/Header/Header"
+import { withRouter } from 'react-router';
 
 // BUG
 //import ReviewModal from "./Components/Review/ReviewModal"
@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <HeaderContainer />
+      <Header />
       <Router history={history}>
         <Switch>
           <Route exact path="/" component={withRouter(Homepage)} />

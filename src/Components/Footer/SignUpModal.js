@@ -8,8 +8,6 @@ import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-
-
     modal: {
         width: "40%",
         maxHeight: "800px",

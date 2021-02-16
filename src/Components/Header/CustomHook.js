@@ -2,7 +2,7 @@ import { findByColor } from '../../Actions/search.action';
 import { useSelector, useDispatch } from 'react-redux';
 import { SAVE_SEARCH_INPUT } from '../../Actions/action.types';
 
-
+//Deprecated
 export default function useSearchBox(props) {
     let searchPhrase = [];
 
@@ -32,11 +32,6 @@ export default function useSearchBox(props) {
                     dispatchSearch(searchResults); //Save the search input to Redux store
                 }
                 if (each.size !== [] && each.size !== undefined) {
-                    // Append products to the searchResults
-
-
-                    //TODO fix
-                    //   midResult = findBySize(each.size);
                     searchResults = searchResults.concat(midResult);
                     dispatchSearch(searchResults); //Save the search input to Redux store
                 }

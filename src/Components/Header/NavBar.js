@@ -8,38 +8,30 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import { makeStyles } from '@material-ui/core/styles';
 import history from "../../history"
 import CurrencyHOC from "../Currency/CurrencyHOC"
 import CartIcon from "./CartIcon"
 
-const NavBar = ({ openDrawer }) => (
-    <Navbar className="nav-bar" bg="light" variant="light">
-        <MobileMenu handleClick={openDrawer} />
-        <Nav className="nav-bar-links">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/all">Shop</NavLink>
-            <NavLink href="/sales">Sales</NavLink>
-        </Nav>
-        <Form inline className="ml-auto desktop">
-            <CurrencyHOC />
-            <CartIcon handleClick={openDrawer} />
-        </Form>
-        <div className="ml-auto mobile-menu"><CartIcon handleClick={openDrawer} /></div>
-    </Navbar>
-);
+const navLinks = [{ href: "/", label: "Home" }, { href: "/all", label: "Shop" }, { href: "/sales", label: "Sales" }]
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-    },
-    paper: {
-        marginRight: theme.spacing(2),
-    },
-}));
+const NavBar = ({ openDrawer }) => {
+
+    return (
+        <Navbar className="nav-bar" bg="light" variant="light">
+            <MobileMenu handleClick={openDrawer} />
+            <Nav className="nav-bar-links">
+                {navLinks.map(each => (<NavLink key={each.label} href={each.href}>{each.label}</NavLink>))}
+            </Nav>
+            <Form inline className="ml-auto desktop">
+                <CurrencyHOC />
+                <CartIcon handleClick={openDrawer} />
+            </Form>
+            <div className="ml-auto mobile-menu"><CartIcon handleClick={openDrawer} /></div>
+        </Navbar>
+    )
+}
 
 const MobileMenu = () => {
-    const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
 
@@ -73,7 +65,7 @@ const MobileMenu = () => {
     }, [open]);
 
     return (
-        <div className={classes.root} id="mobile-menu-logo">
+        <div id="mobile-menu-logo">
             <Button
                 ref={anchorRef}
                 aria-controls={open ? 'menu-list-grow' : undefined}
@@ -90,10 +82,8 @@ const MobileMenu = () => {
                     >
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
-                                <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                    <MenuItem onClick={() => history.push("/")}>Home</MenuItem>
-                                    <MenuItem onClick={() => history.push("/all")}>Shop</MenuItem>
-                                    <MenuItem onClick={() => history.push("/sales")}>Sales</MenuItem>
+                                <MenuList style={{ zIndex: 10, backgroundColor: "white"}} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                                    {navLinks.map(each => (<MenuItem onClick={() => history.push(each.href)}>{each.label}</MenuItem>))}
                                     <MenuItem><CurrencyHOC /></MenuItem>
                                 </MenuList>
                             </ClickAwayListener>

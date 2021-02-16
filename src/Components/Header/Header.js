@@ -57,6 +57,7 @@ export default function HeaderContainer() {
     )
 }
 
+//Deprecated Search function
 /**
  *  {invalidSearch && <Grid item><b>No results.</b><br />
                     Try checking your spelling or use more general terms.</Grid>}

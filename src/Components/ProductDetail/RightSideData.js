@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux"
-import FormControl from '@material-ui/core/FormControl';
+import { Button } from '@material-ui/core';
 import ProductInstruction from '../ProductDetail/ProductInstructions';
-import AddToCartButton from '../ProductDetail/AddToCartButton';
 import SizeTab from '../SizeTab/SizeTab';
 import ReviewTabContainer from "../Review/ReviewTabContainer"
 import ReviewForm from "../Review/ReviewForm"
@@ -46,7 +45,7 @@ export default function RightSideData({ id }) {
             <ReviewTabContainer productName={product.name} productId={product.id} />
             <p className="select-size">SELECT SIZE</p>
             <SizeTab onChange={size => handleChangeSize(size)} sizeDisplay={sizeAvailability} />
-            <AddToCartButton onAddToCart={handleAddToCart} />
+            <Button variant="outlined" id="add-to-cart-btn" onClick={handleAddToCart}><b>Add to Cart</b> </Button>
             <ProductInstruction reviews={reviewBody} />
         </div>
     )

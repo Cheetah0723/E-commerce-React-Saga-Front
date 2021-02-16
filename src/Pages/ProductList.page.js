@@ -56,7 +56,7 @@ export default function ProductListPage({ sales }) {
                     <Filter handleFilter={handleFilter} />
                 </Col>
                 <Col xs={12} md={9}>
-                        <ProductList display={displayData} />
+                    <ProductList display={displayData} />
                 </Col>
             </Row>
         </div>

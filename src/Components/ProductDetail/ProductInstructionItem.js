@@ -7,7 +7,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function EachProductInstruction(props) {
+export default function EachProductInstruction({data}) {
     const [open, setOpen] = React.useState(false);
 
     return (
@@ -15,13 +15,13 @@ export default function EachProductInstruction(props) {
             <ListItem button onClick={() => {
                 setOpen(open => !open)
             }}>
-                <ListItemText style={{ textAlign: "center" }} primary={props.props.title} />
+                <ListItemText style={{ textAlign: "center" }} primary={data.title} />
                 {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button>
-                        {props.props.body}
+                        {data.body}
                     </ListItem>
                 </List>
             </Collapse>

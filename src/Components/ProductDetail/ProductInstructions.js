@@ -32,7 +32,7 @@ const ProductInstruction = ({reviews}) => {
             <ProductReviewItem/>
             {data.map(each => {
                 return (<Fragment key={uuidv4()}>
-                    <EachProductInstruction props={each} />
+                    <EachProductInstruction data={each} />
                     <Divider title="Reviews"/>
                 </Fragment>)
             })}

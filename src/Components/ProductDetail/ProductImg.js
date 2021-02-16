@@ -23,13 +23,11 @@ export default function ProductImg({ id }) {
                 <Col xs={4}>
                     <img className="sub-image-1" src={product.img2} alt="product2"
                         onClick={changeImg} name={product.img2} />
-
                     <img className="sub-image-2" src={product.img} alt="product1"
                         onClick={changeImg} name={product.img} />
                 </Col>
                 <Col xs={8}>
-                    <img className="main-image" src={currentImg} alt="large"
-                    />
+                    <img className="main-image" src={currentImg} alt="large"/>
                 </Col>
             </Row>
         </Fragment>

@@ -15,7 +15,7 @@ export default function FilterColorTab({ onSelect }) {
             <p className="filter-label">FILTER BY COLOR</p>
             <ButtonGroup aria-label="outlined secondary button group">
                 {colorBtns.map(each => (<Button className={each.className}
-                    onClick={(e) => onSelect(e.currentTarget.value)}
+                    onClick={(e) => onSelect(e.currentTarget.value)} key={each.value}
                     value={each.value}>✓</Button>))}
             </ButtonGroup>
         </div>

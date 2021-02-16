@@ -7,7 +7,7 @@ const initialState = { addedItems: [], total: 0, id: 0, size: "", currency: "AUD
 
 function CartReducer(state = initialState, action) {
     if (action.id === "" || action.size === "") { return state }
-    let newState = Object.assign({}, state);
+    let newState = { ...state }
     switch (action.type) {
         case UPDATE_CURRENCY:
             newState.currency = action.data
@@ -46,7 +46,7 @@ function CartReducer(state = initialState, action) {
             newState.total = parseInt(state.total) < 99 ? parseInt(state.total) : parseInt(state.total) + 10
             return newState;
         case SAVE_ORDER_CONFIRMATION:
-            return { ...newState, order:action.data }
+            return { ...newState, order: action.data }
         case CLEAR_CART:
             return {
                 addedItems: [],

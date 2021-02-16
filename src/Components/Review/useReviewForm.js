@@ -46,23 +46,23 @@ export default function useReviewForm() {
         return newErrors
     }
 
-    const submit =  (data) => {
-            dispatch({
-                type: CREATE_REVIEW,
-                review: data
-            }) //Update the currency setting in the store
+    const submit = (data) => {
+        dispatch({
+            type: CREATE_REVIEW,
+            review: data
+        }) //Update the currency setting in the store
 
 
-            // TODO
-            // set the store state to be loading => successful => 
-            // let the view to check the store to update the feedback
-        }
+        // TODO
+        // set the store state to be loading => successful => 
+        // let the view to check the store to update the feedback
+    }
 
     const handleSubmit = () => {
         const newError = isValid(state)
         if (!newError.title && !newError.name && !newError.email && !newError.body
             && productId !== undefined) {
-            const newState = Object.assign({}, state)
+            const newState = { ...state }
             const date = new Date()
             newState.dateTime = date.toJSON()
             newState.productId = productId

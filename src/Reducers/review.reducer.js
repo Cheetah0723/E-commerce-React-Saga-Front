@@ -1,5 +1,5 @@
 import {
-    CREATE_REVIEW, SAVE_REVIEWS, APPEND_REVIEW, SUCCESSFUL, FAILED,ADD_RATING
+    CREATE_REVIEW, SAVE_REVIEWS, APPEND_REVIEW, SUCCESSFUL, FAILED, ADD_RATING
 } from "../Actions/action.types"
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export default function ReviewReducer(state = initialState, action) {
-    let newState = Object.assign({}, state)
+    let newState = { ...state }
     switch (action) {
         case CREATE_REVIEW:
             const toBeAdded = {

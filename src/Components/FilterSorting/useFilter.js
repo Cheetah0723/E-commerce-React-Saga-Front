@@ -19,7 +19,6 @@ export default function useFilter({ handleFilter }) {
     function clearAll() {
         handleFilter([]);
         setShowClear(false);
-        //TODO and also clear the select from the toggle button group
     }
 
     return { showClear, findColor, findSize, clearAll }

@@ -1,8 +1,8 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
-import FilterColorTab from './color.filter';
-import SizeTab from './size.filter';
+import FilterColorTab from './ColorFilter';
+import SizeTab from './SizeFilter';
 import useFilter from "./useFilter"
 import Button from '@material-ui/core/Button';
 

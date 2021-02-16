@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { findSalesItems } from "../Actions/search.action"
 import Sorting from '../Components/FilterSorting/Sorting';
-import FilterView from "../Components/FilterSorting/container.filter"
+import Filter from "../Components/FilterSorting/Filter"
 import ProductList from "../Components/Product/ProductList"
 import { categoryData, categoryDataHighToLow, categoryDataLowToHigh, newest } from "../Data/category"
 import { Col, Row } from "reactstrap"
@@ -53,7 +53,7 @@ export default function ProductListPage({ sales }) {
             <Row className="ml-auto">
                 <Col xs={12} md={3}>
                     <Sorting onSort={sortDisplayList} />
-                    <FilterView handleFilter={handleFilter} />
+                    <Filter handleFilter={handleFilter} />
                 </Col>
                 <Col xs={12} md={9}>
                         <ProductList display={displayData} />

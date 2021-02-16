@@ -9,7 +9,6 @@ import ProductDetail from "./Pages/ProductDetail.page";
 import ProductListPage from "./Pages/ProductList.page";
 import Checkout from './Pages/Checkout.page';
 import Sales from './Pages/Sales.page';
-import Cart from "./Components/Cart/CartDrawer"
 import OrderConfirmation from "./Pages/OrderConfirmation.page"
 import HeaderContainer from "./Components/NavBar/HeaderContainer"
 import {withRouter} from 'react-router';
@@ -33,7 +32,6 @@ export default function App() {
           <Route exact path="/sales" component={withRouter(Sales)} />
           <Route exact path="/product/:id" component={withRouter(ProductDetail)} />
           <Route exact path='/checkoutInfo' component={withRouter(Checkout)} />
-          <Route exact path='./cart' component={withRouter(Cart)} />
           <Route exact path='./orderConfirmation' component={withRouter(OrderConfirmation)} />
         </Switch>
       </Router>

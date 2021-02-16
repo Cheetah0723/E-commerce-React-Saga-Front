@@ -11,7 +11,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import history from "../../history"
 import CurrencyHOC from "../Currency/CurrencyHOC"
-import Cart from "./CartIcon"
+import CartIcon from "./CartIcon"
 
 const NavBar = ({ openDrawer }) => (
     <Navbar className="nav-bar" bg="light" variant="light">
@@ -23,9 +23,9 @@ const NavBar = ({ openDrawer }) => (
         </Nav>
         <Form inline className="ml-auto desktop">
             <CurrencyHOC />
-            <Cart handleClick={openDrawer} />
+            <CartIcon handleClick={openDrawer} />
         </Form>
-        <div className="ml-auto mobile-menu"><Cart handleClick={openDrawer} /></div>
+        <div className="ml-auto mobile-menu"><CartIcon handleClick={openDrawer} /></div>
     </Navbar>
 );
 

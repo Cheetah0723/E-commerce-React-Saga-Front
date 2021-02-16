@@ -17,22 +17,15 @@ export default function CartItem({ item }) {
     return (
         <Row className="align-center">
             <Col xs={4}>
-                <img className="card-image" src={item.img} alt={item.name}
-                    style={{
-                        width: '5rem',
-                        height: '5rem',
-                    }} />
+                <img className="cart-product-image" src={item.img} alt={item.name} />
             </Col>
             <Col xs={6}>
-                {item.name} <br/>{item.color} / {item.size}
+                {item.name} <br />{item.color} / {item.size}
                 <ButtonGroup aria-label="outlined secondary button group">
-                    <Button data-test="add-quantity-btn" onClick={add}
-                        style={{ width: "0.625rem" }}>+</Button>
+                    <Button data-test="add-quantity-btn" onClick={add}>+</Button>
                     <Button disabled>{item.quantity}</Button>
-                    <Button data-test="sub-quantity-btn" onClick={sub}
-                        className="subQuantity">-</Button>
+                    <Button data-test="sub-quantity-btn" onClick={sub}>-</Button>
                 </ButtonGroup>
-
                 <br /><br /><br />
             </Col>
             <Col xs={2} className="price">

@@ -1,15 +1,48 @@
 import React from 'react';
-import Cart from "./Cart"
-import HeaderContainer from "../NavBar/HeaderContainer"
-import Footer from "../Footer/Footer"
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import { Button } from '@material-ui/core';
+import CloseSharpIcon from '@material-ui/icons/CloseSharp';
+import CartContent from './CartContent';
 
-export default function CartDrawer() {
+const drawerWidth = 330;
+
+const useStyles = makeStyles(theme => ({
+    drawer: {
+        [theme.breakpoints.up('sm')]: {
+            width: drawerWidth,  // この幅の横に、mainがレイアウトされる。
+            flexShrink: 0,   // !!! これが無いと main が Drawer の下に入り込んでしまう
+        },
+    },
+    drawerPaper: {
+        width: drawerWidth,
+    },
+}));
+
+export default function CartDrawer({ openStatus, close }) {
+    const classes = useStyles();
 
     return (
-        <div className="cart-page">
-            <HeaderContainer />
-            <Cart showButton={true} />
-            <Footer />
-        </div>
-    )
+        <Drawer
+            key="drawer"
+            className={classes.drawer}
+            variant="persistent"
+            anchor="right"
+            open={openStatus}
+            classes={{
+                paper: classes.drawerPaper,
+            }}
+        >
+            <CloseSharpIcon className="close-cart-icon" onClick={close} />
+            <p className="cart-title" pl={1} >YOUR BAG</p>
+            <CartContent showButton={true} id="cart" />
+            <Button onClick={close} id="cart-btn"  >CONTINUE SHOPPING</Button>
+            <br />
+        </Drawer>
+    );
 }
+
+
+
+
+

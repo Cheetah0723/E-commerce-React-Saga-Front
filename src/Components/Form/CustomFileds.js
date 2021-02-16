@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Field } from 'formik';
-import { TextField, Select, } from 'formik-material-ui';
+import { TextField, Select} from 'formik-material-ui';
 import { MenuItem, InputLabel } from '@material-ui/core';
 
 export const CustomTextField = ({ name = "", handleChange, value = "", inputLabel = "", type = "text" }) => (

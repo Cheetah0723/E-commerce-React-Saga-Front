@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Promo component.
+// -----------------------------------------------------------------------------
+
+
+
+.Promo {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+  
+    @media screen and (max-width: 415px) {
+      font-size: 0.625rem;
+    }
+  
+    @media screen and (min-width: 416px) {
+      font-size: 1rem;
+    }
+  }
+  

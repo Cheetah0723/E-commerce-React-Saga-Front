@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the cart component.
+// -----------------------------------------------------------------------------
+
+.cart-icon {
+  display: flex;
+  cursor: pointer;
+  margin-right: 0;
+}
+
+.cart-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+}
+
+.close-cart-icon {
+  cursor: pointer;
+}
+
+#cart {
+  padding: 0.5rem;
+}
+
+.cart-product-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+#add-to-cart-btn {
+  width: 100%;
+  padding-top: 10;
+  height: 4rem;
+  margin-top: 10;
+  border-radius: 25px;
+  color: white;
+  background-color: #007db5;
+}
+
+.product-in-cart {
+  padding-block-start: 3px;
+}

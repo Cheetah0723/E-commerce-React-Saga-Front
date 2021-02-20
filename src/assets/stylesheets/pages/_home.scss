@@ -1,0 +1,130 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Home page.
+// -----------------------------------------------------------------------------
+
+
+.Homepage {
+    .hp-new-release {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-top: 3rem;
+    }
+  
+    .view-all-btn {
+      position: absolute;
+      top: 28.5rem;
+      left: 12%;
+      color: white;
+      font-size: 1rem;
+      background-color: black;
+      width: 7.5rem;
+      border-radius: 1.563rem;
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    .centered-title {
+      position: absolute;
+      top: 50%;
+      left: 7.5rem;
+      color: white;
+      font-size: 40px;
+      margin-left: 4%;
+      margin-right: 4%;
+    }
+  
+    .centered-text {
+      position: absolute;
+      top: 26rem;
+      left: 11.25rem;
+      color: white;
+      font-size: 1.25rem;
+    }
+  
+    .womens {
+      margin-left: 3.75rem;
+      margin-top: 7.5rem;
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    .sub-image {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+  
+    .mobile-sub-image {
+      display: none;
+    }
+  
+    .product-list {
+      margin-left: 4%;
+      margin-right: 4%;
+      width: 92%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-gap: 0.5rem;
+    }
+  
+    .new-release {
+      margin-left: 3.75rem;
+      font-size: 1.75rem;
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    .view-all-link {
+      cursor: pointer;
+      padding-right: 2rem;
+      text-align: right;
+      color: black;
+      text-decoration: underline;
+      font-size: 1.25rem;
+      align-self: flex-end;
+    }
+  
+    @media screen and (max-width: 415px) {
+      .view-all-btn {
+        top: 23.5rem;
+        left: 10%;
+        color: white;
+        width: 7.5rem;
+      }
+  
+      .centered-title {
+        top: 11.5rem;
+        left: 2rem;
+      }
+  
+      .centered-text {
+        top: 19.5rem;
+        left: 3rem;
+      }
+  
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, JPGmax(4.5rem, 1fr));
+        grid-gap: 0.5rem;
+      }
+  
+      .sub-image {
+        display: none;
+      }
+      .mobile-sub-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+  
+      .womens {
+        margin-left: 1.25rem;
+        margin-top: 2.5rem;
+      }
+      .new-release {
+        margin-left: 1.3rem;
+      }
+      .view-all-link {
+        margin-right: 0;
+      }
+    }
+  }

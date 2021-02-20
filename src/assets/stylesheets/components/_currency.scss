@@ -1,0 +1,10 @@
+@import "../abstracts/mixins";
+
+.currency-select {
+  @include center;
+  margin-bottom: 1rem;
+}
+
+#currency-dialog-title {
+  align-self: center;
+}

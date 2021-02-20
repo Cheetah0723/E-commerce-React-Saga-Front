@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the filter component.
+// -----------------------------------------------------------------------------
+
+.FilterTab {
+  width: 100%;
+  margin-top: 0.8rem;
+
+  .filter-label {
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .orange-btn {
+    background-color: #9a091a;
+  }
+
+  .pink-btn {
+    background-color: #ff99cc;
+  }
+
+  .lt-grey-btn {
+    background-color: #c0c0c0;
+  }
+
+  .black-btn {
+    background-color: black;
+  }
+
+  .blue-btn {
+    background-color: #3399ff;
+  }
+
+  .tab-btn {
+    margin-right: 0.6rem;
+    color: transparent;
+    width: 3.2rem;
+    height: 3.5rem;
+  }
+}
+
+#clear-filter-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Review component.
+// -----------------------------------------------------------------------------
+
+.modal {
+    background-color: white;
+    padding-top: 80px;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin-left: 30%;
+    margin-right: 30%;
+  
+    .err-msg {
+      color: blue;
+    }
+  
+    .input {
+      width: 100%;
+    }
+  
+    p {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+  
+    .star {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      padding-top: 0;
+    }
+  
+    .bar-rating {
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+      padding-top: 0;
+    }
+  }

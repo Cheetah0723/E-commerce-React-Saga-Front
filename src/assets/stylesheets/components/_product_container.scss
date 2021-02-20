@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the ProductComponent component.
+// -----------------------------------------------------------------------------
+
+
+.ProductContainer {
+    width: 100%;
+    border-radius: 1%;
+    z-index: 1;
+    box-shadow: 0.5rem;
+    max-height: 27.5rem;
+    max-width: 20rem;
+  
+    .item-name {
+      color: #444444;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      line-height: 2.1rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      padding-top: 0;
+      text-align: left;
+    }
+  
+    .price-label {
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  
+    .sales {
+      color: red;
+    }
+  
+    .price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  
+    .new-price {
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  
+    .item-color {
+      color: lightslategray;
+      font-size: 1rem;
+      font-weight: 200;
+      margin-bottom: 0;
+      padding-top: 0;
+      margin-top: 0;
+      text-align: left;
+    }
+  
+    .card-image {
+      cursor: pointer;
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+      align-self: center;
+    }
+  
+    .sales-price {
+      color: red;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+    }
+  
+    @media (max-width: 415px) {
+      padding: 0;
+  
+      .item-price {
+        font-size: 1.2rem;
+      }
+  
+      .price {
+        font-size: 1rem;
+      }
+  
+      .item-name {
+        font-size: 0.8rem;
+      }
+  
+      .item-color {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  

@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the All Product page.
+// -----------------------------------------------------------------------------
+
+
+
+.AllProducts {
+    background-color: white;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    display: grid;
+  
+    .sorting {
+      width: 10rem;
+      margin-left: 0;
+      padding-left: 0;
+  
+      @media (min-width: 416px) {
+        margin-left: 12%;
+      }
+    }
+  
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 1rem;
+      margin-top: 1rem;
+    }
+  }

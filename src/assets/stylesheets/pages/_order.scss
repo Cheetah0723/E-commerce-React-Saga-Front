@@ -1,0 +1,39 @@
+.OrderConfirmation {
+  background-color: white;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  align-items: center;
+
+  .container {
+    align-self: center;
+    width: 100%;
+    font-size: 1.25rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .col-right {
+    margin-left: 1rem;
+    width: 50%;
+  }
+
+  .col-left {
+    width: 50%;
+  }
+
+  #label {
+    font-size: 1rem;
+  }
+
+  .item {
+    height: 3rem;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    align-self: center;
+  }
+}

@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Checkout page.
+// -----------------------------------------------------------------------------
+
+@import "../abstracts/mixins";
+
+.checkout-page {
+    width: 100%;
+  
+    form {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+  
+      .field {
+        width: 100%;
+        height: 2.5rem;
+        margin-bottom: 0, 5rem;
+      }
+  
+      .submit-btn {
+        @include btn;
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
+  
+    .PaymentMethod {
+      width: 10rem;
+      margin-left: auto;
+      margin-right: auto;
+  
+      .submit-btn {
+        @include btn;
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
+  
+    .check-out-shipping-payment {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+  
+      .change-button {
+        @include btn;
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }

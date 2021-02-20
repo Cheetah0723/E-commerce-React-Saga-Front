@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "~bootstrap/scss/bootstrap";
+
+// 1. Configuration and helpers
+@import "abstracts/mixins";
+
+// 2. Base stuff
+@import "base/base";
+
+// 3. Layout-related sections
+@import "layout/footer";
+
+// 4. Components
+@import "components/button", "components/cart", "components/currency", "components/filter",
+  "components/product_container", "components/promo", "components/review", "components/size_tab";
+
+// 5. Page-specific styles
+@import "pages/checkout", "pages/home", "pages/order", "pages/product_detail", "pages/shop_all";

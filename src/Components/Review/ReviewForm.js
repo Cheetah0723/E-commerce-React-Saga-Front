@@ -4,6 +4,7 @@ import { Button, Typography, TextareaAutosize } from '@material-ui/core';
 import ReviewStarRating from "./ReviewStarRating"
 import ReviewBarRating from "./ReviewBarRating"
 import useReviewForm from "./useReviewForm"
+import { Col } from "reactstrap"
 
 export default function ReviewForm({ productName, productId, initialState }) {
     const { state, errors, save, handleSubmit, readOnly } = useReviewForm(initialState)
@@ -27,7 +28,7 @@ export default function ReviewForm({ productName, productId, initialState }) {
             <p>COMFORT *</p>
             <ReviewBarRating value={state.comfort}
                 handleClick={data => save("comfort", data)} readOnly={readOnly} name="comfort" />
-            <div className="col">
+            <Col>
                 <p>YOUR REVIEW *</p>
                 <TextField onChange={e => save(e.target.name, e.target.value)} error={errors.title} value={state.title === undefined ? "" : state.title}
                     helperText="Please give your review a title" autoFocus={true}
@@ -56,7 +57,7 @@ export default function ReviewForm({ productName, productId, initialState }) {
                         fontFamily: "'Montserrat', sans-serif",
                     }}
                     onClick={handleSubmit}>SUBMIT REVIEW</Button>}
-            </div>
+            </Col>
         </form>
     )
 

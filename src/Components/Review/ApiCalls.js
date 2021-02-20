@@ -30,7 +30,7 @@ export async function getReviewsByProductId(id) {
 
 
 //--------------------------------------------------
-//Actions for the admin
+//actions for the admin
 export async function getAllReviews() {
     const url = "/api/reviews/"
     const response = await fetch(url)

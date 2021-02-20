@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import history from '../../history';
 import { useSelector } from "react-redux"
 import Card from '@material-ui/core/Card';
-import { selectCurrency } from '../Selectors';
+import { selectCurrency } from '../selectors';
 import { Col } from 'reactstrap';
 
 

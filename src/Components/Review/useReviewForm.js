@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useStore, useDispatch } from "react-redux"
-import { selectProductId } from "../Selectors"
-import { CREATE_REVIEW } from "../../Actions/action.types"
+import { selectProductId } from "../selectors"
+import { CREATE_REVIEW } from "../../actions/action.types"
 
 const noError = {
     title: false,

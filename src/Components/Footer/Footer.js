@@ -1,6 +1,6 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
-import FooterSignUp from './FooterSignUp';
+import FooterSignUp from './footerSignUp';
 import { Row, Col } from 'reactstrap';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';

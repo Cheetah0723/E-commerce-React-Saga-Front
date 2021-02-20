@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { findById } from "../../Actions/search.action"
+import { findById } from "../../actions/search.action"
 import { Row, Col } from 'reactstrap';
 
 export default function ProductImg({ id }) {

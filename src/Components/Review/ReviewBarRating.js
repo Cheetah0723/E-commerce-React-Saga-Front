@@ -1,7 +1,7 @@
 import React from 'react';
 import ThumbUpAltSharpIcon from '@material-ui/icons/ThumbUpAltSharp';
 import Box from '@material-ui/core/Box';
-import StyledRating from "./StyledRating"
+import StyledRating from "./styledRating"
 
 export default function ReviewBarRating({ value, readOnly, handleClick, name }) {
 

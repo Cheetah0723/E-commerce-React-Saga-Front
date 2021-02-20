@@ -1,9 +1,9 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-import EachProductInstruction from "./ProductInstructionItem";
+import EachProductInstruction from "./productInstructionItem";
 import { Divider } from '@material-ui/core';
 import { Fragment } from 'react';
-import ProductReviewItem from "./ProductReviewItem"
+import ProductReviewItem from "./productReviewItem"
 import { v4 as uuidv4 } from 'uuid';
 
 const data = [

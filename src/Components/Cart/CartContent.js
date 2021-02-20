@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 import { useSelector } from "react-redux"
 import { Button } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
-import CartItem from './CartItem';
-import Paypal from '../Payment/Paypal';
-import { selectTotal, selectProductsInCart } from "../Selectors"
+import CartItem from './cartItem';
+import Paypal from '../payment/paypal';
+import { selectTotal, selectProductsInCart } from "../selectors"
 import history from '../../history';
-import PriceCalculation from "./PriceCalculation"
+import PriceCalculation from "./priceCalculation"
 
 export default function Cart({ showButton }) {
     const total = useSelector(selectTotal)

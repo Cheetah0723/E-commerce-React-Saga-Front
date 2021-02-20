@@ -1,6 +1,6 @@
 import {
     CREATE_REVIEW, SAVE_REVIEWS, APPEND_REVIEW, SUCCESSFUL, FAILED, ADD_RATING
-} from "../Actions/action.types"
+} from "../actions/action.types"
 
 const initialState = {
     toBeAdded: {},

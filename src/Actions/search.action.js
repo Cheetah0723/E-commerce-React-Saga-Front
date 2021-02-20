@@ -1,7 +1,6 @@
-import { categoryData } from '../Data/category';
-import { stockData } from '../Data/stockData';
-import colorList from '../Data/colorList';
-import { instaData } from '../Data/instaData';
+import { categoryData } from '../data/category.data';
+import { stockData } from '../data/stock.data';
+import colorList from '../data/color.data';
 import { SAVE_SEARCH_INPUT } from './action.types';
 
 export function findById(id) {
@@ -101,10 +100,4 @@ export const saveSearchInput = (input) => {
         type: SAVE_SEARCH_INPUT,
         input: input
     }
-}
-
-
-export function findInstaRecordById(id) {
-    let result = instaData.find(each => each.id === id)
-    return result;
 }

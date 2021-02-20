@@ -2,7 +2,7 @@
 export const SAVE_SEARCH_INPUT = 'SAVE_SEARCH_INPUT';
 export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS';
 export const FETCH_SEARCH_ERROR = 'FETCH_SEARCH_ERROR';
-//Order
+//order
 export const CREATE_ORDER = 'CREATE_ORDER';
 export const ADD_BUYER_INFO = 'ADD_BUYER_INFO';
 export const CLEAR_ORDER = "CLEAR_ORDER"
@@ -16,7 +16,7 @@ export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const ADD_SHIPPING = 'ADD_SHIPPING';
 export const CLEAR_CART = 'CLEAR_CART';
 export const SAVE_DATA = "SAVE_DATA"
-//Review
+//review
 export const CREATE_REVIEW = "CREATE_REVIEW"
 export const SAVE_REVIEWS = "SAVE_REVIEWS"
 export const APPEND_REVIEW = "APPEND_REVIEW"

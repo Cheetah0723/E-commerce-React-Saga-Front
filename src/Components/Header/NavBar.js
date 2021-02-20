@@ -9,8 +9,8 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import history from "../../history"
-import CurrencyHOC from "../Currency/CurrencyHOC"
-import CartIcon from "./CartIcon"
+import CurrencyHOC from "../currency/currencyHOC"
+import CartIcon from "./cartIcon"
 
 const navLinks = [{ href: "/", label: "Home" }, { href: "/all", label: "Shop" }, { href: "/sales", label: "Sales" }]
 

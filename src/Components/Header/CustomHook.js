@@ -1,6 +1,6 @@
-import { findByColor } from '../../Actions/search.action';
+import { findByColor } from '../../actions/search.action';
 import { useSelector, useDispatch } from 'react-redux';
-import { SAVE_SEARCH_INPUT } from '../../Actions/action.types';
+import { SAVE_SEARCH_INPUT } from '../../actions/action.types';
 
 //Deprecated
 export default function useSearchBox(props) {

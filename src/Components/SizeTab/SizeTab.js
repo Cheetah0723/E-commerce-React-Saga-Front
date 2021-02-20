@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import sizeList from '../../Data/sizeList';
+import sizeList from '../../data/size.data';
 import {ToggleButtonGroup,ToggleButton} from '@material-ui/lab';
 
 export function useSizeTab(sizeDisplay) {

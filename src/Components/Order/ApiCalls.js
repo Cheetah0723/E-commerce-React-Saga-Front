@@ -17,7 +17,7 @@ export async function createOrder(order) {
 
 
 //--------------------------------------------------
-//Actions for the admin
+//actions for the admin
 
 export async function getOrderById(id) {
     const url = "/api/orders/" + id

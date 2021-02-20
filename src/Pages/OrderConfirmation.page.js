@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { InputLabel } from '@material-ui/core';
-import { selectOrderConfirmation } from "../Components/Selectors"
+import { selectOrderConfirmation } from "../components/selectors"
 import { Row, Col } from 'reactstrap';
 
 export default function OrderConfirmation() {

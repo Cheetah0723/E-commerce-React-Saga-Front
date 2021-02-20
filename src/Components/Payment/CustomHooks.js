@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react"
-//import { selectCurrency, selectTotal } from "../Selectors"
+//import { selectCurrency, selectTotal } from "../selectors"
 import { useDispatch } from "react-redux"
-import Model from "./Model"
-import { CREATE_ORDER } from "../../Actions/action.types"
+import Model from "./model"
+import { CREATE_ORDER } from "../../actions/action.types"
 
 export function usePaypal() {
     const [successful, setSuccessful] = useState(false)

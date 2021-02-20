@@ -1,5 +1,5 @@
 
-import { CLEAR_CART } from '../../Actions/action.types';
+import { CLEAR_CART } from '../../actions/action.types';
 import { useDispatch } from "react-redux"
 
 export default function Model() {

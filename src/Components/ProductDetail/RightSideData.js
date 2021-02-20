@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux"
 import { Button } from '@material-ui/core';
-import ProductInstruction from '../ProductDetail/ProductInstructions';
-import SizeTab from '../SizeTab/SizeTab';
-import ReviewTabContainer from "../Review/ReviewTabContainer"
-import ReviewForm from "../Review/ReviewForm"
+import ProductInstruction from './productInstructions'
+import SizeTab from '../sizeTab/sizeTab';
+import ReviewTabContainer from "../review/reviewTabContainer"
+import ReviewForm from "../review/reviewForm"
 import useAddToCart from "./useAddToCart"
-import { selectCurrency } from '../Selectors';
-import { showStockStatus, findById } from "../../Actions/search.action"
+import { selectCurrency } from '../selectors';
+import { showStockStatus, findById } from "../../actions/search.action"
 
 export default function RightSideData({ id }) {
     const [size, setSize] = useState("")

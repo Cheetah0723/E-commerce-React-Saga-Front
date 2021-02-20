@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import { selectCurrency } from "../Selectors"
-import { addQuantity, subQuantity } from "../../Actions/cart.action"
+import { selectCurrency } from "../selectors"
+import { addQuantity, subQuantity } from "../../actions/cart.action"
 import { Row, Col } from 'reactstrap';
 
 export default function CartItem({ item }) {

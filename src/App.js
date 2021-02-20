@@ -1,20 +1,20 @@
 import React from 'react';
-import Homepage from './Pages/Home.page';
-import Footer from './Components/Footer/Footer';
+import Homepage from './pages/home.page';
+import Footer from './components/footer/footer';
 import './assets/stylesheets/main.scss';
-//import ReviewForm from "./Components/Review/ReviewForm"
+//import ReviewForm from "./components/review/reviewForm"
 import { Router, Switch, Route } from "react-router-dom";
 import history from './history';
-import ProductDetail from "./Pages/ProductDetail.page";
-import ProductListPage from "./Pages/ProductList.page";
-import Checkout from './Pages/Checkout.page';
-import Sales from './Pages/Sales.page';
-import OrderConfirmation from "./Pages/OrderConfirmation.page"
-import Header from "./Components/Header/Header"
+import ProductDetail from "./pages/productDetail.page";
+import ProductListPage from "./pages/productList.page";
+import Checkout from './pages/checkout.page';
+import Sales from './pages/sales.page';
+import OrderConfirmation from "./pages/orderConfirmation.page"
+import Header from "./components/header/header"
 import { withRouter } from 'react-router';
 
 // BUG
-//import ReviewModal from "./Components/Review/ReviewModal"
+//import ReviewModal from "./components/review/reviewModal"
 
 //      <ReviewForm/>
 //     <Homepage />

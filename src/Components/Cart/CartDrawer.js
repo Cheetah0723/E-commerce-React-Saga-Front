@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import { Button } from '@material-ui/core';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
-import CartContent from './CartContent';
+import CartContent from './cartContent';
 
 const drawerWidth = 330;
 

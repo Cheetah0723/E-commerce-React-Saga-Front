@@ -1,6 +1,6 @@
 import React from 'react';
-import RightSideData from '../Components/ProductDetail/RightSideData'
-import ProductImg from '../Components/ProductDetail/ProductImg'
+import RightSideData from '../components/productDetail/rightSideData'
+import ProductImg from '../components/productDetail/productImg'
 import { Container, Row, Col } from 'reactstrap';
 
 export default function ProductDetail(props) {

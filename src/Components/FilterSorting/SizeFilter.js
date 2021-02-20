@@ -1,5 +1,5 @@
 import React from 'react';
-import SizeTab from '../SizeTab/SizeTab';
+import SizeTab from '../sizeTab/sizeTab';
 
 export default function FilterSizeTab({ onSelect }) {
 

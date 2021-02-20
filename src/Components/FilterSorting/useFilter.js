@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { findBySingleColor, findBySingleSize } from '../../Actions/search.action';
+import { findBySingleColor, findBySingleSize } from '../../actions/search.action';
 
 export default function useFilter({ handleFilter }) {
     const [showClear, setShowClear] = useState(false);

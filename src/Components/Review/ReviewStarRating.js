@@ -1,5 +1,5 @@
 import React from "react";
-import StyledRating from "./StyledRating"
+import StyledRating from "./styledRating"
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 

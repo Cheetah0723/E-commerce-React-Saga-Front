@@ -3,7 +3,7 @@ import { Form } from 'formik';
 import { withFormik } from 'formik';
 import { Button } from '@material-ui/core';
 import { Row, Col } from 'reactstrap';
-import { CustomTextField, CustomSelectField } from "../Form/CustomFileds"
+import { CustomTextField, CustomSelectField } from "../form/customFileds"
 
 const MyCheckoutForm = props => {
     const {

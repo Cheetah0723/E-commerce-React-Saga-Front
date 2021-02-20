@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from "react-redux"
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-import { usePaypal } from './customHooks';
+import { usePaypal } from './hooks';
 import {selectCurrency, selectTotal} from "../selectors"
 
 const CLIENT = {

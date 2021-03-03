@@ -6,9 +6,9 @@
 ## Tech Stack: 
 ### React.js, Redux Thunk, Material UI, SASS, Bootstrap
 
-![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/demo-1.png)
-![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/demo-2.png)
-![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/demo-3.png)
+![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/Demo-1.png)
+![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/Demo-2.png)
+![alt text](https://github.com/Zoe-0925/E-Commerce-React-Redux-Saga-Node.js-MySQL-Frontend/blob/master/public/Demo-3.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
